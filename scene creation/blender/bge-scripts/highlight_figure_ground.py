@@ -1,5 +1,5 @@
 ### Script that runs continuously with an always sensor in an Empty object
-### Note this uses RED wireframe to highlight objects => don't use red as a color for objects
+### Note this uses RED and BLUE wireframe to highlight objects => don't use red as a color for objects
 ### idea is to create a copy of object
 # with separate material 
 # remove texture 
@@ -13,29 +13,39 @@ scene = bge.logic.getCurrentScene()
 cont = bge.logic.getCurrentController()
 own = cont.owner #owner of the controller is the active object
 
-names_of_unrigid_objects = ["Camera","Lamp","Empty","__default__cam__","Hemi","Hemi.001","Sun"]
-rigid_objects=[]
-for obj in scene.objects:
+scenes = bge.logic.getSceneList()
+
+main_scene = scene
+# preposition_overlay_scene = scenes[1]
+
+# names_of_unrigid_objects = ["Camera","Lamp","Empty","__default__cam__","Hemi","Hemi.001","Sun"]
+# rigid_objects=[]
+# for obj in scene.objects:
 	
-	if obj.name not in names_of_unrigid_objects:
-		rigid_objects.append(obj)
+# 	if obj.name not in names_of_unrigid_objects:
+# 		rigid_objects.append(obj)
 
 change = cont.sensors["change"]
+rigid_objects = []
+
+for obj in main_scene.objects:
+	if "selectedfigure" in obj.getPropertyNames():
+		rigid_objects.append(obj)
 
 
 if change.positive:
 	print("change has come!")
 	
 	for obj in rigid_objects:
-		if obj['highlight']==True:
+		if obj.get('highlight')==True:
 			obj.endObject()
 
 	for obj in rigid_objects:
-		if obj['selectedfigure'] == True:
+		if obj.get('selectedfigure') == True:
 
 			# obj.color-=x
 			obj['selectedfigure']=False
-		if obj['selectedground'] == True:
+		if obj.get('selectedground') == True:
 			# obj.color-=y
 			obj['selectedground']=False
 

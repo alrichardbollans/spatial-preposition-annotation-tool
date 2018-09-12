@@ -2,7 +2,7 @@ import bge
 cont = bge.logic.getCurrentController()
 own = cont.owner #owner of the controller is the active object (try print(own))
 scene = bge.logic.getCurrentScene() #this sets scene as a bge.types.KX_Scene object
-
+scenes = bge.logic.getSceneList()
 
 
 hover = cont.sensors["MouseOver"]
@@ -11,18 +11,19 @@ deselect = cont.sensors["deselect"]
 
 
 if leftClick.positive and hover.positive:
-	triple =[0,own,0]
+	own['selectedprep']= True
+	# triple =[0,own,0]
 	
-	for obj in bpy.data.scenes["Scene"]:
-		if obj["selectedfigure"] == True:
-			triple[0]=obj
-		if obj["selectedground"] == True:
-			triple[2]=obj
-	bge.logic.sendMessage("change")
+	# for obj in bpy.data.scenes["Scene"]:
+	# 	if obj["selectedfigure"] == True:
+	# 		triple[0]=obj
+	# 	if obj["selectedground"] == True:
+	# 		triple[2]=obj
+	# bge.logic.sendMessage("change")
 	
-	with open('output.csv', "a") as csvfile:
-		outputwriter = csv.writer(csvfile)
-		outputwriter.writerow(triple)
+	# with open('output.csv', "a") as csvfile:
+	# 	outputwriter = csv.writer(csvfile)
+	# 	outputwriter.writerow(triple)
 
 if deselect.positive:
 	own['selectedprep']= False
