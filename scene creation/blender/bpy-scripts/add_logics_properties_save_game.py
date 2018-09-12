@@ -4,7 +4,6 @@ import bpy
 
 import os
 
-import random
 
 print("The main scene containing various objects should be named 'Scene', the overlay scene containing the prepositionn menu should be called 'Scene.001'")
 
@@ -14,7 +13,6 @@ class Task:
     highlighted_objects = [] #list of types of objects that may need highlighting
     main_scene = bpy.data.scenes["Scene"]
     preposition_overlay_scene = bpy.data.scenes["Scene.001"]
-    preposition_list = []
 
     ###### EMPTY
     def add_main_empty_logic(self):
@@ -233,7 +231,9 @@ class Task:
         if "p" in self.user_selections:
             bpy.context.screen.scene =  self.preposition_overlay_scene 
             for obj in self.preposition_overlay_scene.objects:
-                if obj.name in self.preposition_list:
+
+                if "preposition" in obj.keys():
+
                     obj.select = True
 
                     bpy.context.scene.objects.active = obj
@@ -351,14 +351,15 @@ class Task:
         self.add_preposition_selection_camera_logic()
         self.add_preposition_menu_logic()
 
-        bpy.ops.wm.save_mainfile()
+        #bpy.ops.wm.save_mainfile()
     def save_game_remove_logic(self):
 
 
         bpy.ops.wm.addon_enable(module="game_engine_save_as_runtime")
         bpy.context.screen.scene =  self.main_scene 
         bpy.ops.wm.save_as_runtime(filepath=get_blender_directory()+'/annotation scenes/'+bpy.path.basename(bpy.context.blend_data.filepath).replace(".blend","-"+self.suffix+".blend"))
-
+        directory = get_bpy_script_directory()
+        run_bpy_script(directory,"remove_all_logic.py")
 
 
 
@@ -402,19 +403,21 @@ def get_blender_directory():
         return os.path.dirname(current_directory)
 
 def run_bpy_script(directory,scriptname):
-    text = bpy.data.texts.load(filepath=os.path.join(directory, scriptname))
+    script = bpy.data.texts[scriptname]
+    exec(script.as_string())
+    # text = bpy.data.texts.load(filepath=os.path.join(directory, scriptname))
 
-    for area in bpy.context.screen.areas:
-        if area.type == 'TEXT_EDITOR':
-            area.spaces[0].text = text # make loaded text file visible
+    # for area in bpy.context.screen.areas:
+    #     if area.type == 'TEXT_EDITOR':
+    #         area.spaces[0].text = text # make loaded text file visible
 
-            ctx = bpy.context.copy()
-            ctx['edit_text'] = text # specify the text datablock to execute
-            ctx['area'] = area # not actually needed...
-            ctx['region'] = area.regions[-1] # ... just be nice
+    #         ctx = bpy.context.copy()
+    #         ctx['edit_text'] = text # specify the text datablock to execute
+    #         ctx['area'] = area # not actually needed...
+    #         ctx['region'] = area.regions[-1] # ... just be nice
 
-            bpy.ops.text.run_script(ctx)
-            break
+    #         bpy.ops.text.run_script(ctx)
+    #         break
 
 def prepare_scene():
     directory = get_bpy_script_directory()
@@ -439,7 +442,6 @@ highlightfg.user_selections = ["p"]
 list_of_tasks.append(highlightfg)
 
 for task in list_of_tasks:
-    task.preposition_list = ["above","in","on"]
     task.add_logic()
     task.save_game_remove_logic()
 
