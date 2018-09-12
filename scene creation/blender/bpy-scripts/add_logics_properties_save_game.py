@@ -274,61 +274,6 @@ class Task:
 
                 obj.select =False
 
-    def create_highlight_duplicates(self,object_list,use):
-
-        #select the object and make it active
-        for obj in object_list:
-            bpy.ops.object.select_all(action='DESELECT')
-
-            ### Create a duplicate
-            obj.select = True
-
-            bpy.context.scene.objects.active = obj
-
-            bpy.context.screen.scene =  self.main_scene 
-
-            bpy.ops.object.duplicate_move(OBJECT_OT_duplicate={"linked":False}) #This is giving a context error but I don't think it matters
-
-            ### Unlink the material and texture
-            bpy.ops.object.make_single_user(object=False,obdata=False,material=True,texture=True,animation=False)
-            ## Edit material of duplicate
-
-            material = bpy.context.active_object.active_material
-
-            material.type = "WIRE"
-
-            material.use_object_color = False
-
-            material.use_mist = False
-            if use =="f":
-                material.diffuse_color = [0.8,0,0]
-            if use =="g":
-                material.diffuse_color = [0,0,0.8]
-
-            # material.use_tangent_shading = True
-
-            material.use_shadeless = True
-
-            # Remove texture
-            material.use_textures[0] = False
-
-            # Add highlight property
-            bpy.ops.object.game_property_new(type = "BOOL",name="highlight")
-
-            # bpy.context.active_object['highlight'] = True#.game.properties[2] = True#['highlight']
-
-            # Hide object in another layer
-            bpy.ops.object.move_to_layer(layers=(False,True,False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False))
-
-            # Make no longer rigid body
-            bpy.ops.rigidbody.object_remove()
-            
-            # Rename
-            bpy.context.active_object.name = obj.name + "highlight" + use
-            
-            #Deselect
-            obj.select = False
-
     def add_logic(self):
         ### Start by clearing all logic from scene
         directory = get_bpy_script_directory()
@@ -403,9 +348,14 @@ def get_blender_directory():
         return os.path.dirname(current_directory)
 
 def run_bpy_script(directory,scriptname):
-    script = bpy.data.texts[scriptname]
-    exec(script.as_string())
-    # text = bpy.data.texts.load(filepath=os.path.join(directory, scriptname))
+    file = directory + scriptname 
+    exec(compile(open(file).read(), file, 'exec'))
+    
+
+    # script = bpy.data.texts[scriptname]
+    # print(script)
+    # exec(script.as_string())
+    # # text = bpy.data.texts.load(filepath=os.path.join(directory, scriptname))
 
     # for area in bpy.context.screen.areas:
     #     if area.type == 'TEXT_EDITOR':
@@ -421,12 +371,15 @@ def run_bpy_script(directory,scriptname):
 
 def prepare_scene():
     directory = get_bpy_script_directory()
+
+    link_scripts(directory)
+
     run_bpy_script(directory,"edit_physics.py")
     run_bpy_script(directory,"edit_rendering.py")
     run_bpy_script(directory,"create_highlights.py")
     run_bpy_script(directory,"remove_all_logic.py")
 
-
+prepare_scene()
 
 list_of_tasks = []
 standard = Task()

@@ -5,7 +5,7 @@
 # with separate material 
 # remove texture 
 # set diffuse color and wire render
-# remove object color  and use mistfrom opitons
+# remove object color  and use_mist from opitons
 import bpy
 import random
 
@@ -78,7 +78,7 @@ def create_highlight_duplicates(scene,object_list,use):
 		
 		# Rename
 		bpy.context.active_object.name = obj.name + "highlight" + use
-		
+		print(bpy.context.active_object.name)
 		#Deselect
 		obj.select = False
 
@@ -89,6 +89,7 @@ bpy.context.screen.scene =  main_scene
 
 
 rigid_bodies = create_list_rigid_bodies(main_scene)
+
 create_highlight_duplicates(main_scene,rigid_bodies,"f")
 create_highlight_duplicates(main_scene,rigid_bodies,"g")
 
