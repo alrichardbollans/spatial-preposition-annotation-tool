@@ -3,8 +3,8 @@
 ### Table of Contents
 1. [Introduction](#introduction)
 2. [Continuing Developments](#continuing-developments)
-2. [Getting Started](#getting-started)
-3. [Troubleshooting](#troubleshooting)
+3. [Getting Started](#getting-started)
+4. [Troubleshooting](#troubleshooting)
 
 ### Introduction
 The aim of this tool is to allow for the collection of large amounts of rich data regarding how people use spatial prepositions.
@@ -36,7 +36,8 @@ Prepositions are stored in a separate scene (Scene.001). In order to add new pre
 We also plan on improving how prepositions are handled.
 
 ### Creating Annotations
-
+#### Standard Task
+#### Preposition Selection
 ### Continuing Developments
 * Adding additional tasks
 * TextUI/Improving preposition selection
