@@ -28,9 +28,14 @@ In order to be able to distinguish concrete objects (chair, bowl etc..) from ble
 Therefore, when adding new objects to the scene make sure that is is set to be a rigid body (In the Render view, under physics properties click 'Rigid Body').
 
 ##### Adding new prepositions
-Prepositions are stored in a separate scene (Scene.001). In order to add new prepositions you can copy one of the existing prepositions an alter the text, make sure to change the name of the new object to that of the preposition e.g. "in".
+Prepositions are stored in a separate scene (Scene.001). In order to add new prepositions you can copy one of the existing prepositions an alter the text, make sure to:
+
+1. Change the name of the new object to that of the preposition e.g. "in".
+2. Assign a custom property called "preposition" to the object.
 
 We also plan on improving how prepositions are handled.
+
+### Creating Annotations
 
 ### Continuing Developments
 * Adding additional tasks
