@@ -4,7 +4,9 @@
 1. [Introduction](#introduction)
 2. [Continuing Developments](#continuing-developments)
 3. [Getting Started](#getting-started)
-4. [Troubleshooting](#troubleshooting)
+4. [Creating Annotations](#creating-annotations)
+5. [Troubleshooting](#troubleshooting)
+6. [Requirements](#Requirements)
 
 ### Introduction
 The aim of this tool is to allow for the collection of large amounts of rich data regarding how people use spatial prepositions.
@@ -13,9 +15,6 @@ The tool uses Blender's game engine and allows users to navigate environments, s
 
 By using virtual scenes we are able to extract large amounts of information about the relationships between objects in the scene.
 
-### Requirements
-1. Blender
-2. Python 2
 
 ### Getting Started
 #### Creating Scenes
@@ -36,10 +35,25 @@ Prepositions are stored in a separate scene (Scene.001). In order to add new pre
 We also plan on improving how prepositions are handled.
 
 ### Creating Annotations
+After processing scenes, run create-annotations.py. This will ask what type of task you would like to use and which scene you want to use.
+
+#### Interface
+* Left click = Select figure or preposition
+* Right click= Select ground
+* Arrow keys = Move around
+* Mouse movement = Look around
+
+Currently there are two modes for annotating
 #### Standard Task
+The standard task allows the user free reign to select figure and ground objects and a suitable preposition.
 #### Preposition Selection
+In the preposition selection task two objects in the scene are selected at random and the user is asked to select appropriate an appropriate preposition relating the two (Red highlighting denotes the *figure* and blue denotes the *ground*). If the user doesn't deem appropriate any of the given prepositions they can select 'Cancel' to change the objects.
 ### Continuing Developments
 * Adding additional tasks
 * TextUI/Improving preposition selection
 * Detailed property extraction
 * Improving game running efficiency
+
+### Requirements
+1. Blender
+2. Python 2
