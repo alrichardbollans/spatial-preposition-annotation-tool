@@ -19,11 +19,19 @@ class Annotation():
 
 #x= raw_input("What is the number of the scene you would like to annotate?") #set x to be random integer within range of files
 #task_type = raw_input("What kind of task would you like to do? s = Standard annotation task, hfg = Task where a figure and ground is given and preposition must be selected")
-scenefile = raw_input("Which scene file would you like to annotate?") #"scene"+str(x)+"-"+task_type+".blend"
+sceneinput = raw_input("Which scene file would you like to annotate? (Only the file name is necessary, not the path)") #"scene"+str(x)+"-"+task_type+".blend"
+if ".blend" in sceneinput:
+	scenefile = sceneinput
+	scene = scenefile[:scenefile.find(".blend")]
+else:
+	scene = sceneinput
+	scenefile = sceneinput + ".blend"
+
+task_type = scenefile[scenefile.find("-")+ 1:scenefile.find(".blend")] ### task type is between "-" and ".blend"
 
 ### run annotation game
 
-os.system("./scene creation/blender/annotation-scenes/" +str(scenefile)) 
+os.system("./scene\ creation/blender/annotation\ scenes/" +str(scenefile)) 
 
 ### create list from output of tool
 with open('output.csv', "r+") as f: 
@@ -36,7 +44,7 @@ for annotation in datalist:
 	an = Annotation()
 	an.task = str(task_type)
 	an.preposition = str(annotation[1])
-	an.scene = scenefile
+	an.scene = scene
 	an.figure = str(annotation[0])
 	an.ground = str(annotation[2])
 
