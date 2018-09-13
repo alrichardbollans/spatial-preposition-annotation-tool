@@ -2,9 +2,9 @@
 
 ### Table of Contents
 1. [Introduction](#introduction)
-2. [Continuing Developments](#continuing-developments)
-3. [Getting Started](#getting-started)
-4. [Creating Annotations](#creating-annotations)
+2. [Getting Started](#getting-started)
+3. [Creating Annotations](#creating-annotations)
+4. [Continuing Developments](#continuing-developments)
 5. [Troubleshooting](#troubleshooting)
 6. [Requirements](#Requirements)
 
@@ -18,7 +18,9 @@ By using virtual scenes we are able to extract large amounts of information abou
 
 ### Getting Started
 #### Creating Scenes
-The first thing you need is a set of scenes to work with. These should be stored in /blender/scene creation/scenes.
+The first thing you need is a set of scenes to work with. These should be stored in /blender/scene creation/scenes. Please avoid using "-" in file names.
+
+Once scenes have been created, run 'process_scenes.py' to create environments to annotate.
 
 At the moment the scene set up is still quite particular. We have included an example.blend in the 'scenes' folder and we recommend using this as a template.
 ##### Adding new objects
@@ -42,7 +44,7 @@ We have included a screenshot of what everything should look like after adding '
 We also plan on improving how prepositions are handled.
 
 ### Creating Annotations
-After processing scenes, run create-annotations.py. #This will ask what type of task you would like to use and which scene you want to use.
+After processing scenes, run create-annotations.py. This will ask for the name of the scene file you would like to use.
 
 Running this will add annotations to the annotation list csv in /outputs/.
 
@@ -62,7 +64,7 @@ In the preposition selection task two objects in the scene are selected at rando
 * TextUI/Improving preposition selection
 * Detailed property extraction
 * Improving game running efficiency
-
+### Troubleshooting
 ### Requirements
 1. Blender
 2. Python 2
