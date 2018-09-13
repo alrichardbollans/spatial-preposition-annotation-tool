@@ -30,7 +30,7 @@ for scene in bpy.data.scenes:
 
 
 ### Unlink texts
-texts_to_keep_linked = ["add_logic.py","remove_all_logic.py"]
+texts_to_keep_linked = ["add_logic_in_blender.py","remove_all_logic.py"]
 for txts in bpy.data.texts:
 	if txts.name not in texts_to_keep_linked:
 		bpy.data.texts.remove(txts)
