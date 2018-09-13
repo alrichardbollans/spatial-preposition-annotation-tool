@@ -42,7 +42,9 @@ We have included a screenshot of what everything should look like after adding '
 We also plan on improving how prepositions are handled.
 
 ### Creating Annotations
-After processing scenes, run create-annotations.py. This will ask what type of task you would like to use and which scene you want to use.
+After processing scenes, run create-annotations.py. #This will ask what type of task you would like to use and which scene you want to use.
+
+Running this will add annotations to the annotation list csv in /outputs/.
 
 #### Interface
 * Left click = Select figure or preposition
