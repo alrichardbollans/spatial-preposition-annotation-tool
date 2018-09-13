@@ -85,4 +85,11 @@ In the preposition selection task two objects in the scene are selected at rando
 ### Requirements
 
 * Blender 2.79
+
+See https://www.blender.org/
+
 * Python 2.7
+
+Installing Python is generally easy, and nowadays many Linux and UNIX distributions include a recent Python. Even some Windows computers (notably those from HP) now come with Python already installed.
+
+For guidance installing python3 on your machine see https://wiki.python.org/moin/BeginnersGuide/Download
