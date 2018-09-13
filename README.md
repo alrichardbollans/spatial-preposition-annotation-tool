@@ -66,5 +66,5 @@ In the preposition selection task two objects in the scene are selected at rando
 * Improving game running efficiency
 ### Troubleshooting
 ### Requirements
-1. Blender
-2. Python 2
+* Blender 2.79
+* Python 2.7
