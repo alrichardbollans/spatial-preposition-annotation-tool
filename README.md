@@ -8,6 +8,7 @@
 4. [Continuing Developments](#continuing-developments)
 5. [Troubleshooting](#troubleshooting)
 6. [Requirements](#requirements)
+7. [Contact](#contact)
 
 ### Introduction
 
@@ -93,3 +94,8 @@ See https://www.blender.org/
 Installing Python is generally easy, and nowadays many Linux and UNIX distributions include a recent Python. Even some Windows computers (notably those from HP) now come with Python already installed.
 
 For guidance installing python3 on your machine see https://wiki.python.org/moin/BeginnersGuide/Download
+
+### Contact
+If you have any comments, queries or want to ask about extensions of the tool to fit your needs dont hesitate to get in touch!
+
+Email: mm15alrb@leeds.ac.uk
