@@ -18,7 +18,7 @@ By using virtual scenes we are able to extract large amounts of information abou
 
 ### Getting Started
 #### Creating Scenes
-The first thing you need is a set of scenes to work with.
+The first thing you need is a set of scenes to work with. These should be stored in /blender/scene creation/scenes.
 
 At the moment the scene set up is still quite particular. We have included an example.blend in the 'scenes' folder and we recommend using this as a template.
 ##### Adding new objects
@@ -27,10 +27,15 @@ In order to be able to distinguish concrete objects (chair, bowl etc..) from ble
 Therefore, when adding new objects to the scene make sure that is is set to be a rigid body (In the Render view, under physics properties click 'Rigid Body').
 
 ##### Adding new prepositions
-Prepositions are stored in a separate scene (Scene.001). In order to add new prepositions you can copy one of the existing prepositions an alter the text, make sure to:
+Prepositions are stored in a separate scene (Scene.001). In order to add new prepositions you can copy one of the existing prepositions and alter the text. To do this:
 
-1. Change the name of the new object to that of the preposition e.g. "in".
-2. Assign a custom property called "preposition" to the object.
+1. Start by making sure that you are using the Camera's perspective. Usually this is toggled with Numpad 0.
+2. Select "above" object and "aboveText" simultaneously by clicking on them while holding shift
+3. Press Shift + D to create a duplicate. Move this duplicate to somewhere appropriate in the view.
+4. Change the name of the object to be the preposition you are adding e.g. 'near'
+5. Edit the text object to be your new preposition.
+
+We have included a screenshot of what everything should look like after adding 'near' in this way.
 
 We also plan on improving how prepositions are handled.
 
