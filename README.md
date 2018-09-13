@@ -7,7 +7,7 @@
 3. [Creating Annotations](#creating-annotations)
 4. [Continuing Developments](#continuing-developments)
 5. [Troubleshooting](#troubleshooting)
-6. [Requirements](#Requirements)
+6. [Requirements](#requirements)
 
 ### Introduction
 
@@ -84,11 +84,11 @@ In the preposition selection task two objects in the scene are selected at rando
 
 ### Requirements
 
-* Blender 2.79
+##### Blender 2.79
 
 See https://www.blender.org/
 
-* Python 2.7
+##### Python 2.7
 
 Installing Python is generally easy, and nowadays many Linux and UNIX distributions include a recent Python. Even some Windows computers (notably those from HP) now come with Python already installed.
 
