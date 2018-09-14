@@ -18,7 +18,7 @@ The tool uses Blender's game engine and allows users to navigate environments, s
 
 The tool is easily extendable to include various different tasks which bring out different aspects of the semantics and pragmatics of spatial preposition use.
 
-By using virtual scenes we are able to extract large amounts of information about the relationships between objects in the scene.
+By using virtual environments it is possible to extract large amounts of detailed information from the scene.
 
 
 ### Getting Started
