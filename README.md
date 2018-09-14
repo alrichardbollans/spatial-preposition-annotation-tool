@@ -14,7 +14,9 @@
 
 The aim of this tool is to allow for the collection of large amounts of rich data regarding how people use spatial prepositions.
 
-The tool uses Blender's game engine and allows users to navigate environments, select objects and give spatial prepositions to describe the relationships.
+The tool uses Blender's game engine and allows users to navigate environments, select objects and assign spatial prepositions relating pairs of objects. 
+
+The tool is easily extendable to include various different tasks which bring out different aspects of the semantics and pragmatics of spatial preposition use.
 
 By using virtual scenes we are able to extract large amounts of information about the relationships between objects in the scene.
 
