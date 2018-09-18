@@ -51,6 +51,8 @@ Prepositions are stored in a separate scene (Scene.001). In order to add new pre
 
 We have included a screenshot of what everything should look like after adding 'near' in this way.
 
+Note: It is important that the preposition objects have a Game Property called 'preposition'.
+
 We also plan on improving how prepositions are handled.
 
 ### Creating Annotations
