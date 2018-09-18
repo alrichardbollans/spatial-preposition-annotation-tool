@@ -12,7 +12,7 @@
 
 ### Introduction
 
-The aim of this tool is to allow for the collection of large amounts of rich data regarding how people use spatial prepositions.
+The aim of this tool is to allow for the collection of large amounts of rich data regarding how people use spatial prepositions in situated discourse.
 
 The tool uses Blender's game engine and allows users to navigate environments, select objects and assign spatial prepositions relating pairs of objects. 
 
