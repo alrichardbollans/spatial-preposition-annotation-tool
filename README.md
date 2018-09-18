@@ -78,7 +78,7 @@ The standard task allows the user free reign to select figure and ground objects
 
 In the preposition selection task two objects in the scene are selected at random and the user is asked to select appropriate an appropriate preposition relating the two (Red highlighting denotes the *figure* and blue denotes the *ground*). If the user doesn't deem appropriate any of the given prepositions they can select 'Cancel' to change the objects.
 
-### Figure & Ground Selection
+#### Figure & Ground Selection
 
 In this task, one of the prepositions is highlighted and users can select figure and ground combinations which fit the preposition. Clicking 'Cancel' changes the preposition.
 
