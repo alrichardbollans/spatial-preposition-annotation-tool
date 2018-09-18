@@ -27,57 +27,58 @@ def create_list_rigid_bodies(scene):
 
 ####### Create duplicate objects to highlight figure
 
-def create_object_highlight(scene,obj,use):
-	bpy.ops.object.select_all(action='DESELECT')
+# def create_object_highlight(scene,obj,use):
+# 	bpy.ops.object.select_all(action='DESELECT')
 
-	### Create a duplicate
-	obj.select = True
+# 	### Create a duplicate
+# 	obj.select = True
 
-	bpy.context.scene.objects.active = obj
+# 	bpy.context.scene.objects.active = obj
 
-	bpy.context.screen.scene =  scene 
+# 	bpy.context.screen.scene =  scene 
 
-	bpy.ops.object.duplicate_move(OBJECT_OT_duplicate={"linked":False}) #This is giving a context error but I don't think it matters
+# 	bpy.ops.object.duplicate_move(OBJECT_OT_duplicate={"linked":False}) #This is giving a context error but I don't think it matters
 
-	### Unlink the material and texture
-	bpy.ops.object.make_single_user(object=False,obdata=False,material=True,texture=True,animation=False)
-	## Edit material of duplicate
+# 	### Unlink the material and texture
+# 	bpy.ops.object.make_single_user(object=False,obdata=False,material=True,texture=True,animation=False)
+# 	## Edit material of duplicate
 
-	material = bpy.context.active_object.active_material
+# 	material = bpy.context.active_object.active_material
 
-	material.type = "WIRE"
+# 	material.type = "WIRE"
 
-	material.use_object_color = False
+# 	material.use_object_color = False
 
-	material.use_mist = False
-	if use =="f":
-		material.diffuse_color = [0.8,0,0]
-	if use =="g":
-		material.diffuse_color = [0,0,0.8]
+# 	material.use_mist = False
+# 	if use =="f":
+# 		material.diffuse_color = [0.8,0,0]
+# 	if use =="g":
+# 		material.diffuse_color = [0,0,0.8]
 
-	# material.use_tangent_shading = True
+# 	# material.use_tangent_shading = True
 
-	material.use_shadeless = True
+# 	material.use_shadeless = True
 
-	# Remove texture
-	material.use_textures[0] = False
+# 	# Remove texture
+# 	material.use_textures[0] = False
 
-	# Add highlight property
-	bpy.ops.object.game_property_new(type = "BOOL",name="highlight")
+# 	# Add highlight property
+# 	bpy.ops.object.game_property_new(type = "BOOL",name="highlight")
 
-	# bpy.context.active_object['highlight'] = True#.game.properties[2] = True#['highlight']
+# 	# bpy.context.active_object['highlight'] = True#.game.properties[2] = True#['highlight']
 
-	# Hide object in another layer
-	bpy.ops.object.move_to_layer(layers=(False,True,False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False))
+# 	# Hide object in another layer
+# 	bpy.ops.object.move_to_layer(layers=(False,True,False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False))
 
-	# Make no longer rigid body
-	bpy.ops.rigidbody.object_remove()
+# 	# Make no longer rigid body
+# 	bpy.ops.rigidbody.object_remove()
 	
-	# Rename
-	bpy.context.active_object.name = obj.name + "highlight" + use
-	print(bpy.context.active_object.name)
-	#Deselect
-	obj.select = False
+# 	# Rename
+# 	bpy.context.active_object.name = obj.name + "highlight" + use
+# 	print(bpy.context.active_object.name)
+# 	#Deselect
+# 	obj.select = False
+
 def create_highlight_duplicates(scene,object_list,use):
 	object_names = []
 	for obj in scene.objects:
@@ -85,10 +86,57 @@ def create_highlight_duplicates(scene,object_list,use):
 	#select the object and make it active
 	for obj in object_list:
 		
-		if obj.name + "highlight" + use in object_names:
-			pass
-		else:
-			create_object_highlight(scene,obj,use)
+		if obj.name + "highlight" + use not in object_names:
+			bpy.ops.object.select_all(action='DESELECT')
+
+			### Create a duplicate
+			obj.select = True
+
+			bpy.context.scene.objects.active = obj
+
+			bpy.context.screen.scene =  scene 
+
+			bpy.ops.object.duplicate_move(OBJECT_OT_duplicate={"linked":False}) #This is giving a context error but I don't think it matters
+
+			### Unlink the material and texture
+			bpy.ops.object.make_single_user(object=False,obdata=False,material=True,texture=True,animation=False)
+			## Edit material of duplicate
+
+			material = bpy.context.active_object.active_material
+
+			material.type = "WIRE"
+
+			material.use_object_color = False
+
+			material.use_mist = False
+			if use =="f":
+				material.diffuse_color = [0.8,0,0]
+			if use =="g":
+				material.diffuse_color = [0,0,0.8]
+
+			# material.use_tangent_shading = True
+
+			material.use_shadeless = True
+
+			# Remove texture
+			material.use_textures[0] = False
+
+			# Add highlight property
+			bpy.ops.object.game_property_new(type = "BOOL",name="highlight")
+
+			# bpy.context.active_object['highlight'] = True#.game.properties[2] = True#['highlight']
+
+			# Hide object in another layer
+			bpy.ops.object.move_to_layer(layers=(False,True,False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False))
+
+			# Make no longer rigid body
+			bpy.ops.rigidbody.object_remove()
+			
+			# Rename
+			bpy.context.active_object.name = obj.name + "highlight" + use
+			print(bpy.context.active_object.name)
+			#Deselect
+			obj.select = False
 			
 
 main_scene = bpy.data.scenes["Scene"]

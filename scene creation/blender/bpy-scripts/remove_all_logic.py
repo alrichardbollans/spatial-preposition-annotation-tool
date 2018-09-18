@@ -10,7 +10,7 @@ def remove_logic(scene):
 
 		bpy.context.scene.objects.active = obj
 		
-		bpy.ops.object.game_property_clear()
+		#bpy.ops.object.game_property_clear()
 
 		for sens in obj.game.sensors:
 			bpy.ops.logic.sensor_remove(sensor=sens.name, object=obj.name)
@@ -30,7 +30,7 @@ for scene in bpy.data.scenes:
 
 
 ### Unlink texts
-texts_to_keep_linked = ["add_logic_in_blender.py","remove_all_logic.py"]
+texts_to_keep_linked = ["add_logic_in_blender.py","remove_all_logic.py", "edit_rendering.py"]
 for txts in bpy.data.texts:
 	if txts.name not in texts_to_keep_linked:
 		bpy.data.texts.remove(txts)
