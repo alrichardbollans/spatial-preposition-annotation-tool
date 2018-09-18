@@ -14,3 +14,4 @@ if leftClick.positive and hover.positive:
 
 	bge.logic.sendMessage("deselect") #Sends a deselect message to sensors in any active scene.
 	bge.logic.sendMessage("change")
+	bge.logic.sendMessage("changepreposition")
