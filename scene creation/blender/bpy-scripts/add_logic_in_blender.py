@@ -379,10 +379,11 @@ def create_list_rigid_bodies(scene):
     bpy.context.screen.scene =  scene 
     rigid_body_list=[]
     for obj in scene.objects:
-        if obj.rigid_body is None:
-            print("'"+obj.name+"'"+ " has not been included, to include it make sure it is a rigid body")
-        else:
-            rigid_body_list.append(obj)
+        if "highlight" not in obj.name:
+            if obj.rigid_body is None:
+                print("'"+obj.name+"'"+ " has not been included, to include it make sure it is a rigid body")
+            else:
+                rigid_body_list.append(obj)
     return rigid_body_list
 
 def get_directory(dir):
@@ -421,7 +422,11 @@ selectfg = SemanticTask()
 selectfg.suffix = "sfg"
 selectfg.user_selections = ["o","f", "g"]
 
-selectfg.add_logic()
+selectprep = SemanticTask()
+selectprep.suffix = "sp"
+selectprep.user_selections = ["p"]
+
+selectprep.add_logic()
 
 # list_of_tasks = []
 # standard = SemanticTask()
@@ -430,9 +435,7 @@ selectfg.add_logic()
 
 # list_of_tasks.append(standard)
 
-# selectprep = SemanticTask()
-# selectprep.suffix = "sp"
-# selectprep.user_selections = ["p"]
+
 
 # list_of_tasks.append(selectprep)
 
