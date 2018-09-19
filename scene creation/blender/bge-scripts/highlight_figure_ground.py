@@ -16,29 +16,20 @@ own = cont.owner #owner of the controller is the active object
 scenes = bge.logic.getSceneList()
 
 main_scene = scene
-# preposition_overlay_scene = scenes[1]
-
-# names_of_unrigid_objects = ["Camera","Lamp","Empty","__default__cam__","Hemi","Hemi.001","Sun"]
-# rigid_objects=[]
-# for obj in scene.objects:
-	
-# 	if obj.name not in names_of_unrigid_objects:
-# 		rigid_objects.append(obj)
 
 change = cont.sensors["change"]
-rigid_objects = []
-
-for obj in main_scene.objects:
-	if "selectedfigure" in obj.getPropertyNames():
-		rigid_objects.append(obj)
 
 
 if change.positive:
-	print("change has come!")
-	
-	for obj in rigid_objects:
+
+	for obj in main_scene.objects:
 		if obj.get('highlight')==True:
 			obj.endObject()
+
+	rigid_objects=[]
+	for obj in main_scene.objects:
+		if "selectedfigure" in obj.getPropertyNames() and 'highlight' not in obj.name:
+			rigid_objects.append(obj)
 
 	for obj in rigid_objects:
 		if obj.get('selectedfigure') == True:
@@ -54,13 +45,11 @@ if change.positive:
 	print("figure = "+ str(fig))
 	highlighter_object = scene.addObject(fig.name+"highlightf")
 
-	# fig.color += x
 	fig['selectedfigure']= True
 
 	ground = random.choice(rigid_objects) # randomly pick an object
 	print("ground = "+str(ground))
 	highlighter_object = scene.addObject(ground.name+"highlightg")
-	# ground.color += y
 	ground['selectedground']= True
 
 
