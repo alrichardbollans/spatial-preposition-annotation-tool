@@ -26,7 +26,7 @@ if len(scenes) == 2:
 	for obj in preposition_overlay_scene.objects:
 		if obj.get('selectedprep')==True:
 			triple[1]=obj
-
+	# print(str(triple))
 	if triple[0] != 0 and triple[1] != 1 and triple[2] != 2:
 		bge.logic.sendMessage("deselect") #Sends a deselect message to sensors in any active scene.
 
@@ -41,8 +41,8 @@ if len(scenes) == 2:
 		print(cam_loc)
 		print(cam_rot)
 
-		for obj in preposition_overlay_scene.objects:
-			obj['selectedprep']=False
+		# for obj in preposition_overlay_scene.objects:
+		# 	obj['selectedprep']=False
 				
 	if deselect.positive:
 		triple=[0,1,2]
