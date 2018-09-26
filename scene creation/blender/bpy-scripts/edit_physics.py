@@ -10,3 +10,15 @@ for obj in scene.objects:
         obj.rigid_body.linear_damping = 0.9
         obj.rigid_body.use_deactivation = True
         obj.collision.stickiness = 0.5
+
+        bpy.ops.object.select_all(action='DESELECT')
+
+        obj.select = True
+
+        bpy.context.scene.objects.active = obj
+        bpy.ops.object.origin_set(type='ORIGIN_CENTER_OF_VOLUME')
+
+
+    if obj.name == 'Ground' or obj.name == 'Plane':
+    	obj.rigid_body = True
+    	obj.rigid_body.enabled = False

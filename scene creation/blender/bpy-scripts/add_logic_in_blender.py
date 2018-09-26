@@ -461,7 +461,6 @@ selectf.user_selections = ["f"]
 
 list_of_tasks.append(selectf)
 
-for task in list_of_tasks:
-    task.add_logic()
-    task.save_game_remove_logic()
+selectf.add_logic()
+
 
