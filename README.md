@@ -68,7 +68,7 @@ Running this will add annotations to the annotation list csv in /outputs/.
 * Arrow keys = Move around
 * Mouse movement = Look around
 
-Currently there are three modes for annotating
+Currently there are five modes for annotating
 
 #### Standard Task
 
@@ -81,6 +81,11 @@ In the preposition selection task two objects in the scene are selected at rando
 #### Figure & Ground Selection
 
 In this task, one of the prepositions is highlighted and users can select figure and ground combinations which fit the preposition. Clicking 'Cancel' changes the preposition.
+
+#### Figure Selection
+In this task, one of the prepositions is highlighted as well as a ground object and users can select figure objects which fit this pair. Clicking 'Cancel' changes the preposition and ground.
+#### Ground Selection
+In this task, one of the prepositions is highlighted as well as a figure object and users can select ground objects which fit this pair. Clicking 'Cancel' changes the preposition and figure.
 
 ### Continuing Developments
 
