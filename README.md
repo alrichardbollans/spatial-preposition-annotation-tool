@@ -53,7 +53,7 @@ We have included a screenshot of what everything should look like after adding '
 
 Note: It is important that the preposition objects have a Game Property called 'preposition'.
 
-We also plan on improving how prepositions are handled.
+We also plan on improving how prepositions are handled. (Currently adding a textUI to replace this and will be completed very soon!)
 
 ### Creating Annotations
 
@@ -90,7 +90,7 @@ In this task, one of the prepositions is highlighted as well as a figure object 
 ### Continuing Developments
 
 * Adding additional tasks
-* TextUI/Improving preposition selection
+* TextUI/Improving preposition selection. (Currently adding a textUI and will be completed very soon!)
 * Detailed property extraction
 * Improving game running efficiency
 
