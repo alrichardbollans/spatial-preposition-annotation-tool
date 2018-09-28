@@ -41,7 +41,7 @@ All objects need to have unique names, but Blender will force this anyway.
 
 ##### Adding new prepositions
 
-Prepositions that you would like to include in the various tasks are contained in /bgui-scripts/textui.py. All you need to do is add/remove prepositions `from preposition_list`.
+Prepositions that you would like to include in the various tasks are contained in /bgui-scripts/textui.py. All you need to do is add/remove prepositions from `preposition_list`.
 
 ### Creating Annotations
 
@@ -99,6 +99,9 @@ See https://www.blender.org/
 Installing Python is generally easy, and nowadays many Linux and UNIX distributions include a recent Python. Even some Windows computers (notably those from HP) now come with Python already installed.
 
 For guidance installing Python on your machine see https://wiki.python.org/moin/BeginnersGuide/Download
+
+###### Note
+The BGUI module has been included in the appropriate directory in the repository. We recommend keeping the version that is included in our repository as we have made minor changes to it.
 
 ### Contact
 If you have any comments, queries or want to ask about extensions of the tool to fit your needs dont hesitate to get in touch!
