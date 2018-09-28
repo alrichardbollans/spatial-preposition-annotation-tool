@@ -29,7 +29,7 @@ The first thing you need is a set of scenes to work with. These should be stored
 
 Once scenes have been created, run 'process_scenes.py' to create environments to annotate.
 
-At the moment the scene set up is still quite particular. We have included an example.blend in the 'scenes' folder and we recommend using this as a template.
+There are a couple of things to note when creating a scene. See below
 
 ##### Adding new objects
 
@@ -41,19 +41,7 @@ All objects need to have unique names, but Blender will force this anyway.
 
 ##### Adding new prepositions
 
-Prepositions are stored in a separate scene (Scene.001). In order to add new prepositions you can copy one of the existing prepositions and alter the text. To do this:
-
-1. Start by making sure that you are using the Camera's perspective. Usually this is toggled with Numpad 0.
-2. Select "above" object and "aboveText" simultaneously by clicking on them while holding shift
-3. Press Shift + D to create a duplicate. Move this duplicate to somewhere appropriate in the view.
-4. Change the name of the object to be the preposition you are adding e.g. 'near'
-5. Edit the text object to be your new preposition.
-
-We have included a screenshot of what everything should look like after adding 'near' in this way.
-
-Note: It is important that the preposition objects have a Game Property called 'preposition'.
-
-We also plan on improving how prepositions are handled. (Currently adding a textUI to replace this and will be completed very soon!)
+Prepositions that you would like to include in the various tasks are contained in /bgui-scripts/textui.py. All you need to do is add/remove prepositions `from preposition_list`.
 
 ### Creating Annotations
 
@@ -63,34 +51,38 @@ Running this will add annotations to the annotation list csv in /outputs/.
 
 #### Interface
 
-* Left click = Select figure or preposition
+* Left click = Select figure
 * Right click= Select ground
 * Arrow keys = Move around
 * Mouse movement = Look around
+* Normal keyboard interface for typing descriptions. Enter Key confirms the input.
+* Space Bar selects a new preposition (in tasks where the preposition is given)
+* DEL key deselects everything and reselects highlighted objects
+
 
 Currently there are five modes for annotating
 
 #### Standard Task
 
-The standard task allows the user free reign to select figure and ground objects and a suitable preposition.
+The standard task allows the user free reign to select figure and ground objects and give a suitable preposition.
 
 #### Preposition Selection
 
-In the preposition selection task two objects in the scene are selected at random and the user is asked to select appropriate an appropriate preposition relating the two (Red highlighting denotes the *figure* and blue denotes the *ground*). If the user doesn't deem appropriate any of the given prepositions they can select 'Cancel' to change the objects.
+In the preposition selection task two objects in the scene are selected at random and the user is asked to give an appropriate preposition relating the two (Red highlighting denotes the *figure* and blue denotes the *ground*). If the user doesn't deem appropriate any of the given prepositions they can press DEL to change the objects and the preposition.
 
 #### Figure & Ground Selection
 
-In this task, one of the prepositions is highlighted and users can select figure and ground combinations which fit the preposition. Clicking 'Cancel' changes the preposition.
+In this task, a preposition is given and users can select figure and ground combinations which fit the preposition. Pressing Space Bar changes the preposition.
 
 #### Figure Selection
-In this task, one of the prepositions is highlighted as well as a ground object and users can select figure objects which fit this pair. Clicking 'Cancel' changes the preposition and ground.
+In this task, a preposition is given as well as a highlighted ground object and users can select figure objects which fit this pair. Pressing Space Bar changes the preposition. Pressing DEL changes the preposition and ground.
 #### Ground Selection
-In this task, one of the prepositions is highlighted as well as a figure object and users can select ground objects which fit this pair. Clicking 'Cancel' changes the preposition and figure.
+In this task, a preposition is given as well as a highlighted figure object and users can select ground objects which fit this pair. Pressing Space Bar changes the preposition. Pressing DEL changes the preposition and figure.
 
 ### Continuing Developments
 
 * Adding additional tasks
-* TextUI/Improving preposition selection. (Currently adding a textUI and will be completed very soon!)
+* Minor tweaks to the UI
 * Detailed property extraction
 * Improving game running efficiency
 
