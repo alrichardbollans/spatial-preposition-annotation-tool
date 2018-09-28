@@ -9,7 +9,6 @@ scene = bge.logic.getCurrentScene()
 scenes = bge.logic.getSceneList()
 
 main_scene = scene
-preposition_overlay_scene = scenes[1]
 
 hover = cont.sensors["MouseOver"]
 leftClick = cont.sensors["leftClick"]

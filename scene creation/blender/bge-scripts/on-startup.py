@@ -9,7 +9,7 @@ main_scene = scenes[0]
 
 
 bge.logic.sendMessage("change") # start message needed for highlighting
-bge.logic.sendMessage("changepreposition")
+# bge.logic.sendMessage("changepreposition")
 # print(scene.objectsInactive)
 
 for obj in scene.objectsInactive:
