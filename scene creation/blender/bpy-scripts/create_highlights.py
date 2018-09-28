@@ -35,6 +35,7 @@ def create_highlight_duplicates(scene,object_list,use):
 	for obj in object_list:
 		
 		if obj.name + "highlight" + use not in object_names and 'highlight' not in obj.name:
+
 			bpy.ops.object.select_all(action='DESELECT')
 
 			### Create a duplicate
@@ -52,7 +53,7 @@ def create_highlight_duplicates(scene,object_list,use):
 
 			material = bpy.context.active_object.active_material
 
-			material.type = "WIRE"
+			material.type = "WIRE" #If this gives an error, check if any of the objects have blank material slots
 
 			material.use_object_color = False
 

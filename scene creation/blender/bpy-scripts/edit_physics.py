@@ -6,9 +6,11 @@ for obj in scene.objects:
     if obj.rigid_body is None:
         pass
     else:
+
         obj.rigid_body.angular_damping = 0.8
         obj.rigid_body.linear_damping = 0.9
         obj.rigid_body.use_deactivation = True
+        obj.rigid_body.use_start_deactivated = True
         obj.collision.stickiness = 0.5
 
         bpy.ops.object.select_all(action='DESELECT')
@@ -16,6 +18,8 @@ for obj in scene.objects:
         obj.select = True
 
         bpy.context.scene.objects.active = obj
+        bpy.ops.object.modifier_remove(modifier="Collision")
+
         bpy.ops.object.origin_set(type='ORIGIN_CENTER_OF_VOLUME')
 
 
