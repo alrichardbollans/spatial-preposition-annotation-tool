@@ -8,11 +8,15 @@ import os
 print("The main scene containing various objects should be named 'Scene', the overlay scene containing the prepositionn menu should be called 'Scene.001'")
 
 class SemanticTask:
-    suffix = '' #string. abbreviation of task
-    user_selections = [] #list of things user selects: "p","o","f", "g"
-    highlighted_objects = [] #list of types of objects that may need highlighting
+
     main_scene = bpy.data.scenes["Scene"]
     preposition_overlay_scene = bpy.data.scenes["Scene.001"]
+
+    def __init__(self,name,suffix,user_selections):
+        self.name = name # name of task
+        self.suffix = suffix # abbreviation of task
+        self.user_selections = user_selections #list of things user selects: "p","f", "g"
+
 
     ###### EMPTY
     def add_main_empty_logic(self):
@@ -29,11 +33,16 @@ class SemanticTask:
         empty.select = True
 
         bpy.context.scene.objects.active = empty
-        while len(empty.game.properties) != 0:
+
+        while len(empty.game.properties) != 0: #Removes game properties prior to adding new ones
             bpy.ops.object.game_property_remove(index=0)
 
 
+        bpy.ops.object.game_property_new(type = "BOOL",name=self.name) # This should be added in the first position
+
         bpy.ops.object.game_property_new(type = "BOOL",name=self.suffix) #This allows the game to know which task we are doing.
+
+
 
         for x in self.user_selections:
             bpy.ops.object.game_property_new(type = "BOOL",name=x)
@@ -454,34 +463,20 @@ def prepare_scene():
 prepare_scene()
 
 list_of_tasks = []
-standard = SemanticTask()
-standard.suffix = "s"
-standard.user_selections = ["p","o","f", "g"]
 
+standard = SemanticTask('Standard Task','s',["p","f", "g"])
 list_of_tasks.append(standard)
 
-selectprep = SemanticTask()
-selectprep.suffix = "sp"
-selectprep.user_selections = ["p"]
-
+selectprep = SemanticTask('Choose Preposition','sp',['p'])
 list_of_tasks.append(selectprep)
 
-selectfg = SemanticTask()
-selectfg.suffix = "sfg"
-selectfg.user_selections = ["f","g"]
-
+selectfg = SemanticTask('Select Figure & Ground','sfg',["f","g"])
 list_of_tasks.append(selectfg)
 
-selectg = SemanticTask()
-selectg.suffix = "sg"
-selectg.user_selections = ["g"]
-
+selectg = SemanticTask('Select Ground','sg',["g"])
 list_of_tasks.append(selectg)
 
-selectf = SemanticTask()
-selectf.suffix = "sf"
-selectf.user_selections = ["f"]
-
+selectf = SemanticTask('Select Figure','sf',["f"])
 list_of_tasks.append(selectf)
 
 list_of_tasks[2].add_logic()
