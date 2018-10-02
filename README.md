@@ -51,8 +51,9 @@ Running this will add annotations to the annotation list csv in /outputs/.
 
 #### Interface
 
-* Left click = Select figure
-* Right click= Select ground
+* Left click selects an object in tasks where user only selects one object. Else:
+  * Left click = Select figure
+  * Right click= Select ground
 * Arrow keys = Move around
 * Mouse movement = Look around
 * Normal keyboard interface for typing descriptions. Enter Key confirms the input.
