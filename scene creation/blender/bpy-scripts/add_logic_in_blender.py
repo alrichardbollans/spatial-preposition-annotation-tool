@@ -10,7 +10,7 @@ print("The main scene containing various objects should be named 'Scene', the ov
 class SemanticTask:
 
     main_scene = bpy.data.scenes["Scene"]
-    preposition_overlay_scene = bpy.data.scenes["Scene.001"]
+    #preposition_overlay_scene = bpy.data.scenes["Scene.001"]
 
     def __init__(self,name,suffix,user_selections):
         self.name = name # name of task
@@ -365,14 +365,12 @@ class SemanticTask:
 
 
 
-    def add_logic(self):
+    def add_logic(self,rigid_body_list):
         ### Start by clearing all logic from scene
         directory = get_directory('bpy')
         run_bpy_script(directory,"remove_all_logic.py")
         ### Start by deselecting all objects
         bpy.ops.object.select_all(action='DESELECT')
-
-        rigid_body_list = create_list_rigid_bodies(self.main_scene)
 
         bge_scripts_directory = get_directory('bge')
 
@@ -405,14 +403,20 @@ class SemanticTask:
 
 #### Link scripts to blender
 def link_scripts(directory):
+    ctx = bpy.context.copy()
+    #Ensure  context area is not None
+    ctx['area'] = ctx['screen'].areas[0]
+
     for filename in os.listdir(directory):
         if filename.endswith(".py"):
             if filename in bpy.data.texts:
-                bpy.context.space_data.text = bpy.data.texts[filename]
-                bpy.ops.text.reload()
+                pass
+
+                    # # bpy.context.space_data.text = bpy.data.texts[filename] # These don't work when run from terminal
+                    # # bpy.ops.text.reload()
             else:
                 bpy.ops.text.open(filepath=directory + filename)
-    bpy.context.space_data.text = bpy.data.texts[0]
+    #bpy.context.space_data.text = bpy.data.texts[0] # These don't work when run from terminal
 
 
 ### For all rigid objects add the appropriate logic bricks and properties
@@ -478,5 +482,8 @@ list_of_tasks.append(selectg)
 
 selectf = SemanticTask('Select Figure','sf',["f"])
 list_of_tasks.append(selectf)
+
+main_scene = bpy.data.scenes["Scene"]
+rigid_body_list = create_list_rigid_bodies(main_scene)
 
 list_of_tasks[2].add_logic()
