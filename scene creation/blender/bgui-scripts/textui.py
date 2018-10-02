@@ -66,7 +66,7 @@ class SimpleLayout(bgui.bge_utils.Layout):
                 sub_theme='Large', options = bgui.BGUI_DEFAULT | bgui.BGUI_CENTERX)
 
             # A TextInput widget
-            self.input = bgui.TextInput(self.win, text="Input text here.",
+            self.input = bgui.TextInput(self.win, text="",
                 input_options = 1, options = bgui.BGUI_DEFAULT)
             self.input.activate()
             self.input.on_enter_key = self.on_input_enter
