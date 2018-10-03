@@ -5,7 +5,7 @@ import bpy
 import os
 
 
-print("The main scene containing various objects should be named 'Scene', the overlay scene containing the prepositionn menu should be called 'Scene.001'")
+print("The main scene containing various objects should be named 'Scene'")
 
 class SemanticTask:
 
@@ -448,7 +448,7 @@ def get_directory(dir):
     elif os.path.basename(os.path.dirname(current_directory)) == "blender":
         return os.path.dirname(current_directory) + directories[dir]
     else:
-        print('Terminal running blender should be running from the blender folder in the main project folder')
+        print('ERROR: Terminal running blender should be running from the blender folder in the main project folder')
 
 def run_bpy_script(directory,scriptname):
     file = directory + scriptname 
@@ -486,4 +486,4 @@ list_of_tasks.append(selectf)
 main_scene = bpy.data.scenes["Scene"]
 rigid_body_list = create_list_rigid_bodies(main_scene)
 
-list_of_tasks[2].add_logic()
+list_of_tasks[2].add_logic(rigid_body_list)

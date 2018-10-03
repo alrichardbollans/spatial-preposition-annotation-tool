@@ -10,7 +10,10 @@ for obj in scene.objects:
         obj.rigid_body.angular_damping = 0.8
         obj.rigid_body.linear_damping = 0.9
         obj.rigid_body.use_deactivation = True
-        obj.rigid_body.use_start_deactivated = True
+        obj.rigid_body.use_start_deactivated = False
+        obj.rigid_body.deactivate_linear_velocity = 0.4
+        obj.rigid_body.deactivate_angular_velocity = 0.4
+
         obj.collision.stickiness = 0.5
 
         bpy.ops.object.select_all(action='DESELECT')
