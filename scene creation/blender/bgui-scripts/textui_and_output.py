@@ -29,7 +29,6 @@ for key,status in keyboard.events:
         if key == bge.events.DELKEY:
             bge.logic.sendMessage("deselect") #Sends a deselect message to sensors in any active scene.
             bge.logic.sendMessage("change")
-            bge.logic.sendMessage("changepreposition")
 
 preposition_list = ['in','on','over','near','above','to the left of', 'to the right of', 'against']
 
