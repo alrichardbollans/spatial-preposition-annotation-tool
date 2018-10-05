@@ -69,16 +69,16 @@ The standard task allows the user free reign to select figure and ground objects
 
 #### Preposition Selection
 
-In the preposition selection task two objects in the scene are selected at random and the user is asked to give an appropriate preposition relating the two (Red highlighting denotes the *figure* and blue denotes the *ground*). If the user doesn't deem appropriate any of the given prepositions they can press DEL to change the objects and the preposition.
+In the preposition selection task two objects in the scene are selected at random and the user is asked to give an appropriate preposition relating the two (Red highlighting denotes the *figure* and blue denotes the *ground*). If the user doesn't deem appropriate any of the given prepositions they can press DEL to change the objects.
 
 #### Figure & Ground Selection
 
 In this task, a preposition is given and users can select figure and ground combinations which fit the preposition. Pressing Space Bar changes the preposition.
 
 #### Figure Selection
-In this task, a preposition is given as well as a highlighted ground object and users can select figure objects which fit this pair. Pressing Space Bar changes the preposition. Pressing DEL changes the preposition and ground.
+In this task, a preposition is given as well as a highlighted ground object and users can select figure objects which fit this pair. Pressing Space Bar changes the preposition. Pressing DEL changes the ground.
 #### Ground Selection
-In this task, a preposition is given as well as a highlighted figure object and users can select ground objects which fit this pair. Pressing Space Bar changes the preposition. Pressing DEL changes the preposition and figure.
+In this task, a preposition is given as well as a highlighted figure object and users can select ground objects which fit this pair. Pressing Space Bar changes the preposition. Pressing DEL changes the figure.
 
 ### Continuing Developments
 
