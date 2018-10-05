@@ -25,17 +25,25 @@ def create_list_rigid_bodies(scene):
 	#print("rigid body list ="+str(rigid_body_list))
 	return rigid_body_list
 
+def remove_all_highlights():
+	# first remove all highlights
+	bpy.ops.object.select_all(action='DESELECT')
+	for obj in bpy.data.objects:
+		if 'highlight' in obj.name:
+			obj.select = True
+	bpy.context.scene.layers[1] = True
+	bpy.ops.object.delete()
+	bpy.context.scene.layers[1] = False
 
 ####### Create duplicate objects to highlight figure
 
 def create_highlight_duplicates(scene,object_list,use):
-	object_names = []
-	for obj in scene.objects:
-		object_names.append(obj.name)
+
+
 	#select the object and make it active
 	for obj in object_list:
 		
-		if obj.name + "highlight" + use not in object_names and 'highlight' not in obj.name:
+		if 'highlight' not in obj.name:
 
 			bpy.ops.object.select_all(action='DESELECT')
 
@@ -71,6 +79,9 @@ def create_highlight_duplicates(scene,object_list,use):
 			# Remove texture
 			material.use_textures[0] = False
 
+			#
+			#bpy.ops.transform.resize((1.1,1.1,1.1))
+
 			# Add highlight property
 			bpy.ops.object.game_property_new(type = "BOOL",name="highlight")
 
@@ -99,6 +110,7 @@ bpy.context.screen.scene =  main_scene
 
 rigid_bodies = create_list_rigid_bodies(main_scene)
 
+remove_all_highlights()
 create_highlight_duplicates(main_scene,rigid_bodies,"f")
 create_highlight_duplicates(main_scene,rigid_bodies,"g")
 
