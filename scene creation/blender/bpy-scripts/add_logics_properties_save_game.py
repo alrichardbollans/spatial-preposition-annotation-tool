@@ -76,7 +76,7 @@ class SemanticTask:
         empty.game.sensors["AlwaysStartup"].link(empty.game.controllers["startUp"])
 
         bpy.ops.logic.controller_add(type="PYTHON",name="textui",object=empty.name)
-        empty.game.controllers["textui"].text=bpy.data.texts["textui.py"]
+        empty.game.controllers["textui"].text=bpy.data.texts["textui_and_output.py"]
         empty.game.sensors["Always"].link(empty.game.controllers["textui"])
         empty.game.sensors["textinputkeyboard"].link(empty.game.controllers["textui"])
         empty.game.sensors["changepreposition"].link(empty.game.controllers["textui"])
