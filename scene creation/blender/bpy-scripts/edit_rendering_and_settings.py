@@ -33,29 +33,27 @@ add_material_to_objects(main_scene,mat)
 ### World Settings
 bpy.data.worlds["World"].horizon_color = (0.487, 0.404, 0.208)
 
-bpy.context.scene.world.light_settings.use_environment_light = True
+main_scene.world.light_settings.use_environment_light = True
 
-bpy.context.scene.world.light_settings.environment_energy = 0.1
+main_scene.world.light_settings.environment_energy = 0.1
 
 ### Game Settings
 
 main_scene.game_settings.material_mode = 'GLSL' #For proper texture and shading
 
-bpy.context.scene.game_settings.show_mouse = True #So that mouse is visible in game
+main_scene.game_settings.show_mouse = True #So that mouse is visible in game
 
-bpy.context.scene.game_settings.physics_engine = 'BULLET' # Needed for hitboxes used by mouseover sensor
-
-bpy.data.scenes["Scene.001"].game_settings.physics_engine = 'BULLET' # Needed for hitboxes used by mouseover sensor
+main_scene.game_settings.physics_engine = 'BULLET' # Needed for hitboxes used by mouseover sensor
 
 
 
 
 ### Menu Settings
-def hide_menu_render(name):
-	bpy.data.scenes["Scene.001"].objects[name].hide_render = True
+#def hide_menu_render(name):
+#	bpy.data.scenes["Scene"].objects[name].hide_render = True
 
-hide_menu_render('exit')
-hide_menu_render('cancel')
-hide_menu_render('background')
+# hide_menu_render('exit')
+# hide_menu_render('cancel')
+# hide_menu_render('background')
 
 

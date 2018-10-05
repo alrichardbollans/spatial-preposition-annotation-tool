@@ -18,10 +18,11 @@ def create_list_rigid_bodies(scene):
 	for obj in scene.objects:
 		if "highlight" not in obj.name:
 			if obj.rigid_body is None:
-				print("'"+obj.name+"'"+ " has not been included, to include it make sure it is a rigid body")
+				pass
+				#print("'"+obj.name+"'"+ " has not been included, to include it make sure it is a rigid body")
 			else:
 				rigid_body_list.append(obj)
-	print("rigid body list ="+str(rigid_body_list))
+	#print("rigid body list ="+str(rigid_body_list))
 	return rigid_body_list
 
 
@@ -83,7 +84,7 @@ def create_highlight_duplicates(scene,object_list,use):
 			
 			# Rename
 			bpy.context.active_object.name = obj.name + "highlight" + use
-			print(bpy.context.active_object.name)
+			# print(bpy.context.active_object.name)
 			#Deselect
 			obj.select = False
 
