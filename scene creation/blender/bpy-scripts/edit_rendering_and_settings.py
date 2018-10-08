@@ -45,6 +45,8 @@ main_scene.game_settings.show_mouse = True #So that mouse is visible in game
 
 main_scene.game_settings.physics_engine = 'BULLET' # Needed for hitboxes used by mouseover sensor
 
+for mat in bpy.data.materials:
+	mat.game_settings.use_backface_culling = False
 
 
 
