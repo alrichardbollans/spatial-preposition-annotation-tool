@@ -68,9 +68,9 @@ def create_highlight_duplicates(scene,object_list,use):
 
 			material.use_mist = False
 			if use =="f":
-				material.diffuse_color = [0.8,0,0]
+				material.diffuse_color = [0,0.8,0]
 			if use =="g":
-				material.diffuse_color = [0,0,0.8]
+				material.diffuse_color = [0.8,0,0]
 
 			# material.use_tangent_shading = True
 
