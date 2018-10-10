@@ -83,7 +83,7 @@ Currently there are five modes for annotating
 
 #### Standard Task
 
-The standard task allows the user free reign to select figure and ground objects and give a suitable preposition.
+In the standard task all you have to do is select a figure object (left click), a ground object (right click) and enter a preposition. Press enter to input your selections, if you make a mistake in any of your selections just press the delete key.
 
 #### Preposition Selection
 
