@@ -57,13 +57,17 @@ Spatial prepositions are words or phrases like ‘in’, ‘on’, ‘above’, 
 
 In general they specify a (spatial) relation between two objects e.g. ‘the bike *to the left of* the house’.
 
+Here we are interested in collecting examples of pairs of objects and prepositions that describe them. So for instance, two objects must be selected from the scene and you must give a preposition e.g. 'in' which describes the relation between the two objects.
+
+Note: The objects that you will be able to select are in some sense atomic e.g. you can select the table in the scene but not specify a particular table leg; nor can you select the room which you are in but you can select various walls.
+
 #### Some Important Terminology
 
 The ‘figure’ is the object whose location is to be determined while the ‘ground’ is an object which is used as a point of reference or landmark. In general the structure of such phrases is: [Figure]+[Preposition]+[Ground]. So in the above example the bike is the figure and the house is the ground.
 
 
 #### Note On Lag
-Currently when the mouse hovers near a dense cluster of objects this uses a lot of processing power and causes the game to lag.
+Currently when the mouse hovers near a dense cluster of objects this uses a lot of processing power and causes the game to lag. If this occurs when trying to select an object, usually moving closer to the object will solve this. If this occurs while typing a preposition try moving the mouse over an area without many objects.
 
 #### Interface
 
