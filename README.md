@@ -60,6 +60,7 @@ Running this will add annotations to the annotation list csv in /outputs/.
 * Space Bar selects a new preposition (in tasks where the preposition is given)
 * DEL key deselects everything and reselects highlighted objects
 
+In general green highlighting denotes a figure objects while red highlighting denotes a ground.
 
 Currently there are five modes for annotating
 
@@ -69,7 +70,7 @@ The standard task allows the user free reign to select figure and ground objects
 
 #### Preposition Selection
 
-In the preposition selection task two objects in the scene are selected at random and the user is asked to give an appropriate preposition relating the two (Red highlighting denotes the *figure* and blue denotes the *ground*). If the user doesn't deem appropriate any of the given prepositions they can press DEL to change the objects.
+In the preposition selection task two objects in the scene are selected at random and the user is asked to give an appropriate preposition relating the two (Green highlighting denotes the *figure* and red denotes the *ground*). If the user doesn't deem appropriate any of the given prepositions they can press DEL to change the objects.
 
 #### Figure & Ground Selection
 
