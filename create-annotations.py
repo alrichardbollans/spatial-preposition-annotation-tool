@@ -2,6 +2,17 @@ import os
 import csv
 import uuid
 
+### User Info
+user_id = uuid.uuid4()
+age = raw_input('Age: ')
+gender = raw_input('Gender: ')
+city = raw_input('Where were you born? ')
+
+
+
+with open('outputs/user list.csv', "a+") as csvfile:
+	writer = csv.writer(csvfile)
+	writer.writerow([user_id,age,gender,city])
 
 
 class Annotation():
@@ -47,11 +58,13 @@ for annotation in datalist:
 	an.scene = scene
 	an.figure = str(annotation[0])
 	an.ground = str(annotation[2])
+	an.cam_loc = str(annotation[4])
+	an.cam_rot = str(annotation[5])
 
 	### add annotations to list
 	with open('outputs/annotation list.csv', "a+") as csvfile:
 		writer = csv.writer(csvfile)
-		writer.writerow([an.task,an.scene,an.preposition,an.figure,an.ground])
+		writer.writerow([user_id,an.task,an.scene,an.preposition,an.figure,an.ground,an.cam_loc,an.cam_rot])
 
 ### delete output from tool
 
