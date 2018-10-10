@@ -49,6 +49,22 @@ After processing scenes, run create-annotations.py. This will ask for the name o
 
 Running this will add annotations to the annotation list csv in /outputs/.
 
+### Instructions for Subjects
+
+The aim of this tool is to collect data on how people use spatial prepositions.
+
+Spatial prepositions are words or phrases like ‘in’, ‘on’, ‘above’, ‘to the right of’ etc.. 
+
+In general they specify a (spatial) relation between two objects e.g. ‘the bike *to the left of* the house’.
+
+#### Some Important Terminology
+
+The ‘figure’ is the object whose location is to be determined while the ‘ground’ is an object which is used as a point of reference or landmark. In general the structure of such phrases is: [Figure]+[Preposition]+[Ground]. So in the above example the bike is the figure and the house is the ground.
+
+
+#### Note On Lag
+Currently when the mouse hovers near a dense cluster of objects this uses a lot of processing power and causes the game to lag.
+
 #### Interface
 
 * Left click selects an object in tasks where user only selects one object. Else:
@@ -71,16 +87,18 @@ The standard task allows the user free reign to select figure and ground objects
 
 #### Preposition Selection
 
-In the preposition selection task two objects in the scene are selected at random and the user is asked to give an appropriate preposition relating the two (Green highlighting denotes the *figure* and red denotes the *ground*). If the user doesn't deem appropriate any of the given prepositions they can press DEL to change the objects.
+In the preposition selection task two objects in the scene are selected at random. All you have to do is enter a preposition which describes the pair. Note that green highlighting denotes the figure and red denotes the ground. If you can’t think of an appropriate preposition just press the delete key to change the pair of objects.
+
 
 #### Figure & Ground Selection
 
-In this task, a preposition is given and users can select figure and ground combinations which fit the preposition. Pressing Space Bar changes the preposition.
+In this task, a preposition is given at the top of the screen. What you have to do is select a figure (left click) and ground (right click). As soon as one figure is selected and one ground is selected the program will automatically input the selections. If you make a mistake in any of your selections just press the delete key. Pressing Space Bar changes the preposition.
+
 
 #### Figure Selection
-In this task, a preposition is given as well as a highlighted ground object and users can select figure objects which fit this pair. Pressing Space Bar changes the preposition. Pressing DEL changes the ground.
+In this task, a preposition is given at the top of the screen as well as a highlighted ground object. You need to select figure objects which fit this pair e.g. if the highlighted ground is a bowl and the preposition is ‘in’ then you need to select all objects you think are in the bowl. Pressing Space Bar changes the preposition. Pressing the delete key changes the ground.
 #### Ground Selection
-In this task, a preposition is given as well as a highlighted figure object and users can select ground objects which fit this pair. Pressing Space Bar changes the preposition. Pressing DEL changes the figure.
+In this task, a preposition is given at the top of the screen as well as a highlighted figure object. You need to select ground objects which fit this pair e.g. if the highlighted figure is a pencil and the preposition is ‘in’ then you need to select all objects that you think the pencil is in. Pressing Space Bar changes the preposition. Pressing the delete key changes the figure.
 
 ### Continuing Developments
 
