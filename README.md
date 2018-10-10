@@ -77,7 +77,7 @@ Currently when the mouse hovers near a dense cluster of objects this uses a lot 
 * Arrow keys = Move around
 * Mouse movement = Look around
 * Normal keyboard interface for typing descriptions. Enter Key confirms the input.
-* Space Bar selects a new preposition (in tasks where the preposition is given)
+* Space Bar selects a new preposition (in tasks where the preposition is already given)
 * DEL key deselects everything and reselects highlighted objects
 * ESC exits the game
 
