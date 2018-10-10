@@ -59,6 +59,7 @@ Running this will add annotations to the annotation list csv in /outputs/.
 * Normal keyboard interface for typing descriptions. Enter Key confirms the input.
 * Space Bar selects a new preposition (in tasks where the preposition is given)
 * DEL key deselects everything and reselects highlighted objects
+* ESC exits the game
 
 In general green highlighting denotes a figure objects while red highlighting denotes a ground.
 
