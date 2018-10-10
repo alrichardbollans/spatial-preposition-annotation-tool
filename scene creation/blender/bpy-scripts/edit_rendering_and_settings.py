@@ -29,6 +29,10 @@ bpy.context.screen.scene =  main_scene
 mat = add_material_to_scene(main_scene)
 add_material_to_objects(main_scene,mat)
 
+### Scene settings
+
+bpy.context.scene.frame_current = 1
+
 
 ### World Settings
 bpy.data.worlds["World"].horizon_color = (0.487, 0.404, 0.208)
@@ -47,6 +51,8 @@ main_scene.game_settings.physics_engine = 'BULLET' # Needed for hitboxes used by
 
 for mat in bpy.data.materials:
 	mat.game_settings.use_backface_culling = False
+	mat.use_object_color = True # This is so that object colours change on click
+
 
 
 

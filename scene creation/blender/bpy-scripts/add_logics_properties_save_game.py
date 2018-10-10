@@ -380,6 +380,14 @@ class SemanticTask:
 
         link_scripts(bgui_scripts_directory)
 
+        bpy_scripts_directory = get_directory('bpy')
+
+        edits_scripts_directory = get_directory('edits')
+
+        link_scripts(bpy_scripts_directory)
+
+        link_scripts(edits_scripts_directory)
+
         self.add_main_empty_logic()
         self.add_camera_navigation_logic()
         self.add_object_logic(rigid_body_list)
@@ -434,6 +442,7 @@ def create_list_rigid_bodies(scene):
 def get_directory(dir):
     # This is the list of directories with the name and address
     directories={'bpy':'/bpy-scripts/',
+                 'edits': '/bpy-scripts/scene editing',
                  'bge':'/bge-scripts/',
                  'bgui':'/bgui-scripts/',
                  'blender':''}
@@ -455,14 +464,18 @@ def run_bpy_script(directory,scriptname):
     exec(compile(open(file).read(), file, 'exec'))
 
 def prepare_scene():
-    directory = get_directory('bpy')
+    bpy_scripts_directory = get_directory('bpy')
 
-    link_scripts(directory)
+    edits_scripts_directory = get_directory('edits')
+    
+    link_scripts(bpy_scripts_directory)
+
+    link_scripts(edits_scripts_directory)
 
     #run_bpy_script(directory,"edit_physics.py")
-    run_bpy_script(directory,"edit_rendering_and_settings.py")
-    run_bpy_script(directory,"create_highlights.py")
-    run_bpy_script(directory,"remove_all_logic.py")
+    run_bpy_script(bpy_scripts_directory,"edit_rendering_and_settings.py")
+    run_bpy_script(bpy_scripts_directory,"create_highlights.py")
+    run_bpy_script(bpy_scripts_directory,"remove_all_logic.py")
 
 prepare_scene()
 
