@@ -49,6 +49,15 @@ main_scene.game_settings.show_mouse = True #So that mouse is visible in game
 
 main_scene.game_settings.physics_engine = 'BULLET' # Needed for hitboxes used by mouseover sensor
 
+for obj in main_scene.objects: # This makes mouseover much more effiecient
+	obj.game.physics_type = 'STATIC'
+	obj.game.use_collision_bounds = True
+	obj.game.collision_bounds_type = 'CONVEX_HULL'
+	obj.game.collision_margin = 0.02
+
+
+	obj.game.use_collision_compound = True
+
 for mat in bpy.data.materials:
 	mat.game_settings.use_backface_culling = False
 	mat.use_object_color = True # This is so that object colours change on click
