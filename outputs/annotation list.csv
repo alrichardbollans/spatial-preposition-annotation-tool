@@ -1,1 +1,4 @@
-User,Task,Scene,Preposition,Figure,Ground,Cam Location,Cam Rotation
+Annotation ID,User ID,Task Type,Scene,Preposition,Figure,Ground,Camera Location,Camera Rotation
+8c88454e-c964-4d77-8b69-c09613fe6a31,a75b4156-4d2a-4eb2-8771-a13aac0e118e,s,scene2-s,on,banana,plate,"<Vector (-1.5693, 1.8270, 1.5662)>","<Matrix 3x3 (-0.5977, -0.0467, 0.8004)
+            ( 0.8017, -0.0348, 0.5967)
+            (-0.0000,  0.9983, 0.0583)>"
