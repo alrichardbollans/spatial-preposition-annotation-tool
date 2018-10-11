@@ -67,7 +67,7 @@ The ‘figure’ is the object whose location is to be determined while the ‘g
 
 
 #### Note On Lag
-Currently when the mouse hovers near a dense cluster of objects this uses a lot of processing power and causes the game to lag. If this occurs when trying to select an object, usually moving closer to the object will solve this. If this occurs while typing a preposition try moving the mouse over an area without many objects.
+We have recently made improvement which give big reductions in lag. If, however, excessive lag does occur usually moving the mouse away from clusters of objects will help.
 
 #### Interface
 
@@ -109,7 +109,6 @@ In this task, a preposition is given at the top of the screen as well as a highl
 * Adding additional tasks
 * Minor tweaks to the UI
 * Detailed property extraction
-* Improving game running efficiency
 
 ### Troubleshooting
 
