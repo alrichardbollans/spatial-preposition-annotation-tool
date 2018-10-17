@@ -163,7 +163,7 @@ def get_scene_files():
 
 
 dropbox_path = dropbox_home()
-output_path = 'test/'
+output_path = 'outputs/'
 
 
 
