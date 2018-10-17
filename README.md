@@ -45,9 +45,11 @@ Prepositions that you would like to include in the various tasks are contained i
 
 ### Creating Annotations
 
-After processing scenes, run create-annotations.py. This will ask for the name of the scene file you would like to use.
+After processing scenes, run create-annotations.py. This will display a user interface where users can select the scene they would like to annotate and also give some basic user info.
 
-Running this will add annotations to the annotation list csv in /outputs/.
+Clicking start begins a new annotation session.
+
+This will add annotations to the annotation list csv in /outputs/.
 
 ### Instructions for Subjects
 
