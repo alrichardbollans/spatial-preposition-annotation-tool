@@ -126,6 +126,9 @@ Installing Python is generally easy, and nowadays many Linux and UNIX distributi
 
 For guidance installing Python on your machine see https://wiki.python.org/moin/BeginnersGuide/Download
 
+##### Python Modules
+* Tkinter
+
 ###### Note
 The BGUI module has been included in the appropriate directory in the repository. We recommend keeping the version that is included in our repository as we have made minor changes to it.
 
