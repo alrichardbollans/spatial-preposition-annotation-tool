@@ -89,7 +89,7 @@ Currently there are five modes for annotating
 
 #### Standard Task
 
-In the standard task all you have to do is select a figure object (left click), a ground object (right click) and enter a preposition. Press enter to input your selections, if you make a mistake in any of your selections just press the delete key.
+In the standard task all you have to do is select a figure object (left click), a ground object (right click) and enter a preposition bv typing and pressing Enter. If you make a mistake in any of your selections just press the delete key.
 
 #### Preposition Selection
 
