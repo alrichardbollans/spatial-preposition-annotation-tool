@@ -8,6 +8,8 @@ sys.path.append('../..')
 import csv
 import random
 
+import time
+
 import bgui
 import bgui.bge_utils
 import bge
@@ -30,7 +32,13 @@ for key,status in keyboard.events:
             bge.logic.sendMessage("deselect") #Sends a deselect message to sensors in any active scene.
             bge.logic.sendMessage("change")
 
-preposition_list = ['in','on','over','near','above','to the left of', 'to the right of', 'against']
+preposition_list = ['in','on']#,'over','near','above','to the left of', 'to the right of', 'against']
+
+selectable_objects = []
+
+for obj in main_scene.objects:
+    if 'selectedfigure' in obj.getPropertyNames():
+        selectable_objects.append(obj)
 
 class SimpleLayout(bgui.bge_utils.Layout):
     """A layout showcasing various Bgui features"""
@@ -46,13 +54,19 @@ class SimpleLayout(bgui.bge_utils.Layout):
         
 
         # Add a label for the title
-        self.lbl = bgui.Label(self, text=empty.getPropertyNames()[0], pos=[0, .95],
+        self.titlelbl = bgui.Label(self, text=empty.getPropertyNames()[0], pos=[0, .95],
             sub_theme='Large', options = bgui.BGUI_DEFAULT | bgui.BGUI_CENTERX) 
+
+        self.figurelbl = bgui.Label(self, text='Figure: ',pos=[.25, .9],
+            sub_theme='Large', options = bgui.BGUI_DEFAULT)
+
+        self.groundlbl = bgui.Label(self, text='Ground: ', pos=[.7, .9],
+            sub_theme='Large', options = bgui.BGUI_DEFAULT)
 
         if "p" not in empty.getPropertyNames():
             # A label for the given preposition
-            self.lbl2 = bgui.Label(self, text= preposition_list[0], pos=[0, 0.9],
-                sub_theme='Large', options = bgui.BGUI_DEFAULT | bgui.BGUI_CENTERX)          
+            self.prepositionlbl = bgui.Label(self, text= 'Preposition: '+preposition_list[0], pos=[0, 0.9],
+                sub_theme='Large', options = bgui.BGUI_DEFAULT | bgui.BGUI_CENTERX)
 
 
         
@@ -61,7 +75,7 @@ class SimpleLayout(bgui.bge_utils.Layout):
             self.win = bgui.Frame(self,  size=[.6, .1],pos=[0, 0.1],border=0.2,
                 options=bgui.BGUI_DEFAULT|bgui.BGUI_CENTERX)
 
-            self.lbl2 = bgui.Label(self, text="You've entered: ", pos=[0, 0.9],
+            self.prepositionlbl = bgui.Label(self, text="", pos=[0, 0.9],
                 sub_theme='Large', options = bgui.BGUI_DEFAULT | bgui.BGUI_CENTERX)
 
             # A TextInput widget
@@ -72,41 +86,15 @@ class SimpleLayout(bgui.bge_utils.Layout):
 
 
     def on_input_enter(self, widget):
-        self.lbl2.text = "You've entered: " + widget.text
-
-        
-        bge.logic.sendMessage("deselect") #Sends a deselect message to sensors in any active scene.
-        bge.logic.sendMessage("change")
-
-        triple=[0,1,2]
-
-        triple[1]=widget.text
-
-        main_scene = bge.logic.getCurrentScene()
-
-        for obj in main_scene.objects:
-            
-            if obj.get('selectedfigure')==True:
-                triple[0]=obj
-
-            if obj.get('selectedground')==True: 
-                triple[2] = obj
-
-        print(str(triple))
-        triple.append("currentscene")
-
-        cam_loc = main_scene.objects["Camera"].position
-        cam_rot = main_scene.objects["Camera"].orientation
-        triple.append(cam_loc)
-        triple.append(cam_rot)
-
-        with open('output.csv', "a") as csvfile:
-            outputwriter = csv.writer(csvfile)
-            outputwriter.writerow(triple)
-
-        
-
+        self.prepositionlbl.text = "You've entered: " + widget.text
         widget.text = ""
+
+        
+
+
+        
+
+        
         #widget.deactivate()
         #widget.frozen = 1
         
@@ -137,14 +125,60 @@ def main(cont):
 
 main(bge.logic.getCurrentController())
 
-### Things that need to run constantly
+
+for obj in selectable_objects:
+    if obj.get('selectedfigure')==True:
+        co.owner['sys'].layout.figurelbl.text = 'Figure: '+ obj.name
+
+    if obj.get('selectedground')==True: 
+        co.owner['sys'].layout.groundlbl.text = 'Ground: '+ obj.name
+
+
+
+if all(obj['selectedfigure']==False for obj in selectable_objects):
+    co.owner['sys'].layout.figurelbl.text = 'Figure: '
+
+if all(obj['selectedground']==False for obj in selectable_objects):
+    co.owner['sys'].layout.groundlbl.text = 'Ground: '
+
+
+
 if "p" in empty.getPropertyNames():
     co.owner['sys'].layout.input.system.focused_widget = co.owner['sys'].layout.input
+
+    triple=[0,1,2]
+    triple[1] = co.owner['sys'].layout.prepositionlbl.text.replace("You've entered: ",'')
+    for obj in selectable_objects:
+        
+        if obj.get('selectedfigure')==True:
+            triple[0]=obj
+
+        if obj.get('selectedground')==True: 
+            triple[2] = obj
+
+    if triple[0] != 0 and triple[2] != 2 and triple[1] != '':
+        bge.logic.sendMessage("deselect") #Sends a deselect message to sensors in any active scene.
+        bge.logic.sendMessage("change")
+
+        print(str(triple))
+        triple.append("currentscene")
+
+        cam_loc = main_scene.objects["Camera"].position
+        cam_rot = main_scene.objects["Camera"].orientation
+        triple.append(cam_loc)
+        triple.append(cam_rot)
+
+        with open('output.csv', "a") as csvfile:
+            outputwriter = csv.writer(csvfile)
+            outputwriter.writerow(triple)
+
+
+        co.owner['sys'].layout.prepositionlbl.text = ''
 
 if "p" not in empty.getPropertyNames():
     #### Output annotations
     triple=[0,1,2]
-    triple[1] = co.owner['sys'].layout.lbl2.text
+    triple[1] = co.owner['sys'].layout.prepositionlbl.text.replace('Preposition: ','')
     for obj in main_scene.objects:
         
         if obj.get('selectedfigure')==True:
@@ -153,7 +187,7 @@ if "p" not in empty.getPropertyNames():
         if obj.get('selectedground')==True: 
             triple[2] = obj
 
-    if triple[0] != 0 and triple[1] != 1 and triple[2] != 2:
+    if triple[0] != 0 and triple[2] != 2:
         bge.logic.sendMessage("deselect") #Sends a deselect message to sensors in any active scene.
 
         print(triple)
@@ -179,7 +213,7 @@ if "p" not in empty.getPropertyNames():
                 bge.logic.sendMessage("changepreposition")
 
     if changeprep.positive:
-        co.owner['sys'].layout.lbl2.text = random.choice(preposition_list)
+        co.owner['sys'].layout.prepositionlbl.text = 'Preposition: ' + random.choice(preposition_list)
         # new_index = preposition_list.index(co.owner['sys'].layout.lbl2.text) + 1
 
         # if new_index < len(preposition_list):
