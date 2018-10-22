@@ -22,6 +22,11 @@ co = bge.logic.getCurrentController()
 empty = co.owner
 
 
+deselect = co.sensors["deselect"]
+
+if deselect.positive:
+    empty['confirm'] = False
+
 keyboard = co.sensors["textinputkeyboard"]
 
 ### This allows users to reset choices and replaces the old cancel button
@@ -40,6 +45,8 @@ for obj in main_scene.objects:
     if 'selectedfigure' in obj.getPropertyNames():
         selectable_objects.append(obj)
 
+
+
 class SimpleLayout(bgui.bge_utils.Layout):
     """A layout showcasing various Bgui features"""
 
@@ -56,13 +63,16 @@ class SimpleLayout(bgui.bge_utils.Layout):
         # Add a label for the title
         self.titlelbl = bgui.Label(self, text=empty.getPropertyNames()[0], pos=[0, .95],
             sub_theme='Large', options = bgui.BGUI_DEFAULT | bgui.BGUI_CENTERX) 
-
+        # Add a label for the figure
         self.figurelbl = bgui.Label(self, text='Figure: ',pos=[.25, .9],
             sub_theme='Large', options = bgui.BGUI_DEFAULT)
-
+        # Add a label for the ground
         self.groundlbl = bgui.Label(self, text='Ground: ', pos=[.7, .9],
             sub_theme='Large', options = bgui.BGUI_DEFAULT)
 
+        self.confirmlbl = bgui.Label(self, text='Press Enter to Confirm this selection', pos=[0, .8],
+            sub_theme='Large', options = bgui.BGUI_DEFAULT | bgui.BGUI_CENTERX)
+        self.confirmlbl.visible = False
         if "p" not in empty.getPropertyNames():
             # A label for the given preposition
             self.prepositionlbl = bgui.Label(self, text= 'Preposition: '+preposition_list[0], pos=[0, 0.9],
@@ -86,8 +96,11 @@ class SimpleLayout(bgui.bge_utils.Layout):
 
 
     def on_input_enter(self, widget):
-        self.prepositionlbl.text = "You've entered: " + widget.text
-        widget.text = ""
+        if empty.get('confirm') == False:
+            self.prepositionlbl.text = "You've entered: " + widget.text
+            widget.text = ""
+        else:
+            pass
 
         
 
@@ -157,23 +170,36 @@ if "p" in empty.getPropertyNames():
             triple[2] = obj
 
     if triple[0] != 0 and triple[2] != 2 and triple[1] != '':
-        bge.logic.sendMessage("deselect") #Sends a deselect message to sensors in any active scene.
-        bge.logic.sendMessage("change")
+        co.owner['sys'].layout.confirmlbl.visible = True
 
-        print(str(triple))
-        triple.append("currentscene")
+        if empty.get('confirm') == True:
+            for key,status in keyboard.events:
+                # key[0] == bge.events.keycode, key[1] = status
+                if status == bge.logic.KX_INPUT_JUST_ACTIVATED:
+                    if key == bge.events.ENTERKEY:
+                        bge.logic.sendMessage("deselect") #Sends a deselect message to sensors in any active scene.
+                        bge.logic.sendMessage("change")
 
-        cam_loc = main_scene.objects["Camera"].position
-        cam_rot = main_scene.objects["Camera"].orientation
-        triple.append(cam_loc)
-        triple.append(cam_rot)
+                        print(str(triple))
+                        triple.append("currentscene")
 
-        with open('output.csv', "a") as csvfile:
-            outputwriter = csv.writer(csvfile)
-            outputwriter.writerow(triple)
+                        cam_loc = main_scene.objects["Camera"].position
+                        cam_rot = main_scene.objects["Camera"].orientation
+                        triple.append(cam_loc)
+                        triple.append(cam_rot)
+
+                        with open('output.csv', "a") as csvfile:
+                            outputwriter = csv.writer(csvfile)
+                            outputwriter.writerow(triple)
 
 
-        co.owner['sys'].layout.prepositionlbl.text = ''
+                        co.owner['sys'].layout.prepositionlbl.text = ''
+
+                        co.owner['sys'].layout.confirmlbl.visible = False
+                        empty['confirm'] = False
+        empty['confirm'] = True
+    # if triple[1] == '':
+    #     co.owner['sys'].layout.input.on_enter_key = co.owner['sys'].layout.on_input_enter(co.owner['sys'].layout.input)
 
 if "p" not in empty.getPropertyNames():
     #### Output annotations
@@ -188,19 +214,34 @@ if "p" not in empty.getPropertyNames():
             triple[2] = obj
 
     if triple[0] != 0 and triple[2] != 2:
-        bge.logic.sendMessage("deselect") #Sends a deselect message to sensors in any active scene.
+        co.owner['sys'].layout.confirmlbl.visible = True
 
-        print(triple)
-        triple.append("currentscene")
+        if empty.get('confirm') == True:
+            for key,status in keyboard.events:
+                # key[0] == bge.events.keycode, key[1] = status
+                if status == bge.logic.KX_INPUT_JUST_ACTIVATED:
+                    if key == bge.events.ENTERKEY:
+                        bge.logic.sendMessage("deselect") #Sends a deselect message to sensors in any active scene.
+                        bge.logic.sendMessage("change")
 
-        cam_loc = main_scene.objects["Camera"].position
-        cam_rot = main_scene.objects["Camera"].orientation
-        triple.append(cam_loc)
-        triple.append(cam_rot)
+                        print(str(triple))
+                        triple.append("currentscene")
 
-        with open('output.csv', "a") as csvfile:
-            outputwriter = csv.writer(csvfile)
-            outputwriter.writerow(triple)
+                        cam_loc = main_scene.objects["Camera"].position
+                        cam_rot = main_scene.objects["Camera"].orientation
+                        triple.append(cam_loc)
+                        triple.append(cam_rot)
+
+                        with open('output.csv', "a") as csvfile:
+                            outputwriter = csv.writer(csvfile)
+                            outputwriter.writerow(triple)
+
+
+                        co.owner['sys'].layout.prepositionlbl.text = ''
+
+                        co.owner['sys'].layout.confirmlbl.visible = False
+                        empty['confirm'] = False
+        empty['confirm'] = True
 
 
     #### Change preposition
