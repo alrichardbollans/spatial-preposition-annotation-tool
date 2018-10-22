@@ -89,22 +89,22 @@ Currently there are five modes for annotating
 
 #### Standard Task
 
-In the standard task all you have to do is select a figure object (left click), a ground object (right click) and enter a preposition bv typing and pressing Enter. If you make a mistake in any of your selections just press the delete key.
+In the standard task all you have to do is select a figure object (left click), a ground object (right click) and enter a preposition bv typing and pressing Enter. Once you have entered a figure, ground and preposition you will be asked to press Enter to confirm your selection. If you make a mistake in any of your selections just press the delete key.
 
 #### Preposition Selection
 
-In the preposition selection task two objects in the scene are selected at random. All you have to do is enter a preposition which describes the pair. Note that green highlighting denotes the figure and red denotes the ground. If you can’t think of an appropriate preposition just press the delete key to change the pair of objects.
+In the preposition selection task two objects in the scene are selected at random. All you have to do is enter a preposition which describes the pair. Once you have entered a preposition you will be asked to press Enter to confirm your selection. A new pair of objects will then be highlighted. Note that green highlighting denotes the figure and red denotes the ground. If you can’t think of an appropriate preposition just press the delete key to change the pair of objects.
 
 
 #### Figure & Ground Selection
 
-In this task, a preposition is given at the top of the screen. What you have to do is select a figure (left click) and ground (right click). As soon as one figure is selected and one ground is selected the program will automatically input the selections. If you make a mistake in any of your selections just press the delete key. Pressing Space Bar changes the preposition.
+In this task, a preposition is given at the top of the screen. What you have to do is select a figure (left click) and ground (right click). Once you have entered a figure and ground you will be asked to press Enter to confirm your selection. If you make a mistake in any of your selections just press the delete key. Pressing Space Bar changes the preposition.
 
 
 #### Figure Selection
-In this task, a preposition is given at the top of the screen as well as a highlighted ground object. You need to select figure objects which fit this pair e.g. if the highlighted ground is a bowl and the preposition is ‘in’ then you need to select all objects you think are in the bowl. Pressing Space Bar changes the preposition. Pressing the delete key changes the ground.
+In this task, a preposition is given at the top of the screen as well as a highlighted ground object. You need to select figure objects which fit this pair e.g. if the highlighted ground is a bowl and the preposition is ‘in’ then you need to select all objects you think are in the bowl. Once you have entered a figure you will be asked to press Enter to confirm your selection. Pressing Space Bar changes the preposition. Pressing the delete key changes the ground.
 #### Ground Selection
-In this task, a preposition is given at the top of the screen as well as a highlighted figure object. You need to select ground objects which fit this pair e.g. if the highlighted figure is a pencil and the preposition is ‘in’ then you need to select all objects that you think the pencil is in. Pressing Space Bar changes the preposition. Pressing the delete key changes the figure.
+In this task, a preposition is given at the top of the screen as well as a highlighted figure object. You need to select ground objects which fit this pair e.g. if the highlighted figure is a pencil and the preposition is ‘in’ then you need to select all objects that you think the pencil is in. Once you have entered a ground you will be asked to press Enter to confirm your selection. Pressing Space Bar changes the preposition. Pressing the delete key changes the figure.
 
 ### Continuing Developments
 
