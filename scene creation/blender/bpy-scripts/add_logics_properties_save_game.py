@@ -42,6 +42,7 @@ class SemanticTask:
 
         bpy.ops.object.game_property_new(type = "BOOL",name=self.suffix) #This allows the game to know which task we are doing.
 
+        bpy.ops.object.game_property_new(type = "BOOL",name='confirm')
 
 
         for x in self.user_selections:
@@ -53,8 +54,8 @@ class SemanticTask:
         bpy.ops.logic.sensor_add(type="ALWAYS",name="AlwaysStartup",object=empty.name)
         # bpy.ops.logic.sensor_add(type="MESSAGE",name="start",object=obj.name)
         
-        # bpy.ops.logic.sensor_add(type="MESSAGE",name="deselect",object=empty.name)
-        # empty.game.sensors["deselect"].subject = "deselect"
+        bpy.ops.logic.sensor_add(type="MESSAGE",name="deselect",object=empty.name)
+        empty.game.sensors["deselect"].subject = "deselect"
 
         bpy.ops.logic.sensor_add(type="MESSAGE",name="change",object=empty.name)
         empty.game.sensors["change"].subject = "change"
@@ -78,6 +79,7 @@ class SemanticTask:
         bpy.ops.logic.controller_add(type="PYTHON",name="textui",object=empty.name)
         empty.game.controllers["textui"].text=bpy.data.texts["textui_and_output.py"]
         empty.game.sensors["Always"].link(empty.game.controllers["textui"])
+        empty.game.sensors["deselect"].link(empty.game.controllers["textui"])
         empty.game.sensors["textinputkeyboard"].link(empty.game.controllers["textui"])
         empty.game.sensors["changepreposition"].link(empty.game.controllers["textui"])
    
@@ -442,7 +444,7 @@ def create_list_rigid_bodies(scene):
 def get_directory(dir):
     # This is the list of directories with the name and address
     directories={'bpy':'/bpy-scripts/',
-                 'edits': '/bpy-scripts/scene editing',
+                 'edits': '/bpy-scripts/scene editing/',
                  'bge':'/bge-scripts/',
                  'bgui':'/bgui-scripts/',
                  'blender':''}
