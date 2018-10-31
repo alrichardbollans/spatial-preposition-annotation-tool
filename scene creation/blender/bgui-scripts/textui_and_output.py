@@ -24,9 +24,10 @@ empty = co.owner
 
 deselect = co.sensors["deselect"]
 
-if deselect.positive:
-    empty['confirm'] = False
-    co.owner['sys'].layout.confirmlbl.visible = False
+if 'confirm' in empty.getPropertyNames():
+    if deselect.positive:
+        empty['confirm'] = False
+        co.owner['sys'].layout.confirmlbl.visible = False
 
 keyboard = co.sensors["textinputkeyboard"]
 
@@ -267,32 +268,32 @@ if 'pragmatic' not in empty.getPropertyNames():
         if triple[0] != 0 and triple[2] != 2:
             co.owner['sys'].layout.confirmlbl.visible = True
 
-            if empty.get('confirm') == True:
-                for key,status in keyboard.events:
-                    # key[0] == bge.events.keycode, key[1] = status
-                    if status == bge.logic.KX_INPUT_JUST_ACTIVATED:
-                        if key == bge.events.ENTERKEY:
-                            bge.logic.sendMessage("deselect") #Sends a deselect message to sensors in any active scene.
-                            bge.logic.sendMessage("change")
+            # if empty.get('confirm') == True:
+            for key,status in keyboard.events:
+                # key[0] == bge.events.keycode, key[1] = status
+                if status == bge.logic.KX_INPUT_JUST_ACTIVATED:
+                    if key == bge.events.ENTERKEY:
+                        bge.logic.sendMessage("deselect") #Sends a deselect message to sensors in any active scene.
+                        bge.logic.sendMessage("change")
 
-                            print(str(triple))
-                            triple.append("currentscene")
+                        print(str(triple))
+                        triple.append("currentscene")
 
-                            cam_loc = main_scene.objects["Camera"].position
-                            cam_rot = main_scene.objects["Camera"].orientation
-                            triple.append(cam_loc)
-                            triple.append(cam_rot)
+                        cam_loc = main_scene.objects["Camera"].position
+                        cam_rot = main_scene.objects["Camera"].orientation
+                        triple.append(cam_loc)
+                        triple.append(cam_rot)
 
-                            with open('output.csv', "a") as csvfile:
-                                outputwriter = csv.writer(csvfile)
-                                outputwriter.writerow(triple)
+                        with open('output.csv', "a") as csvfile:
+                            outputwriter = csv.writer(csvfile)
+                            outputwriter.writerow(triple)
 
 
+                        
+
+                        co.owner['sys'].layout.confirmlbl.visible = False
                             
-
-                            co.owner['sys'].layout.confirmlbl.visible = False
-                            
-            empty['confirm'] = True
+            # empty['confirm'] = True
 
 
         #### Change preposition
