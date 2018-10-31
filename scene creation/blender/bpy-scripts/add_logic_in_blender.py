@@ -178,13 +178,19 @@ class Task:
             obj.select = True
 
             bpy.context.scene.objects.active = obj
-            if "selectedfigure" not in obj.game.properties:
+
+            while len(obj.game.properties) != 0:
+                bpy.ops.object.game_property_remove(index=0)
+            if "used" not in obj.game.properties:
 
                 bpy.ops.object.game_property_new(type = "BOOL",name="selectedfigure")
 
                 bpy.ops.object.game_property_new(type = "BOOL", name="selectedground")
 
                 bpy.ops.object.game_property_new(type = "BOOL",name="highlight")
+
+                bpy.ops.object.game_property_new(type = "BOOL",name="used")
+
 
     def save_game_remove_logic(self):
 
