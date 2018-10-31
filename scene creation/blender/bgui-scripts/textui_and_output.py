@@ -38,7 +38,7 @@ for key,status in keyboard.events:
             bge.logic.sendMessage("deselect") #Sends a deselect message to sensors in any active scene.
             bge.logic.sendMessage("change")
 
-preposition_list = ['in','on']#,'over','near','above','to the left of', 'to the right of', 'against']
+preposition_list = ['in','on', 'against', 'over', 'under', 'above','below']
 
 selectable_objects = []
 
@@ -65,6 +65,9 @@ class SimpleLayout(bgui.bge_utils.Layout):
         self.titlelbl = bgui.Label(self, text=empty.getPropertyNames()[0], pos=[0, .95],
             sub_theme='Large', pt_size = 35,options = bgui.BGUI_DEFAULT | bgui.BGUI_CENTERX)
 
+        self.timerlbl = bgui.Label(self, text="0:00", pos=[0.1, .95],
+            sub_theme='Large', pt_size = 35,options = bgui.BGUI_DEFAULT)
+
         if 'pragmatic' not in empty.getPropertyNames():
             # Add a label for the figure
             self.figurelbl = bgui.Label(self, text='Figure: ',pos=[.25, .9],
@@ -79,13 +82,11 @@ class SimpleLayout(bgui.bge_utils.Layout):
 
             if "p" not in empty.getPropertyNames():
                 # A label for the given preposition
-                self.prepositionlbl = bgui.Label(self, text= 'Preposition: '+preposition_list[0], pos=[0, 0.9],
+                self.prepositionlbl = bgui.Label(self, text= 'Preposition: '+random.choice(preposition_list), pos=[0, 0.9],
                     sub_theme='Large', options = bgui.BGUI_DEFAULT | bgui.BGUI_CENTERX)
         
             if "p" in empty.getPropertyNames():
-                # A themed frame to store widgets
-                self.win = bgui.Frame(self,  size=[.6, .1],pos=[0, 0.1],border=0.2,
-                    options=bgui.BGUI_DEFAULT|bgui.BGUI_CENTERX) 
+                 
 
                 self.prepositionlbl = bgui.Label(self, text="", pos=[0, 0.9],
                     sub_theme='Large', options = bgui.BGUI_DEFAULT | bgui.BGUI_CENTERX)
@@ -98,6 +99,9 @@ class SimpleLayout(bgui.bge_utils.Layout):
         
         if 'pragmatic' in empty.getPropertyNames():
             # A TextInput widget
+            # A themed frame to store widgets
+            self.win = bgui.Frame(self,  size=[.6, .1],pos=[0, 0.1],border=0.2,
+                options=bgui.BGUI_DEFAULT|bgui.BGUI_CENTERX)
             self.input = bgui.TextInput(self.win, text="",
                 input_options = 1, options = bgui.BGUI_DEFAULT)
             self.input.activate()
@@ -180,6 +184,11 @@ def main(cont):
 
 
 main(bge.logic.getCurrentController())
+
+#Update Timer
+seconds = empty['game_time']
+m, s = divmod(seconds, 60)
+co.owner['sys'].layout.timerlbl.text = "%d:%02d" % (m, s)
 
 if 'pragmatic' not in empty.getPropertyNames():
     for obj in selectable_objects:
