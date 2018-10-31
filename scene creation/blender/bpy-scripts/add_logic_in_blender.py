@@ -4,112 +4,17 @@ import bpy
 
 import os
 
+### blender_utils file should be in blender add ons directory. Usually .config/blender/2.79/scripts/addons
+import blender_utils
 
 print("The main scene containing various objects should be named 'Scene'")
 
-class SemanticTask:
-
+class Task:
     main_scene = bpy.data.scenes["Scene"]
-    #preposition_overlay_scene = bpy.data.scenes["Scene.001"]
-
-    def __init__(self,name,suffix,user_selections):
+    def __init__(self,name,suffix):
         self.name = name # name of task
         self.suffix = suffix # abbreviation of task
-        self.user_selections = user_selections #list of things user selects: "p","f", "g"
-
-
-    ###### EMPTY
-    def add_main_empty_logic(self):
-        bpy.ops.object.select_all(action='DESELECT')
-
-        bpy.context.screen.scene =  self.main_scene 
-        if "Empty" not in self.main_scene.objects:
-            bpy.ops.object.empty_add(type='PLAIN_AXES', view_align=False, location=(0,0,0), layers=(True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False))
-            bpy.context.active_object.name = "Empty"
-            print("Empty object was missing from main scene and has been added")
-
-        empty = self.main_scene.objects["Empty"]
-
-        empty.select = True
-
-        bpy.context.scene.objects.active = empty
-
-        while len(empty.game.properties) != 0: #Removes game properties prior to adding new ones
-            bpy.ops.object.game_property_remove(index=0)
-
-
-        bpy.ops.object.game_property_new(type = "BOOL",name=self.name) # This should be added in the first position
-
-        bpy.ops.object.game_property_new(type = "BOOL",name=self.suffix) #This allows the game to know which task we are doing.
-
-        bpy.ops.object.game_property_new(type = "BOOL",name='confirm')
-
-
-        for x in self.user_selections:
-            bpy.ops.object.game_property_new(type = "BOOL",name=x)
-
-        bpy.ops.logic.sensor_add(type="ALWAYS",name="Always",object=empty.name)
-        empty.game.sensors["Always"].use_pulse_true_level =True
-        
-        bpy.ops.logic.sensor_add(type="ALWAYS",name="AlwaysStartup",object=empty.name)
-        # bpy.ops.logic.sensor_add(type="MESSAGE",name="start",object=obj.name)
-        
-        bpy.ops.logic.sensor_add(type="MESSAGE",name="deselect",object=empty.name)
-        empty.game.sensors["deselect"].subject = "deselect"
-
-        bpy.ops.logic.sensor_add(type="MESSAGE",name="change",object=empty.name)
-        empty.game.sensors["change"].subject = "change"
-
-        bpy.ops.logic.sensor_add(type="MESSAGE",name="changepreposition",object=empty.name)
-        empty.game.sensors["changepreposition"].subject = "changepreposition"
-
-        bpy.ops.logic.sensor_add(type="KEYBOARD",name="textinputkeyboard",object=empty.name)
-        empty.game.sensors["textinputkeyboard"].use_all_keys = True
-
-        # bpy.ops.logic.controller_add(type="PYTHON",name="PythonOverlay",object=empty.name)
-        # empty.game.controllers["PythonOverlay"].text=bpy.data.texts["open-overlay.py"]
-        # empty.game.controllers["PythonOverlay"].use_priority =True
-        # empty.game.sensors["AlwaysStartup"].link(empty.game.controllers["PythonOverlay"])
-
-        bpy.ops.logic.controller_add(type="PYTHON",name="startUp",object=empty.name)
-        empty.game.controllers["startUp"].text=bpy.data.texts["on-startup.py"]
-        empty.game.controllers["startUp"].use_priority =True
-        empty.game.sensors["AlwaysStartup"].link(empty.game.controllers["startUp"])
-
-        bpy.ops.logic.controller_add(type="PYTHON",name="textui",object=empty.name)
-        empty.game.controllers["textui"].text=bpy.data.texts["textui_and_output.py"]
-        empty.game.sensors["Always"].link(empty.game.controllers["textui"])
-        empty.game.sensors["deselect"].link(empty.game.controllers["textui"])
-        empty.game.sensors["textinputkeyboard"].link(empty.game.controllers["textui"])
-        empty.game.sensors["changepreposition"].link(empty.game.controllers["textui"])
-   
-        # bpy.ops.logic.controller_add(type="PYTHON",name="outputs",object=empty.name)
-        # empty.game.controllers["outputs"].text=bpy.data.texts["output_annotations.py"]
-        # empty.game.sensors["Always"].link(empty.game.controllers["outputs"])
-        # empty.game.sensors["deselect"].link(empty.game.controllers["outputs"])
-
-        if self.suffix == "sp":
-            bpy.ops.logic.controller_add(type="PYTHON",name="PythonHighlightFG",object=empty.name)
-            empty.game.controllers["PythonHighlightFG"].text = bpy.data.texts["highlight_figure_ground.py"]
-            for sens in empty.game.sensors:
-                if sens.name in ["Always","change"]:
-                    sens.link(empty.game.controllers["PythonHighlightFG"])
-
-        if self.suffix == "sf":
-            bpy.ops.logic.controller_add(type="PYTHON",name="PythonHighlightG",object=empty.name)
-            empty.game.controllers["PythonHighlightG"].text = bpy.data.texts["highlight_ground.py"]
-            for sens in empty.game.sensors:
-                if sens.name in ["Always","change"]:
-                    sens.link(empty.game.controllers["PythonHighlightG"])
-
-        if self.suffix == "sg":
-            bpy.ops.logic.controller_add(type="PYTHON",name="PythonHighlightF",object=empty.name)
-            empty.game.controllers["PythonHighlightF"].text = bpy.data.texts["highlight_figure.py"]
-            for sens in empty.game.sensors:
-                if sens.name in ["Always","change"]:
-                    sens.link(empty.game.controllers["PythonHighlightF"])
-
-    ####### CAMERA
+    ####### CAMERA & Timer
     def add_camera_navigation_logic(self):
         bpy.context.screen.scene =  self.main_scene 
         if "Camera" not in self.main_scene.objects:
@@ -201,11 +106,72 @@ class SemanticTask:
 
         ##########
 
-    ####### OBJECTS
-    def add_object_logic(self, object_list):
-        bpy.context.screen.scene =  self.main_scene
+
+    def add_general_logic(self,object_list):
+        ### Link scripts
+        bge_scripts_directory = blender_utils.get_directory('bge')
+
+        bgui_scripts_directory = blender_utils.get_directory('bgui')
+
+        blender_utils.link_scripts(bge_scripts_directory)
+
+        blender_utils.link_scripts(bgui_scripts_directory)
+
+        bpy_scripts_directory = blender_utils.get_directory('bpy')
+
+        edits_scripts_directory = blender_utils.get_directory('edits')
+
+        blender_utils.link_scripts(bpy_scripts_directory)
+
+        blender_utils.link_scripts(edits_scripts_directory)
+        ###EMPTY
+        ### Add empty object if there isn't one
+        bpy.context.screen.scene =  self.main_scene 
+        if "Empty" not in self.main_scene.objects:
+            bpy.ops.object.empty_add(type='PLAIN_AXES', view_align=False, location=(0,0,0), layers=(True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False))
+            bpy.context.active_object.name = "Empty"
+            print("Empty object was missing from main scene and has been added")
+        ### Select empty object
+        empty = self.main_scene.objects["Empty"]
+
+        empty.select = True
+
+        bpy.context.scene.objects.active = empty
+        ### Clear empty game properties
+        while len(empty.game.properties) != 0:
+            bpy.ops.object.game_property_remove(index=0)
+
+        ### Add game properties
+        bpy.ops.object.game_property_new(type = "BOOL",name=self.name) # This should be added in the first position
+
+        bpy.ops.object.game_property_new(type = "BOOL",name=self.suffix) #This allows the game to know which task we are doing.
+
+        bpy.ops.object.game_property_new(type = "TIMER",name='game_time')
 
 
+        # Add general sensors
+        bpy.ops.logic.sensor_add(type="ALWAYS",name="Always",object=empty.name)
+        empty.game.sensors["Always"].use_pulse_true_level =True
+
+        bpy.ops.logic.sensor_add(type="ALWAYS",name="AlwaysStartup",object=empty.name)
+        # bpy.ops.logic.sensor_add(type="MESSAGE",name="start",object=obj.name)
+        
+        bpy.ops.logic.sensor_add(type="MESSAGE",name="deselect",object=empty.name)
+        empty.game.sensors["deselect"].subject = "deselect"
+
+        bpy.ops.logic.sensor_add(type="MESSAGE",name="change",object=empty.name)
+        empty.game.sensors["change"].subject = "change"
+
+        bpy.ops.logic.sensor_add(type="MESSAGE",name="changepreposition",object=empty.name)
+        empty.game.sensors["changepreposition"].subject = "changepreposition"
+
+        bpy.ops.logic.sensor_add(type="KEYBOARD",name="textinputkeyboard",object=empty.name)
+        empty.game.sensors["textinputkeyboard"].use_all_keys = True
+
+
+
+
+        ### OBJECTS
 
         for obj in object_list:
             bpy.ops.object.select_all(action='DESELECT')
@@ -219,6 +185,106 @@ class SemanticTask:
                 bpy.ops.object.game_property_new(type = "BOOL", name="selectedground")
 
                 bpy.ops.object.game_property_new(type = "BOOL",name="highlight")
+
+    def save_game_remove_logic(self):
+
+
+        bpy.ops.wm.addon_enable(module="game_engine_save_as_runtime")
+        bpy.context.screen.scene =  self.main_scene 
+        bpy.ops.wm.save_as_runtime(filepath=blender_utils.get_directory('blender')+'/annotation scenes/'+bpy.path.basename(bpy.context.blend_data.filepath).replace(".blend","-"+self.suffix+".blend"))
+        directory = blender_utils.get_directory('bpy')
+        blender_utils.run_bpy_script(directory,"remove_all_logic.py")
+
+class SemanticTask(Task):
+
+    main_scene = bpy.data.scenes["Scene"]
+    #preposition_overlay_scene = bpy.data.scenes["Scene.001"]
+
+    def __init__(self,name,suffix,user_selections):
+        Task.__init__(self,name,suffix)
+        self.user_selections = user_selections #list of things user selects: "p","f", "g"
+
+
+    ###### EMPTY
+    def add_main_empty_logic(self):
+        ### Deslect all objects
+        bpy.ops.object.select_all(action='DESELECT')
+
+        
+        bpy.context.screen.scene =  self.main_scene 
+
+
+        ### Select empty object
+        empty = self.main_scene.objects["Empty"]
+
+        empty.select = True
+
+        bpy.context.scene.objects.active = empty
+
+        bpy.ops.object.game_property_new(type = "BOOL",name='confirm')
+
+        for x in self.user_selections:
+            bpy.ops.object.game_property_new(type = "BOOL",name=x)
+
+        ### Add sensors, controllers and links
+
+        # bpy.ops.logic.controller_add(type="PYTHON",name="PythonOverlay",object=empty.name)
+        # empty.game.controllers["PythonOverlay"].text=bpy.data.texts["open-overlay.py"]
+        # empty.game.controllers["PythonOverlay"].use_priority =True
+        # empty.game.sensors["AlwaysStartup"].link(empty.game.controllers["PythonOverlay"])
+
+        bpy.ops.logic.controller_add(type="PYTHON",name="startUp",object=empty.name)
+        empty.game.controllers["startUp"].text=bpy.data.texts["on-startup.py"]
+        empty.game.controllers["startUp"].use_priority =True
+        empty.game.sensors["AlwaysStartup"].link(empty.game.controllers["startUp"])
+
+        bpy.ops.logic.controller_add(type="PYTHON",name="textui",object=empty.name)
+        empty.game.controllers["textui"].text=bpy.data.texts["textui_and_output.py"]
+        empty.game.sensors["Always"].link(empty.game.controllers["textui"])
+        empty.game.sensors["deselect"].link(empty.game.controllers["textui"])
+        empty.game.sensors["textinputkeyboard"].link(empty.game.controllers["textui"])
+        empty.game.sensors["changepreposition"].link(empty.game.controllers["textui"])
+   
+        # bpy.ops.logic.controller_add(type="PYTHON",name="outputs",object=empty.name)
+        # empty.game.controllers["outputs"].text=bpy.data.texts["output_annotations.py"]
+        # empty.game.sensors["Always"].link(empty.game.controllers["outputs"])
+        # empty.game.sensors["deselect"].link(empty.game.controllers["outputs"])
+
+        if self.suffix == "sp":
+            bpy.ops.logic.controller_add(type="PYTHON",name="PythonHighlightFG",object=empty.name)
+            empty.game.controllers["PythonHighlightFG"].text = bpy.data.texts["highlight_figure_ground.py"]
+            for sens in empty.game.sensors:
+                if sens.name in ["Always","change"]:
+                    sens.link(empty.game.controllers["PythonHighlightFG"])
+
+        if self.suffix == "sf":
+            bpy.ops.logic.controller_add(type="PYTHON",name="PythonHighlightG",object=empty.name)
+            empty.game.controllers["PythonHighlightG"].text = bpy.data.texts["highlight_ground.py"]
+            for sens in empty.game.sensors:
+                if sens.name in ["Always","change"]:
+                    sens.link(empty.game.controllers["PythonHighlightG"])
+
+        if self.suffix == "sg":
+            bpy.ops.logic.controller_add(type="PYTHON",name="PythonHighlightF",object=empty.name)
+            empty.game.controllers["PythonHighlightF"].text = bpy.data.texts["highlight_figure.py"]
+            for sens in empty.game.sensors:
+                if sens.name in ["Always","change"]:
+                    sens.link(empty.game.controllers["PythonHighlightF"])
+
+
+
+    ####### OBJECTS
+    def add_object_logic(self, object_list):
+        bpy.context.screen.scene =  self.main_scene
+
+
+
+        for obj in object_list:
+            bpy.ops.object.select_all(action='DESELECT')
+            obj.select = True
+
+            bpy.context.scene.objects.active = obj
+
 
             if 'o' in self.user_selections or 'f' in self.user_selections or 'g' in self.user_selections:
                 bpy.ops.logic.sensor_add(type="MOUSE",name="leftClick",object=obj.name)
@@ -247,6 +313,24 @@ class SemanticTask:
             
 
             obj.select = False
+
+
+
+    def add_logic(self):
+        rigid_body_list = blender_utils.create_list_rigid_bodies()
+        ### Start by clearing all logic from scene
+        directory = blender_utils.get_directory('bpy')
+        blender_utils.run_bpy_script(directory,"remove_all_logic.py")
+        ### Start by deselecting all objects
+        bpy.ops.object.select_all(action='DESELECT')
+
+
+
+        self.add_general_logic(rigid_body_list)
+        self.add_main_empty_logic()
+        self.add_camera_navigation_logic()
+        self.add_object_logic(rigid_body_list)
+
 
     ##### Preposition Overlay
     ####### Overlay scene is not needed as we are using BGUI for text input
@@ -366,118 +450,104 @@ class SemanticTask:
 
 
 
+class PragmaticTask(Task):
 
-    def add_logic(self,rigid_body_list):
+    main_scene = bpy.data.scenes["Scene"]
+    #preposition_overlay_scene = bpy.data.scenes["Scene.001"]
+
+    def __init__(self,name,suffix,instruction,highlighted_object):
+        Task.__init__(self,name,suffix)
+        self.instruction = instruction
+        self.highlighted_object = highlighted_object
+
+    ###### EMPTY
+    def add_main_empty_logic(self):
+        ### Deslect all objects
+        bpy.ops.object.select_all(action='DESELECT')
+
+        
+        bpy.context.screen.scene =  self.main_scene 
+
+
+        ### Select empty object
+        empty = self.main_scene.objects["Empty"]
+
+        empty.select = True
+
+        bpy.context.scene.objects.active = empty
+
+        bpy.ops.object.game_property_new(type = "BOOL",name='pragmatic')
+
+        bpy.ops.object.game_property_new(type = "BOOL",name=self.highlighted_object)
+
+        ### Add sensors, controllers and links
+
+        bpy.ops.logic.controller_add(type="PYTHON",name="startUp",object=empty.name)
+        empty.game.controllers["startUp"].text=bpy.data.texts["on-startup.py"]
+        empty.game.controllers["startUp"].use_priority =True
+        empty.game.sensors["AlwaysStartup"].link(empty.game.controllers["startUp"])
+
+        bpy.ops.logic.controller_add(type="PYTHON",name="textui",object=empty.name)
+        empty.game.controllers["textui"].text=bpy.data.texts["textui_and_output.py"]
+        empty.game.sensors["Always"].link(empty.game.controllers["textui"])
+        empty.game.sensors["deselect"].link(empty.game.controllers["textui"])
+        empty.game.sensors["textinputkeyboard"].link(empty.game.controllers["textui"])
+        empty.game.sensors["changepreposition"].link(empty.game.controllers["textui"])
+   
+        
+        if self.suffix == "p1":
+            bpy.ops.logic.controller_add(type="PYTHON",name="PythonHighlightF",object=empty.name)
+            empty.game.controllers["PythonHighlightF"].text = bpy.data.texts["highlight_figure.py"]
+            for sens in empty.game.sensors:
+                if sens.name in ["Always","change"]:
+                    sens.link(empty.game.controllers["PythonHighlightF"])
+
+
+
+    ####### OBJECTS
+    def add_object_logic(self, object_list):
+        bpy.context.screen.scene =  self.main_scene
+
+
+
+    def add_logic(self):
+        rigid_body_list = blender_utils.create_list_rigid_bodies()
         ### Start by clearing all logic from scene
-        directory = get_directory('bpy')
-        run_bpy_script(directory,"remove_all_logic.py")
+        directory = blender_utils.get_directory('bpy')
+        blender_utils.run_bpy_script(directory,"remove_all_logic.py")
         ### Start by deselecting all objects
         bpy.ops.object.select_all(action='DESELECT')
 
-        bge_scripts_directory = get_directory('bge')
 
-        bgui_scripts_directory = get_directory('bgui')
 
-        link_scripts(bge_scripts_directory)
-
-        link_scripts(bgui_scripts_directory)
-
-        bpy_scripts_directory = get_directory('bpy')
-
-        edits_scripts_directory = get_directory('edits')
-
-        link_scripts(bpy_scripts_directory)
-
-        link_scripts(edits_scripts_directory)
-
+        self.add_general_logic(rigid_body_list)
         self.add_main_empty_logic()
         self.add_camera_navigation_logic()
         self.add_object_logic(rigid_body_list)
 
 
-        # self.add_overlay_empty_logic()
-        # self.add_preposition_selection_camera_logic()
-        # self.add_preposition_menu_logic()
-
-        #bpy.ops.wm.save_mainfile()
-    def save_game_remove_logic(self):
-
-
-        bpy.ops.wm.addon_enable(module="game_engine_save_as_runtime")
-        bpy.context.screen.scene =  self.main_scene 
-        bpy.ops.wm.save_as_runtime(filepath=get_directory('blender')+'/annotation scenes/'+bpy.path.basename(bpy.context.blend_data.filepath).replace(".blend","-"+self.suffix+".blend"))
-        directory = get_directory('bpy')
-        run_bpy_script(directory,"remove_all_logic.py")
 
 
 
-#### Link scripts to blender
-def link_scripts(directory):
-    ctx = bpy.context.copy()
-    #Ensure  context area is not None
-    ctx['area'] = ctx['screen'].areas[0]
-
-    for filename in os.listdir(directory):
-        if filename.endswith(".py"):
-            if filename in bpy.data.texts:
-                pass
-
-                    # # bpy.context.space_data.text = bpy.data.texts[filename] # These don't work when run from terminal
-                    # # bpy.ops.text.reload()
-            else:
-                bpy.ops.text.open(filepath=directory + filename)
-    #bpy.context.space_data.text = bpy.data.texts[0] # These don't work when run from terminal
 
 
-### For all rigid objects add the appropriate logic bricks and properties
-def create_list_rigid_bodies(scene):
-    bpy.context.screen.scene =  scene 
-    rigid_body_list=[]
-    for obj in scene.objects:
-        if "highlight" not in obj.name:
-            if obj.rigid_body is None:
-                print("'"+obj.name+"'"+ " has not been included, to include it make sure it is a rigid body")
-            else:
-                rigid_body_list.append(obj)
-    return rigid_body_list
 
-def get_directory(dir):
-    # This is the list of directories with the name and address
-    directories={'bpy':'/bpy-scripts/',
-                 'edits': '/bpy-scripts/scene editing/',
-                 'bge':'/bge-scripts/',
-                 'bgui':'/bgui-scripts/',
-                 'blender':''}
-    ## Blender is the default directory
-    if dir is None:
-        dir='blender'
 
-    current_directory = os.getcwd()
 
-    if os.path.basename(current_directory) == "blender":
-        return current_directory + directories[dir]
-    elif os.path.basename(os.path.dirname(current_directory)) == "blender":
-        return os.path.dirname(current_directory) + directories[dir]
-    else:
-        print('ERROR: Terminal running blender should be running from the blender folder in the main project folder')
-
-def run_bpy_script(directory,scriptname):
-    file = directory + scriptname 
-    exec(compile(open(file).read(), file, 'exec'))
 
 def prepare_scene():
-    bpy_scripts_directory = get_directory('bpy')
+    bpy_scripts_directory = blender_utils.get_directory('bpy')
 
-    edits_scripts_directory = get_directory('edits')
+    edits_scripts_directory = blender_utils.get_directory('edits')
     
-    link_scripts(bpy_scripts_directory)
+    blender_utils.link_scripts(bpy_scripts_directory)
 
-    link_scripts(edits_scripts_directory)
+    blender_utils.link_scripts(edits_scripts_directory)
 
-    #run_bpy_script(directory,"edit_physics.py")
-    run_bpy_script(bpy_scripts_directory,"edit_rendering_and_settings.py")
-    run_bpy_script(bpy_scripts_directory,"create_highlights.py")
-    run_bpy_script(bpy_scripts_directory,"remove_all_logic.py")
+    #blender_utils.run_bpy_script(directory,"edit_physics.py")
+    blender_utils.run_bpy_script(bpy_scripts_directory,"edit_rendering_and_settings.py")
+    blender_utils.run_bpy_script(bpy_scripts_directory,"create_highlights.py")
+    blender_utils.run_bpy_script(bpy_scripts_directory,"remove_all_logic.py")
 
 prepare_scene()
 
@@ -498,7 +568,11 @@ list_of_tasks.append(selectg)
 selectf = SemanticTask('Select Figure','sf',["f"])
 list_of_tasks.append(selectf)
 
-main_scene = bpy.data.scenes["Scene"]
-rigid_body_list = create_list_rigid_bodies(main_scene)
+pass_object = PragmaticTask('Provide the robot with a description of the location of the highlighted object','p1','','f')
+list_of_tasks.append(pass_object)
 
-list_of_tasks[0].add_logic(rigid_body_list)
+main_scene = bpy.data.scenes["Scene"]
+
+
+
+list_of_tasks[5].add_logic()
