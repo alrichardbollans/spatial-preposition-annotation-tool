@@ -19,29 +19,49 @@ main_scene = scene
 
 change = cont.sensors["change"]
 
+def clean_name(obj):
+    if '.' in obj.name:
+        clean_name = obj.name[:obj.name.find(".")]
+    elif '_' in obj.name:
+        clean_name = obj.name[:obj.name.find("_")]
+    else: 
+        clean_name = obj.name
+    return clean_name.lower()
+    
+def list_clean_names(object_list):
+    names = []
+    for obj in object_list:
+        names.append(clean_name(obj))
+    return names
 
 if change.positive:
 
 	for obj in main_scene.objects:
 		if obj.get('highlight')==True:
 			obj.endObject()
-
+			print(obj.name)
+	### Make list of rigid bodies
 	rigid_objects=[]
 	for obj in main_scene.objects:
 		if "selectedfigure" in obj.getPropertyNames() and 'highlight' not in obj.name:
 			rigid_objects.append(obj)
-
+	#Make list of rigid bodies of which there are at least two
+	figure_list = []
 	for obj in rigid_objects:
+		if list_clean_names(rigid_objects).count(clean_name(obj))>1 and obj['used'] ==False:
+			figure_list.append(obj)
+	for obj in figure_list:
 		if obj.get('selectedfigure') == True:
 
 			# obj.color-=x
 			obj['selectedfigure']=False
 
-	fig = random.choice(rigid_objects) # randomly pick an object
+	fig = random.choice(figure_list) # randomly pick an object
 	print("figure = "+ str(fig))
 	highlighter_object = scene.addObject(fig.name+"highlightf")
 
 	fig['selectedfigure']= True
+	fig['used'] =True
 
 
 

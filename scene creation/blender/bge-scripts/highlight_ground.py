@@ -37,8 +37,8 @@ if change.positive:
 			# obj.color-=x
 			obj['selectedground']=False
 
-	fig = random.choice(rigid_objects) # randomly pick an object
-	print("ground = "+ str(fig))
-	highlighter_object = scene.addObject(fig.name+"highlightg")
+	ground = random.choice(rigid_objects) # randomly pick an object
+	print("ground = "+ ground.name)
+	highlighter_object = scene.addObject(ground.name+"highlightg")
 
-	fig['selectedground']= True
+	ground['selectedground']= True
