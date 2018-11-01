@@ -58,26 +58,27 @@ def create_highlight_duplicates(scene,object_list,use):
 
 			### Unlink the material and texture
 			bpy.ops.object.make_single_user(object=False,obdata=False,material=True,texture=True,animation=False)
-			## Edit material of duplicate
+			## Edit ALL materials of duplicate
 
-			material = bpy.context.active_object.active_material
 
-			material.type = "WIRE" #If this gives an error, check if any of the objects have blank material slots
+			#material = bpy.context.active_object.active_material
+			for m in bpy.context.active_object.material_slots:
+				m.material.type = "WIRE" #If this gives an error, check if any of the objects have blank m.material slots
 
-			material.use_object_color = False
+				m.material.use_object_color = False
 
-			material.use_mist = False
-			if use =="f":
-				material.diffuse_color = [0,0.8,0]
-			if use =="g":
-				material.diffuse_color = [0.8,0,0]
+				m.material.use_mist = False
+				if use =="f":
+					m.material.diffuse_color = [0,0.8,0]
+				if use =="g":
+					m.material.diffuse_color = [0.8,0,0]
 
-			# material.use_tangent_shading = True
+				# m.material.use_tangent_shading = True
 
-			material.use_shadeless = True
+				m.material.use_shadeless = True
 
-			# Remove texture
-			material.use_textures[0] = False
+				# Remove texture
+				m.material.use_textures[0] = False
 
 			#
 			#bpy.ops.transform.resize((1.1,1.1,1.1))
