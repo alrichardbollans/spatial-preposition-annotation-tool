@@ -39,7 +39,11 @@ if change.positive:
 	for obj in main_scene.objects:
 		if obj.get('highlight')==True:
 			obj.endObject()
-			print(obj.name)
+
+		if obj.get('selectedfigure') == True:
+
+			# obj.color-=x
+			obj['selectedfigure']=False
 	### Make list of rigid bodies
 	rigid_objects=[]
 	for obj in main_scene.objects:
@@ -50,11 +54,7 @@ if change.positive:
 	for obj in rigid_objects:
 		if list_clean_names(rigid_objects).count(clean_name(obj))>1 and obj['used'] ==False:
 			figure_list.append(obj)
-	for obj in figure_list:
-		if obj.get('selectedfigure') == True:
-
-			# obj.color-=x
-			obj['selectedfigure']=False
+		
 
 	fig = random.choice(figure_list) # randomly pick an object
 	print("figure = "+ str(fig))

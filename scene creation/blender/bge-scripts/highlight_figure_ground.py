@@ -26,11 +26,6 @@ if change.positive:
 		if obj.get('highlight')==True:
 			obj.endObject()
 
-	rigid_objects=[]
-	for obj in main_scene.objects:
-		if "selectedfigure" in obj.getPropertyNames() and 'highlight' not in obj.name:
-			rigid_objects.append(obj)
-
 	for obj in rigid_objects:
 		if obj.get('selectedfigure') == True:
 
@@ -39,6 +34,13 @@ if change.positive:
 		if obj.get('selectedground') == True:
 			# obj.color-=y
 			obj['selectedground']=False
+
+	rigid_objects=[]
+	for obj in main_scene.objects:
+		if "selectedfigure" in obj.getPropertyNames() and 'highlight' not in obj.name:
+			rigid_objects.append(obj)
+
+
 
 
 	fig = random.choice(rigid_objects) # randomly pick an object
