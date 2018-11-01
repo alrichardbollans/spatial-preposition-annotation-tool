@@ -26,7 +26,7 @@ if change.positive:
 		if obj.get('highlight')==True:
 			obj.endObject()
 
-	for obj in rigid_objects:
+	
 		if obj.get('selectedfigure') == True:
 
 			# obj.color-=x

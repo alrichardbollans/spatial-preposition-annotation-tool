@@ -1,5 +1,7 @@
 
 import bge
+
+
 cont = bge.logic.getCurrentController()
 own = cont.owner #owner of the controller is the active object (try print(own))
 scene = bge.logic.getCurrentScene()
@@ -12,10 +14,13 @@ bge.logic.sendMessage("change") # start message needed for highlighting
 # bge.logic.sendMessage("changepreposition")
 # print(scene.objectsInactive)
 
+# Tags all highlighter objects as 'highlights'
 for obj in scene.objectsInactive:
 
 	obj['highlight'] = True
 
+# Makes game run in full screen
+bge.render.setFullScreen(True)
 
 # preposition_objects = []
 # for objs in preposition_overlay_scene.objects:
