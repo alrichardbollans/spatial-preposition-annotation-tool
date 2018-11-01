@@ -39,6 +39,8 @@ Therefore, when adding new objects to the scene make sure that is is set to be a
 
 All objects need to have unique names, but Blender will force this anyway.
 
+In general green highlighting denotes a figure objects while red highlighting denotes a ground, so avoid using bright green or red for objects.
+
 ##### Adding new prepositions
 
 Prepositions that you would like to include in the various tasks are contained in /bgui-scripts/textui.py. All you need to do is add/remove prepositions from `preposition_list`.
