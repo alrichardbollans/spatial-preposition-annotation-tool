@@ -8,28 +8,22 @@ sys.path.append('../..')
 import csv
 import random
 
-import time
-
 import bgui
 import bgui.bge_utils
 import bge
 
+preposition_list = ['in','on', 'against', 'over', 'under', 'above','below']
 
 
 main_scene = bge.logic.getCurrentScene()
 
 co = bge.logic.getCurrentController()
+
 empty = co.owner
 
+keyboard = co.sensors["textinputkeyboard"]
 
 deselect = co.sensors["deselect"]
-
-if 'confirm' in empty.getPropertyNames():
-    if deselect.positive:
-        empty['confirm'] = False
-        co.owner['sys'].layout.confirmlbl.visible = False
-
-keyboard = co.sensors["textinputkeyboard"]
 
 ### This allows users to reset choices and replaces the old cancel button
 
@@ -39,7 +33,11 @@ for key,status in keyboard.events:
             bge.logic.sendMessage("deselect") #Sends a deselect message to sensors in any active scene.
             bge.logic.sendMessage("change")
 
-preposition_list = ['in','on', 'against', 'over', 'under', 'above','below']
+# the confirm property is necessary to force the script to have to run a second time
+if 'confirm' in empty.getPropertyNames():
+    if deselect.positive:
+        empty['confirm'] = False
+        co.owner['sys'].layout.confirmlbl.visible = False
 
 selectable_objects = []
 
@@ -47,7 +45,21 @@ for obj in main_scene.objects:
     if 'selectedfigure' in obj.getPropertyNames():
         selectable_objects.append(obj)
 
+def output(selection):
+    bge.logic.sendMessage("deselect") #Sends a deselect message to sensors in any active scene.
+    bge.logic.sendMessage("change")
 
+    print(str(selection))
+    selection.append("currentscene")
+
+    cam_loc = main_scene.objects["Camera"].position
+    cam_rot = main_scene.objects["Camera"].orientation
+    selection.append(cam_loc)
+    selection.append(cam_rot)
+
+    with open('output.csv', "a") as csvfile:
+        outputwriter = csv.writer(csvfile)
+        outputwriter.writerow(selection)
 
 class SimpleLayout(bgui.bge_utils.Layout):
     """A layout showcasing various Bgui features"""
@@ -87,7 +99,8 @@ class SimpleLayout(bgui.bge_utils.Layout):
                     sub_theme='Large', options = bgui.BGUI_DEFAULT | bgui.BGUI_CENTERX)
         
             if "p" in empty.getPropertyNames():
-                 
+                self.win = bgui.Frame(self,  size=[.6, .1],pos=[0, 0.1],border=0.2,
+                    options=bgui.BGUI_DEFAULT|bgui.BGUI_CENTERX)
 
                 self.prepositionlbl = bgui.Label(self, text="", pos=[0, 0.9],
                     sub_theme='Large', options = bgui.BGUI_DEFAULT | bgui.BGUI_CENTERX)
@@ -133,20 +146,7 @@ class SimpleLayout(bgui.bge_utils.Layout):
                 
                 triple[2] = 'N/A'
 
-            bge.logic.sendMessage("deselect") #Sends a deselect message to sensors in any active scene.
-            bge.logic.sendMessage("change")
-
-            print(str(triple))
-            triple.append("currentscene")
-
-            cam_loc = main_scene.objects["Camera"].position
-            cam_rot = main_scene.objects["Camera"].orientation
-            triple.append(cam_loc)
-            triple.append(cam_rot)
-
-            with open('output.csv', "a") as csvfile:
-                outputwriter = csv.writer(csvfile)
-                outputwriter.writerow(triple)
+            output(triple)
             
         elif empty.get('confirm') == False:
             self.prepositionlbl.text = "You've entered: " + widget.text
@@ -230,20 +230,7 @@ if 'pragmatic' not in empty.getPropertyNames():
                     # key[0] == bge.events.keycode, key[1] = status
                     if status == bge.logic.KX_INPUT_JUST_ACTIVATED:
                         if key == bge.events.ENTERKEY:
-                            bge.logic.sendMessage("deselect") #Sends a deselect message to sensors in any active scene.
-                            bge.logic.sendMessage("change")
-
-                            print(str(triple))
-                            triple.append("currentscene")
-
-                            cam_loc = main_scene.objects["Camera"].position
-                            cam_rot = main_scene.objects["Camera"].orientation
-                            triple.append(cam_loc)
-                            triple.append(cam_rot)
-
-                            with open('output.csv', "a") as csvfile:
-                                outputwriter = csv.writer(csvfile)
-                                outputwriter.writerow(triple)
+                            output(triple)
 
 
                             co.owner['sys'].layout.prepositionlbl.text = ''
@@ -267,33 +254,16 @@ if 'pragmatic' not in empty.getPropertyNames():
 
         if triple[0] != 0 and triple[2] != 2:
             co.owner['sys'].layout.confirmlbl.visible = True
-
-            # if empty.get('confirm') == True:
             for key,status in keyboard.events:
-                # key[0] == bge.events.keycode, key[1] = status
+                
                 if status == bge.logic.KX_INPUT_JUST_ACTIVATED:
                     if key == bge.events.ENTERKEY:
-                        bge.logic.sendMessage("deselect") #Sends a deselect message to sensors in any active scene.
-                        bge.logic.sendMessage("change")
-
-                        print(str(triple))
-                        triple.append("currentscene")
-
-                        cam_loc = main_scene.objects["Camera"].position
-                        cam_rot = main_scene.objects["Camera"].orientation
-                        triple.append(cam_loc)
-                        triple.append(cam_rot)
-
-                        with open('output.csv', "a") as csvfile:
-                            outputwriter = csv.writer(csvfile)
-                            outputwriter.writerow(triple)
-
-
+                        output(triple)
                         
 
                         co.owner['sys'].layout.confirmlbl.visible = False
                             
-            # empty['confirm'] = True
+            
 
 
         #### Change preposition
