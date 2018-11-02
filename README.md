@@ -132,7 +132,7 @@ For guidance installing Python on your machine see https://wiki.python.org/moin/
 * Tkinter
 
 ###### Note
-The BGUI module has been included in the appropriate directory in the repository. We recommend keeping the version that is included in our repository as we have made minor changes to it.
+The BGUI module has been included in the appropriate directory in the repository. We recommend keeping the version that is included in our repository as we have made minor changes to it, [see here](https://blender.stackexchange.com/questions/119394/how-to-make-a-bgui-widget-always-focused-active).
 
 ### Contact
 If you have any comments, queries or want to ask about extensions of the tool to fit your needs dont hesitate to get in touch!
