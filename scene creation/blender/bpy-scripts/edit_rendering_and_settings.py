@@ -33,6 +33,9 @@ add_material_to_objects(main_scene,mat)
 
 bpy.context.scene.frame_current = 1
 
+bpy.context.scene.render.fps = 60
+
+
 
 ### World Settings
 bpy.data.worlds["World"].horizon_color = (0.487, 0.404, 0.208)
@@ -52,11 +55,14 @@ main_scene.game_settings.physics_engine = 'BULLET' # Needed for hitboxes used by
 for obj in main_scene.objects: # This makes mouseover much more effiecient
 	obj.game.physics_type = 'STATIC'
 	obj.game.use_collision_bounds = True
-	obj.game.collision_bounds_type = 'CONVEX_HULL'
-	obj.game.collision_margin = 0.02
+	obj.game.collision_bounds_type = 'TRIANGLE_MESH'
+	obj.game.collision_margin = 0
+	obj.game.use_actor = False
+	obj.game.use_ghost = True
 
 
-	obj.game.use_collision_compound = True
+
+	obj.game.use_collision_compound = False
 
 for mat in bpy.data.materials:
 	mat.game_settings.use_backface_culling = False

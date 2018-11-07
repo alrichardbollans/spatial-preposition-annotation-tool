@@ -168,6 +168,26 @@ class Task:
         bpy.ops.logic.sensor_add(type="KEYBOARD",name="textinputkeyboard",object=empty.name)
         empty.game.sensors["textinputkeyboard"].use_all_keys = True
 
+        bpy.ops.logic.sensor_add(type="MOUSE",name="leftClick",object=empty.name)
+        empty.game.sensors["leftClick"].use_tap =True
+        empty.game.sensors["leftClick"].mouse_event = "LEFTCLICK"
+
+        bpy.ops.logic.sensor_add(type="MOUSE",name="rightClick",object=empty.name)
+        empty.game.sensors["rightClick"].use_tap =True
+        empty.game.sensors["rightClick"].mouse_event = "RIGHTCLICK"
+
+        bpy.ops.logic.sensor_add(type="MOUSE",name="hoverAny",object=empty.name)
+        empty.game.sensors["hoverAny"].mouse_event = "MOUSEOVERANY"
+
+        bpy.ops.logic.controller_add(type="PYTHON",name="ObjectController",object=empty.name)
+
+        empty.game.sensors["leftClick"].link(empty.game.controllers["ObjectController"])
+        empty.game.sensors["rightClick"].link(empty.game.controllers["ObjectController"])
+        empty.game.sensors["hoverAny"].link(empty.game.controllers["ObjectController"])
+        empty.game.sensors["deselect"].link(empty.game.controllers["ObjectController"])
+
+        empty.game.controllers["ObjectController"].text=bpy.data.texts["object_controller.py"]
+
 
 
 
@@ -335,125 +355,7 @@ class SemanticTask(Task):
         self.add_general_logic(rigid_body_list)
         self.add_main_empty_logic()
         self.add_camera_navigation_logic()
-        self.add_object_logic(rigid_body_list)
-
-
-    ##### Preposition Overlay
-    ####### Overlay scene is not needed as we are using BGUI for text input
-    # def add_overlay_empty_logic(self):
-    #     if 'p' not in self.user_selections:
-
-    #         bpy.ops.object.select_all(action='DESELECT')
-
-    #         bpy.context.screen.scene =  self.preposition_overlay_scene 
-    #         if "Empty.001" not in self.preposition_overlay_scene.objects:
-    #             bpy.ops.object.empty_add(type='PLAIN_AXES', view_align=False, location=(0,0,0), layers=(True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False))
-    #             bpy.context.active_object.name = "Empty.001"
-    #             print("Empty object was missing from main scene and has been added")
-
-    #         empty = self.preposition_overlay_scene.objects["Empty.001"]
-
-    #         empty.select = True
-
-    #         bpy.context.scene.objects.active = empty
-
-    #         bpy.ops.logic.sensor_add(type="ALWAYS",name="Always",object=empty.name)
-    #         empty.game.sensors["Always"].use_pulse_true_level =True
-
-
-    #         bpy.ops.logic.sensor_add(type="MESSAGE",name="changepreposition",object=empty.name)
-    #         empty.game.sensors["changepreposition"].subject = "changepreposition"
-
-    #         bpy.ops.logic.controller_add(type="PYTHON",name="highlight",object=empty.name)
-    #         empty.game.controllers["highlight"].text=bpy.data.texts["highlight_preposition.py"]
-
-            
-    #         empty.game.sensors["Always"].link(empty.game.controllers["highlight"])
-    #         empty.game.sensors["changepreposition"].link(empty.game.controllers["highlight"])
-
-
-    # def add_preposition_selection_camera_logic(self):
-    #     bpy.context.screen.scene =  self.preposition_overlay_scene
-    #     if "Camera.001" not in self.preposition_overlay_scene.objects:
-    #         bpy.ops.object.camera_add(view_align=True, enter_editmode=False, location=(0,0,11), rotation=(0,0,0), layers=(True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False))
-    #         bpy.context.active_object.name = "Camera.001"
-    #         print("Camera object was missing from preposition overlay scene and has been added")
-        
-    #     text_camera = self.preposition_overlay_scene.objects["Camera.001"]
-
-    #     bpy.ops.logic.sensor_add(type="MOUSE",name="mouseMove",object=text_camera.name)
-    #     text_camera.game.sensors["mouseMove"].mouse_event = "MOVEMENT"
-
-    #     bpy.ops.logic.controller_add(type="LOGIC_AND",name="and0",object=text_camera.name)
-
-    #     bpy.ops.logic.actuator_add(type="MOUSE",name="mouseLook",object=text_camera.name)
-    #     text_camera.game.actuators["mouseLook"].mode = "LOOK"
-    #     text_camera.game.actuators["mouseLook"].use_axis_x = True
-    #     text_camera.game.actuators["mouseLook"].use_axis_y = True
-    #     text_camera.game.actuators["mouseLook"].sensitivity_x = 2
-    #     text_camera.game.actuators["mouseLook"].sensitivity_y = 2
-    #     text_camera.game.actuators["mouseLook"].min_x = 0
-    #     text_camera.game.actuators["mouseLook"].max_x = 0
-    #     text_camera.game.actuators["mouseLook"].min_y = -1.570796
-    #     text_camera.game.actuators["mouseLook"].max_y = 1.570796
-    #     text_camera.game.actuators["mouseLook"].object_axis_x = "OBJECT_AXIS_Y"
-    #     text_camera.game.actuators["mouseLook"].object_axis_y = "OBJECT_AXIS_X"
-    #     text_camera.game.actuators["mouseLook"].local_x = False
-
-    #     text_camera.game.sensors["mouseMove"].link(text_camera.game.controllers["and0"])
-    #     text_camera.game.actuators["mouseLook"].link(text_camera.game.controllers["and0"])
-
-    # # def add_preposition_menu_logic(self):
-    #     bpy.context.screen.scene =  self.preposition_overlay_scene 
-
-    #     for obj in self.preposition_overlay_scene.objects:
-    #         if obj.name == "cancel" or obj.name == "exit":
-    #             bpy.ops.logic.sensor_add(type="MOUSE",name="leftClick",object=obj.name)
-    #             obj.game.sensors["leftClick"].use_tap =True
-    #             obj.game.sensors["leftClick"].mouse_event = "LEFTCLICK"
-
-    #             bpy.ops.logic.sensor_add(type="MOUSE",name="MouseOver",object=obj.name)
-    #             obj.game.sensors["MouseOver"].mouse_event = "MOUSEOVER"
-
-    #             bpy.ops.logic.controller_add(type="PYTHON",name="PythonMouse",object=obj.name)
-    #             obj.game.controllers["PythonMouse"].text=bpy.data.texts[obj.name+"-button.py"]
-
-    #             obj.game.sensors["leftClick"].link(obj.game.controllers["PythonMouse"])
-    #             obj.game.sensors["MouseOver"].link(obj.game.controllers["PythonMouse"])
-
-
-    #         if "preposition" in obj.game.properties:
-
-    #             obj.select = True
-
-    #             bpy.context.scene.objects.active = obj
-
-    #             if "selectedprep" not in obj.game.properties:
-
-    #                 bpy.ops.object.game_property_new(type = "BOOL",name="selectedprep")
-
-    #             if "p" in self.user_selections:
-
-    #                 bpy.ops.logic.sensor_add(type="MOUSE",name="leftClick",object=obj.name)
-    #                 obj.game.sensors["leftClick"].use_tap =True
-    #                 obj.game.sensors["leftClick"].mouse_event = "LEFTCLICK"
-
-    #                 bpy.ops.logic.sensor_add(type="MOUSE",name="MouseOver",object=obj.name)
-    #                 obj.game.sensors["MouseOver"].mouse_event = "MOUSEOVER"
-
-    #                 bpy.ops.logic.sensor_add(type="MESSAGE",name="deselect",object=obj.name)
-    #                 obj.game.sensors["deselect"].subject = "deselect"
-
-    #                 bpy.ops.logic.controller_add(type="PYTHON",name="PythonMouse",object=obj.name)
-    #                 obj.game.controllers["PythonMouse"].text=bpy.data.texts["menu-controller-"+self.suffix+".py"]
-
-    #                 obj.game.sensors["leftClick"].link(obj.game.controllers["PythonMouse"])
-    #                 obj.game.sensors["MouseOver"].link(obj.game.controllers["PythonMouse"])
-    #                 obj.game.sensors["deselect"].link(obj.game.controllers["PythonMouse"])
-    #             obj.select =False
-    # ########################
-
-
+        # self.add_object_logic(rigid_body_list)
 
 
 class PragmaticTask(Task):
@@ -563,18 +465,18 @@ standard = SemanticTask('Standard Task','s',["p","f", "g"])
 list_of_tasks.append(standard)
 
 selectprep = SemanticTask('Choose Preposition','sp',['p'])
-list_of_tasks.append(selectprep)
+# list_of_tasks.append(selectprep)
 
 selectfg = SemanticTask('Select Figure & Ground','sfg',["f","g"])
 list_of_tasks.append(selectfg)
 
 selectg = SemanticTask('Select Ground','sg',["g"])
-list_of_tasks.append(selectg)
+# list_of_tasks.append(selectg)
 
 selectf = SemanticTask('Select Figure','sf',["f"])
-list_of_tasks.append(selectf)
+# list_of_tasks.append(selectf)
 
-pass_object = PragmaticTask('Provide the robot with a description of the location of the highlighted object','p1','','f')
+pass_object = PragmaticTask('Description Task','p1','Provide the robot with a description of the location of the highlighted object','f')
 list_of_tasks.append(pass_object)
 
 main_scene = bpy.data.scenes["Scene"]
