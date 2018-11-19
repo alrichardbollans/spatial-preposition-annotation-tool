@@ -100,13 +100,16 @@ In the preposition selection task two objects in the scene are selected at rando
 
 #### Figure & Ground Selection
 
-In this task, a preposition is given at the top of the screen. What you have to do is select a figure (left click) and ground (right click). Once you have entered a figure and ground you will be asked to press Enter to confirm your selection. If you make a mistake in any of your selections just press the delete key. Pressing Space Bar changes the preposition.
+In this task a preposition is given at the top of the screen. What you have to do is select a figure (left click) and ground (right click). Once you have entered a figure and ground you will be asked to press Enter to confirm your selection. If you make a mistake in any of your selections just press the delete key. Pressing Space Bar changes the preposition.
 
 
 #### Figure Selection
-In this task, a preposition is given at the top of the screen as well as a highlighted ground object. You need to select figure objects which fit this pair e.g. if the highlighted ground is a bowl and the preposition is ‘in’ then you need to select all objects you think are in the bowl. Once you have entered a figure you will be asked to press Enter to confirm your selection. Pressing Space Bar changes the preposition. Pressing the delete key changes the ground.
+In this task a preposition is given at the top of the screen as well as a highlighted ground object. You need to select figure objects which fit this pair e.g. if the highlighted ground is a bowl and the preposition is ‘in’ then you need to select all objects you think are in the bowl. Once you have entered a figure you will be asked to press Enter to confirm your selection. Pressing Space Bar changes the preposition. Pressing the delete key changes the ground.
 #### Ground Selection
-In this task, a preposition is given at the top of the screen as well as a highlighted figure object. You need to select ground objects which fit this pair e.g. if the highlighted figure is a pencil and the preposition is ‘in’ then you need to select all objects that you think the pencil is in. Once you have entered a ground you will be asked to press Enter to confirm your selection. Pressing Space Bar changes the preposition. Pressing the delete key changes the figure.
+In this task a preposition is given at the top of the screen as well as a highlighted figure object. You need to select ground objects which fit this pair e.g. if the highlighted figure is a pencil and the preposition is ‘in’ then you need to select all objects that you think the pencil is in. Once you have entered a ground you will be asked to press Enter to confirm your selection. Pressing Space Bar changes the preposition. Pressing the delete key changes the figure.
+
+#### Description Task
+In this task an object is highlighted and the participant is asked to provide a description of it's location with respect to some ground.
 
 ### Continuing Developments
 
