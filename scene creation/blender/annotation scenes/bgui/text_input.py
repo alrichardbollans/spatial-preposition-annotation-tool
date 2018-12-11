@@ -358,49 +358,52 @@ class TextInput(Widget):
 				self.label.text = self.text[:self.slice[0]] + self.text[self.slice[1] + 1:]
 
 		elif key == LEFTARROWKEY:
-			slice_len = abs(self.slice[0] - self.slice[1])
-			if (self.slice_direction in [-1, 0]):
-				if is_shifted and self.slice[0] > 0:
-					self.slice = [self.slice[0] - 1, self.slice[1]]
-					self.slice_direction = -1
-				elif is_shifted:
-					pass
-				else:
-					if slice_len > 0:
-						self.slice = [self.slice[0], self.slice[0]]
-					elif self.slice[0] > 0:
-						self.slice = [self.slice[0] - 1, self.slice[0] - 1]
-					self.slice_direction = 0
+			pass
+			# slice_len = abs(self.slice[0] - self.slice[1])
+			# if (self.slice_direction in [-1, 0]):
+			# 	if is_shifted and self.slice[0] > 0:
+			# 		self.slice = [self.slice[0] - 1, self.slice[1]]
+			# 		self.slice_direction = -1
+			# 	elif is_shifted:
+			# 		pass
+			# 	else:
+			# 		if slice_len > 0:
+			# 			self.slice = [self.slice[0], self.slice[0]]
+			# 		elif self.slice[0] > 0:
+			# 			self.slice = [self.slice[0] - 1, self.slice[0] - 1]
+			# 		self.slice_direction = 0
 
-			elif self.slice_direction == 1:
-				if is_shifted:
-					self.slice = [self.slice[0], self.slice[1] - 1]
-				else:
-					self.slice = [self.slice[0], self.slice[0]]
-				if self.slice[0] - self.slice[1] == 0:
-					self.slice_direction = 0
+			# elif self.slice_direction == 1:
+			# 	if is_shifted:
+			# 		self.slice = [self.slice[0], self.slice[1] - 1]
+			# 	else:
+			# 		self.slice = [self.slice[0], self.slice[0]]
+			# 	if self.slice[0] - self.slice[1] == 0:
+			# 		self.slice_direction = 0
 
 		elif key == RIGHTARROWKEY:
-			slice_len = abs(self.slice[0] - self.slice[1])
-			if (self.slice_direction in [1, 0]):
-				if is_shifted  and self.slice[1] < len(self.text):
-					self.slice = [self.slice[0], self.slice[1] + 1]
-					self.slice_direction = 1
-				elif is_shifted:
-					pass
-				else:
-					if slice_len > 0:
-						self.slice = [self.slice[1], self.slice[1]]
-					elif self.slice[1] < len(self.text):
-						self.slice = [self.slice[1] + 1, self.slice[1] + 1]
-					self.slice_direction = 0
-			elif self.slice_direction == -1:
-				if is_shifted:
-					self.slice = [self.slice[0] + 1, self.slice[1]]
-				else:
-					self.slice = [self.slice[1], self.slice[1]]
-				if self.slice[0] - self.slice[1] == 0:
-					self.slice_direction = 0
+			pass
+			
+			# slice_len = abs(self.slice[0] - self.slice[1])
+			# if (self.slice_direction in [1, 0]):
+			# 	if is_shifted  and self.slice[1] < len(self.text):
+			# 		self.slice = [self.slice[0], self.slice[1] + 1]
+			# 		self.slice_direction = 1
+			# 	elif is_shifted:
+			# 		pass
+			# 	else:
+			# 		if slice_len > 0:
+			# 			self.slice = [self.slice[1], self.slice[1]]
+			# 		elif self.slice[1] < len(self.text):
+			# 			self.slice = [self.slice[1] + 1, self.slice[1] + 1]
+			# 		self.slice_direction = 0
+			# elif self.slice_direction == -1:
+			# 	if is_shifted:
+			# 		self.slice = [self.slice[0] + 1, self.slice[1]]
+			# 	else:
+			# 		self.slice = [self.slice[1], self.slice[1]]
+			# 	if self.slice[0] - self.slice[1] == 0:
+			# 		self.slice_direction = 0
 		else:
 			char = None
 			if ord(AKEY) <= key <= ord(ZKEY):
