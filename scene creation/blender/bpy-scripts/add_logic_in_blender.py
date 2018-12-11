@@ -124,7 +124,9 @@ class Task:
         blender_utils.link_scripts(bpy_scripts_directory)
 
         blender_utils.link_scripts(edits_scripts_directory)
-        ###EMPTY
+
+        ###### EMPTY
+        
         ### Add empty object if there isn't one
         bpy.context.screen.scene =  self.main_scene 
         if "Empty" not in self.main_scene.objects:
@@ -147,6 +149,8 @@ class Task:
         bpy.ops.object.game_property_new(type = "BOOL",name=self.suffix) #This allows the game to know which task we are doing.
 
         bpy.ops.object.game_property_new(type = "TIMER",name='game_time')
+
+        bpy.ops.object.game_property_new(type = "BOOL",name=bpy.path.basename(bpy.context.blend_data.filepath))
 
 
         # Add general sensors
@@ -179,6 +183,7 @@ class Task:
         bpy.ops.logic.sensor_add(type="MOUSE",name="hoverAny",object=empty.name)
         empty.game.sensors["hoverAny"].mouse_event = "MOUSEOVERANY"
 
+        
         bpy.ops.logic.controller_add(type="PYTHON",name="ObjectController",object=empty.name)
 
         empty.game.sensors["leftClick"].link(empty.game.controllers["ObjectController"])
@@ -189,7 +194,21 @@ class Task:
         empty.game.controllers["ObjectController"].text=bpy.data.texts["object_controller.py"]
 
 
+        bpy.ops.logic.controller_add(type="PYTHON",name="startUp",object=empty.name)
+        empty.game.controllers["startUp"].text=bpy.data.texts["on-startup.py"]
+        empty.game.controllers["startUp"].use_priority =True
+        empty.game.sensors["AlwaysStartup"].link(empty.game.controllers["startUp"])
 
+        bpy.ops.logic.controller_add(type="PYTHON",name="textui",object=empty.name)
+        empty.game.controllers["textui"].text=bpy.data.texts["textui_and_output.py"]
+        empty.game.sensors["Always"].link(empty.game.controllers["textui"])
+        empty.game.sensors["deselect"].link(empty.game.controllers["textui"])
+        empty.game.sensors["textinputkeyboard"].link(empty.game.controllers["textui"])
+        empty.game.sensors["changepreposition"].link(empty.game.controllers["textui"])
+
+        bpy.ops.logic.actuator_add(type="GAME",name="END_GAME",object=empty.name)
+        empty.game.actuators['END_GAME'].mode = 'QUIT'
+        empty.game.actuators['END_GAME'].link(empty.game.controllers['textui'])
 
         ### OBJECTS
 
@@ -259,18 +278,8 @@ class SemanticTask(Task):
         # empty.game.controllers["PythonOverlay"].use_priority =True
         # empty.game.sensors["AlwaysStartup"].link(empty.game.controllers["PythonOverlay"])
 
-        bpy.ops.logic.controller_add(type="PYTHON",name="startUp",object=empty.name)
-        empty.game.controllers["startUp"].text=bpy.data.texts["on-startup.py"]
-        empty.game.controllers["startUp"].use_priority =True
-        empty.game.sensors["AlwaysStartup"].link(empty.game.controllers["startUp"])
+        
 
-        bpy.ops.logic.controller_add(type="PYTHON",name="textui",object=empty.name)
-        empty.game.controllers["textui"].text=bpy.data.texts["textui_and_output.py"]
-        empty.game.sensors["Always"].link(empty.game.controllers["textui"])
-        empty.game.sensors["deselect"].link(empty.game.controllers["textui"])
-        empty.game.sensors["textinputkeyboard"].link(empty.game.controllers["textui"])
-        empty.game.sensors["changepreposition"].link(empty.game.controllers["textui"])
-   
         # bpy.ops.logic.controller_add(type="PYTHON",name="outputs",object=empty.name)
         # empty.game.controllers["outputs"].text=bpy.data.texts["output_annotations.py"]
         # empty.game.sensors["Always"].link(empty.game.controllers["outputs"])
@@ -293,6 +302,7 @@ class SemanticTask(Task):
         if self.suffix == "sg":
             bpy.ops.logic.controller_add(type="PYTHON",name="PythonHighlightF",object=empty.name)
             empty.game.controllers["PythonHighlightF"].text = bpy.data.texts["highlight_figure.py"]
+            empty.game.actuators['END_GAME'].link(empty.game.controllers['PythonHighlightF'])
             for sens in empty.game.sensors:
                 if sens.name in ["Always","change"]:
                     sens.link(empty.game.controllers["PythonHighlightF"])
@@ -390,22 +400,13 @@ class PragmaticTask(Task):
 
         ### Add sensors, controllers and links
 
-        bpy.ops.logic.controller_add(type="PYTHON",name="startUp",object=empty.name)
-        empty.game.controllers["startUp"].text=bpy.data.texts["on-startup.py"]
-        empty.game.controllers["startUp"].use_priority =True
-        empty.game.sensors["AlwaysStartup"].link(empty.game.controllers["startUp"])
-
-        bpy.ops.logic.controller_add(type="PYTHON",name="textui",object=empty.name)
-        empty.game.controllers["textui"].text=bpy.data.texts["textui_and_output.py"]
-        empty.game.sensors["Always"].link(empty.game.controllers["textui"])
-        empty.game.sensors["deselect"].link(empty.game.controllers["textui"])
-        empty.game.sensors["textinputkeyboard"].link(empty.game.controllers["textui"])
-        empty.game.sensors["changepreposition"].link(empty.game.controllers["textui"])
+        
    
         
         if self.suffix == "p1":
             bpy.ops.logic.controller_add(type="PYTHON",name="PythonHighlightF",object=empty.name)
             empty.game.controllers["PythonHighlightF"].text = bpy.data.texts["highlight_figure.py"]
+            empty.game.actuators['END_GAME'].link(empty.game.controllers['PythonHighlightF'])
             for sens in empty.game.sensors:
                 if sens.name in ["Always","change"]:
                     sens.link(empty.game.controllers["PythonHighlightF"])
@@ -462,13 +463,13 @@ prepare_scene()
 list_of_tasks = []
 
 standard = SemanticTask('Standard Task','s',["p","f", "g"])
-list_of_tasks.append(standard)
+# list_of_tasks.append(standard)
 
 selectprep = SemanticTask('Choose Preposition','sp',['p'])
 # list_of_tasks.append(selectprep)
 
 selectfg = SemanticTask('Select Figure & Ground','sfg',["f","g"])
-# list_of_tasks.append(selectfg)
+list_of_tasks.append(selectfg)
 
 selectg = SemanticTask('Select Ground','sg',["g"])
 # list_of_tasks.append(selectg)
@@ -476,11 +477,11 @@ selectg = SemanticTask('Select Ground','sg',["g"])
 selectf = SemanticTask('Select Figure','sf',["f"])
 # list_of_tasks.append(selectf)
 
-pass_object = PragmaticTask('Description Task','p1','Provide the robot with a description of the location of the highlighted object','f')
+pass_object = PragmaticTask('Identification Task','p1','Provide the robot with a description of the location of the highlighted object','f')
 list_of_tasks.append(pass_object)
 
 main_scene = bpy.data.scenes["Scene"]
 
 
 
-list_of_tasks[1].add_logic()
+list_of_tasks[0].add_logic()

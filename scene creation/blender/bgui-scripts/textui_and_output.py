@@ -6,13 +6,17 @@ import sys
 sys.path.append('../..')
 
 import csv
+import os
+
+from os.path import expanduser
+
 import random
 
 import bgui
 import bgui.bge_utils
 import bge
 
-preposition_list = ['in','on', 'against', 'over', 'under', 'above','below']
+preposition_list = ['in','inside','on', 'on top of', 'against', 'over', 'under', 'above','below']
 
 
 main_scene = bge.logic.getCurrentScene()
@@ -24,6 +28,11 @@ empty = co.owner
 keyboard = co.sensors["textinputkeyboard"]
 
 deselect = co.sensors["deselect"]
+
+end_game = co.actuators['END_GAME']
+
+def quit_game():
+    co.activate(end_game)
 
 ### This allows users to reset choices and replaces the old cancel button
 
@@ -39,13 +48,18 @@ if 'confirm' in empty.getPropertyNames():
         empty['confirm'] = False
         co.owner['sys'].layout.confirmlbl.visible = False
 
+
+
 selectable_objects = []
 
 for obj in main_scene.objects:
     if 'selectedfigure' in obj.getPropertyNames():
         selectable_objects.append(obj)
 
+
+
 def output(selection):
+    output_path = expanduser("~")
     bge.logic.sendMessage("deselect") #Sends a deselect message to sensors in any active scene.
     bge.logic.sendMessage("change")
 
@@ -57,74 +71,90 @@ def output(selection):
     selection.append(cam_loc)
     selection.append(cam_rot)
 
-    with open('output.csv', "a") as csvfile:
+    time = empty['game_time']
+    selection.append(time)
+
+    with open(output_path + '/output.csv', "a") as csvfile:
         outputwriter = csv.writer(csvfile)
         outputwriter.writerow(selection)
 
+
+
+
 class SimpleLayout(bgui.bge_utils.Layout):
-    """A layout showcasing various Bgui features"""
 
     def __init__(self, sys, data):
         super().__init__(sys, data)
         
         #Use a frame to store all of our widgets
-        self.frame = bgui.Frame(self, border=0)
+        self.frame = bgui.Frame(self, border=0,options = bgui.BGUI_DEFAULT | bgui.BGUI_CENTERX)
         self.frame.colors = [(0, 0, 0, 0) for i in range(4)]
 
 
         
 
         # Add a label for the title
-        self.titlelbl = bgui.Label(self, text=empty.getPropertyNames()[0], pos=[0, .95],
-            sub_theme='Large', pt_size = 35,options = bgui.BGUI_DEFAULT | bgui.BGUI_CENTERX)
+        self.titlelbl = bgui.Label(self.frame, text=empty.getPropertyNames()[0], pos=[0.4, .95],
+            sub_theme='Large', pt_size = 50,options = bgui.BGUI_DEFAULT)
 
-        self.timerlbl = bgui.Label(self, text="0:00", pos=[0.1, .95],
-            sub_theme='Large', pt_size = 35,options = bgui.BGUI_DEFAULT)
+        self.timerlbl = bgui.Label(self.frame,text="0:00", pos=[0.1, .95],
+            sub_theme='Large', pt_size = 50,options = bgui.BGUI_DEFAULT)
 
         if 'pragmatic' not in empty.getPropertyNames():
             # Add a label for the figure
-            self.figurelbl = bgui.Label(self, text='Figure: ',pos=[.25, .9],
-                sub_theme='Large', options = bgui.BGUI_DEFAULT)
+            self.figurelbl = bgui.Label(self.frame,text='Figure: ',pos=[.1, .9],
+                sub_theme='Large',pt_size = 50, options = bgui.BGUI_DEFAULT)
             # Add a label for the ground
-            self.groundlbl = bgui.Label(self, text='Ground: ', pos=[.7, .9],
-                sub_theme='Large', options = bgui.BGUI_DEFAULT)
+            self.groundlbl = bgui.Label(self.frame,text='Ground: ', pos=[.7, .9],
+                sub_theme='Large',pt_size = 50, options = bgui.BGUI_DEFAULT)
 
-            self.confirmlbl = bgui.Label(self, text='Press Enter to Confirm this selection', pos=[0, .5],
-                sub_theme='Large', color = (0,1,0,1),outline_color=(1,0,0,1), outline_size = 2, pt_size = 50, options = bgui.BGUI_DEFAULT | bgui.BGUI_CENTERX)
+            self.confirmlbl = bgui.Label(self.frame,text='Press Enter to Confirm this selection', pos=[0.3, .5],
+                sub_theme='Large', color = (0,1,0,1),outline_color=(1,0,0,1), outline_size = 2, pt_size = 50, options = bgui.BGUI_DEFAULT)
             self.confirmlbl.visible = False
+
+            if 'sfg' in empty.getPropertyNames():
+                self.allselectedlbl = bgui.Label(self.frame,text='Press Enter to Confirm that you have selected all pairs in the scene', pos=[0.1, .5],
+                    sub_theme='Large', color = (0,1,0,1),outline_color=(1,0,0,1), outline_size = 2, pt_size = 50, options = bgui.BGUI_DEFAULT)
+                self.allselectedlbl.visible = False
 
             if "p" not in empty.getPropertyNames():
                 # A label for the given preposition
-                self.prepositionlbl = bgui.Label(self, text= 'Preposition: '+random.choice(preposition_list), pos=[0, 0.9],
-                    sub_theme='Large', options = bgui.BGUI_DEFAULT | bgui.BGUI_CENTERX)
+                self.prepositionlbl = bgui.Label(self.frame,text= 'Preposition: '+random.choice(preposition_list), pos=[0, 0.9],
+                    sub_theme='Large',pt_size = 50, options = bgui.BGUI_DEFAULT | bgui.BGUI_CENTERX)
         
             if "p" in empty.getPropertyNames():
-                self.win = bgui.Frame(self,  size=[.6, .1],pos=[0, 0.1],border=0.2,
+                # A themed frame to store text input widget
+                self.win = bgui.Frame(self.frame, size=[.6, .1],pos=[0, 0.1],border=0.2,
                     options=bgui.BGUI_DEFAULT|bgui.BGUI_CENTERX)
 
-                self.prepositionlbl = bgui.Label(self, text="", pos=[0, 0.9],
-                    sub_theme='Large', options = bgui.BGUI_DEFAULT | bgui.BGUI_CENTERX)
+                self.prepositionlbl = bgui.Label(self.frame,text="", pos=[0, 0.9],
+                    sub_theme='Large',pt_size = 50, options = bgui.BGUI_DEFAULT | bgui.BGUI_CENTERX)
 
                 # A TextInput widget
                 self.input = bgui.TextInput(self.win, text="",
-                    input_options = 1, options = bgui.BGUI_DEFAULT)
+                    input_options = bgui.BGUI_INPUT_NONE,pt_size = 50, options = bgui.BGUI_DEFAULT)
                 self.input.activate()
                 self.input.on_enter_key = self.on_input_enter
         
         if 'pragmatic' in empty.getPropertyNames():
+            # Add a label for the title
+            self.instructionlbl0 = bgui.Label(self.frame, text='Imagine you want the robot to bring you the highlighted object.', pos=[0.18, .9],
+                sub_theme='Large', pt_size = 50,options = bgui.BGUI_DEFAULT)
+            self.instructionlbl1 = bgui.Label(self.frame, text='Provide the robot with a description of its location', pos=[0.21, .85],
+                sub_theme='Large', pt_size = 50,options = bgui.BGUI_DEFAULT)
             # A TextInput widget
-            # A themed frame to store widgets
-            self.win = bgui.Frame(self,  size=[.6, .1],pos=[0, 0.1],border=0.2,
+            # A themed frame to store text input widget
+            self.win = bgui.Frame(self.frame, size=[.6, .1],pos=[0, 0.1],border=0.2,
                 options=bgui.BGUI_DEFAULT|bgui.BGUI_CENTERX)
             self.input = bgui.TextInput(self.win, text="",
-                input_options = 1, options = bgui.BGUI_DEFAULT)
+                input_options = bgui.BGUI_INPUT_NONE,pt_size = 50, options = bgui.BGUI_DEFAULT)
             self.input.activate()
             self.input.on_enter_key = self.on_input_enter
 
             if 'f' in empty.getPropertyNames():
                 # Add a label for the figure
-                self.figurelbl = bgui.Label(self, text='Figure: ',pos=[.25, .9],
-                    sub_theme='Large', options = bgui.BGUI_DEFAULT)
+                self.figurelbl = bgui.Label(self.frame, text='Object: ',pos=[0, .8],
+                    sub_theme='Large',pt_size = 50, options = bgui.BGUI_DEFAULT| bgui.BGUI_CENTERX)
 
         
 
@@ -190,6 +220,10 @@ main(bge.logic.getCurrentController())
 seconds = empty['game_time']
 m, s = divmod(seconds, 60)
 co.owner['sys'].layout.timerlbl.text = "%d:%02d" % (m, s)
+
+### Quit game at 10mins
+if round(seconds,0) == 600.0:
+    quit_game()
 
 if 'pragmatic' not in empty.getPropertyNames():
     for obj in selectable_objects:
@@ -265,33 +299,51 @@ if 'pragmatic' not in empty.getPropertyNames():
                             
             
 
+        if 'sfg' not in empty.getPropertyNames():
+            #### Change preposition
+            changeprep = co.sensors["changepreposition"]
 
-        #### Change preposition
-        changeprep = co.sensors["changepreposition"]
+            for key,status in keyboard.events:
+                # key[0] == bge.events.keycode, key[1] = status
+                if status == bge.logic.KX_INPUT_JUST_ACTIVATED:
+                    if key == bge.events.SPACEKEY:
+                        bge.logic.sendMessage("changepreposition")
 
-        for key,status in keyboard.events:
-            # key[0] == bge.events.keycode, key[1] = status
-            if status == bge.logic.KX_INPUT_JUST_ACTIVATED:
-                if key == bge.events.SPACEKEY:
-                    bge.logic.sendMessage("changepreposition")
+            if changeprep.positive:
+                co.owner['sys'].layout.prepositionlbl.text = 'Preposition: ' + random.choice(preposition_list)
+                # new_index = preposition_list.index(co.owner['sys'].layout.lbl2.text) + 1
 
-        if changeprep.positive:
-            co.owner['sys'].layout.prepositionlbl.text = 'Preposition: ' + random.choice(preposition_list)
-            # new_index = preposition_list.index(co.owner['sys'].layout.lbl2.text) + 1
+                # if new_index < len(preposition_list):
 
-            # if new_index < len(preposition_list):
+                #     co.owner['sys'].layout.lbl2.text = preposition_list[new_index]
+                # else:
+                #     co.owner['sys'].layout.lbl2.text = preposition_list[0]
 
-            #     co.owner['sys'].layout.lbl2.text = preposition_list[new_index]
-            # else:
-            #     co.owner['sys'].layout.lbl2.text = preposition_list[0]
+if 'sfg' in empty.getPropertyNames():
+    if deselect.positive:
+        co.owner['sys'].layout.allselectedlbl.visible = False
+    for key,status in keyboard.events:
+        # key[0] == bge.events.keycode, key[1] = status
+        if status == bge.logic.KX_INPUT_JUST_ACTIVATED:
+            if key == bge.events.SPACEKEY:
+                co.owner['sys'].layout.allselectedlbl.visible = True
+    for key,status in keyboard.events:
+        # key[0] == bge.events.keycode, key[1] = status
+        if status == bge.logic.KX_INPUT_JUST_ACTIVATED:
+            if key == bge.events.ENTERKEY:
+                if co.owner['sys'].layout.allselectedlbl.visible == True:
+                    output(['ALL INSTANCES SELECTED',co.owner['sys'].layout.prepositionlbl.text.replace('Preposition: ',''),''])
+                    co.owner['sys'].layout.allselectedlbl.visible = False
+                    co.owner['sys'].layout.prepositionlbl.text = 'Preposition: ' + random.choice(preposition_list)
+
 if "pragmatic" in empty.getPropertyNames():
     ###Keep text input focused
     co.owner['sys'].layout.input.system.focused_widget = co.owner['sys'].layout.input
 
     if 'f' in empty.getPropertyNames():
         for obj in selectable_objects:
-            if obj.get('selectedfigure')==True:
-                co.owner['sys'].layout.figurelbl.text = 'Figure: '+ obj.name
+            if obj['selectedfigure']==True:
+                co.owner['sys'].layout.figurelbl.text = 'Object: '+ obj.name
 
 
 

@@ -19,6 +19,11 @@ main_scene = scene
 
 change = cont.sensors["change"]
 
+end_game = cont.actuators['END_GAME']
+
+def quit_game():
+    cont.activate(end_game)
+
 def clean_name(obj):
     if '.' in obj.name:
         clean_name = obj.name[:obj.name.find(".")]
@@ -51,17 +56,20 @@ if change.positive:
 			rigid_objects.append(obj)
 	#Make list of rigid bodies of which there are at least two
 	figure_list = []
+	non_figure_list = ['wall','ceiling','floor']
 	for obj in rigid_objects:
-		if list_clean_names(rigid_objects).count(clean_name(obj))>1 and obj['used'] ==False:
+		if list_clean_names(rigid_objects).count(clean_name(obj))>1 and obj['used'] ==False and clean_name(obj) not in non_figure_list:
 			figure_list.append(obj)
 		
+	if len(figure_list) == 0:
+		quit_game()
+	else:
+		fig = random.choice(figure_list) # randomly pick an object
+		print("figure = "+ str(fig))
+		highlighter_object = scene.addObject(fig.name+"highlightf")
 
-	fig = random.choice(figure_list) # randomly pick an object
-	print("figure = "+ str(fig))
-	highlighter_object = scene.addObject(fig.name+"highlightf")
-
-	fig['selectedfigure']= True
-	fig['used'] =True
+		fig['selectedfigure']= True
+		fig['used'] =True
 
 
 
