@@ -5,10 +5,9 @@
 1. [Introduction](#introduction)
 2. [Getting Started](#getting-started)
 3. [Creating Annotations](#creating-annotations)
-4. [Continuing Developments](#continuing-developments)
-5. [Troubleshooting](#troubleshooting)
-6. [Requirements](#requirements)
-7. [Contact](#contact)
+4. [Troubleshooting](#troubleshooting)
+5. [Requirements](#requirements)
+6. [Contact](#contact)
 
 ### Introduction
 
@@ -51,7 +50,7 @@ After processing scenes, run create-annotations.py. This will display a user int
 
 Clicking start begins a new annotation session.
 
-This will add annotations to the annotation list csv in /outputs/.
+This will store the users data in the user list csv and add annotations to the annotation list csv in the `output_path`, which is currently set to the home directory.
 
 ### Instructions for Subjects
 
@@ -87,7 +86,16 @@ We have recently made improvement which give big reductions in lag. If, however,
 
 In general green highlighting denotes a figure objects while red highlighting denotes a ground.
 
-Currently there are five modes for annotating
+Currently there are two main modes for annotating
+
+#### Figure & Ground Selection
+
+In this task a preposition is given at the top of the screen. What you have to do is select a figure (left click) and ground (right click). Once you have entered a figure and ground you will be asked to press Enter to confirm your selection. If you make a mistake in any of your selections just press the delete key. Pressing Space Bar changes the preposition.
+
+#### Description Task
+In this task an object is highlighted and the participant is asked to provide a description of it's location.
+
+There are also further possible tasks that can be implemented with some minor tweaks:
 
 #### Standard Task
 
@@ -98,24 +106,14 @@ In the standard task all you have to do is select a figure object (left click), 
 In the preposition selection task two objects in the scene are selected at random. All you have to do is enter a preposition which describes the pair. Once you have entered a preposition you will be asked to press Enter to confirm your selection. A new pair of objects will then be highlighted. Note that green highlighting denotes the figure and red denotes the ground. If you can’t think of an appropriate preposition just press the delete key to change the pair of objects.
 
 
-#### Figure & Ground Selection
-
-In this task a preposition is given at the top of the screen. What you have to do is select a figure (left click) and ground (right click). Once you have entered a figure and ground you will be asked to press Enter to confirm your selection. If you make a mistake in any of your selections just press the delete key. Pressing Space Bar changes the preposition.
-
-
 #### Figure Selection
 In this task a preposition is given at the top of the screen as well as a highlighted ground object. You need to select figure objects which fit this pair e.g. if the highlighted ground is a bowl and the preposition is ‘in’ then you need to select all objects you think are in the bowl. Once you have entered a figure you will be asked to press Enter to confirm your selection. Pressing Space Bar changes the preposition. Pressing the delete key changes the ground.
 #### Ground Selection
 In this task a preposition is given at the top of the screen as well as a highlighted figure object. You need to select ground objects which fit this pair e.g. if the highlighted figure is a pencil and the preposition is ‘in’ then you need to select all objects that you think the pencil is in. Once you have entered a ground you will be asked to press Enter to confirm your selection. Pressing Space Bar changes the preposition. Pressing the delete key changes the figure.
 
-#### Description Task
-In this task an object is highlighted and the participant is asked to provide a description of it's location with respect to some ground.
 
-### Continuing Developments
 
-* Adding additional tasks
-* Minor tweaks to the UI
-* Detailed property extraction
+
 
 ### Troubleshooting
 
