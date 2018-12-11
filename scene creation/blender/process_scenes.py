@@ -9,7 +9,7 @@ scene_directory = "scenes/"
 
 def create_games(scene_directory):
 	for filename in os.listdir(scene_directory):
-		if filename.endswith(".blend"):
+		if 'test' not in filename and filename.endswith('.blend'):
 			os.system("blender scenes/" + filename + " --background --python bpy-scripts/add_logics_properties_save_game.py")
 
 create_games(scene_directory)
