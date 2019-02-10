@@ -7,7 +7,7 @@
 3. [Creating Annotations](#creating-annotations)
 4. [Troubleshooting](#troubleshooting)
 5. [Requirements](#requirements)
-6. [Preliminary Study](#study)
+6. [Preliminary Study](#preliminary-study)
 7. [Contact](#contact)
 
 ### Introduction
