@@ -1,0 +1,736 @@
+Annotation ID,User ID,Task,Scene,Raw Sentence,Preposition,Figure,Ground,Case,Cam Location,Cam Rotation,Time
+8787aa8e-e811-41cc-946d-0a0b134c1843,4,p1,scene2-p1,the book on the floor next to the banana ,?,book,?,compound,"<Vector (4.2037, 2.9700, 1.7252)>","<Matrix 3x3 (0.0056, -0.1719,  0.9851)
+            (1.0000,  0.0010, -0.0055)
+            (0.0000,  0.9851,  0.1719)>",66.2663421630859
+f11239b3-8ae6-4297-bcd0-8b3e339a2006,4,p1,scene2-p1,the desk against the wall under the shelf ,?,table.001,?,compound,"<Vector (4.0448, 1.2775, 1.7252)>","<Matrix 3x3 (0.0935, -0.0866,  0.9919)
+            (0.9956,  0.0081, -0.0931)
+            (0.0000,  0.9962,  0.0870)>",114.559989929199
+66a045fd-e663-4184-bc46-5e043de17e51,4,p1,scene2-p1,the mug on top of the bookshelf ,on top of,mug,bookshelf,simple,"<Vector (4.0448, 1.2775, 1.7252)>","<Matrix 3x3 (0.3275, -0.1064,  0.9389)
+            (0.9449,  0.0369, -0.3254)
+            (0.0000,  0.9936,  0.1126)>",133.978073120117
+4346740e-68f7-4815-a273-3ed6cd1b4d4d,4,p1,scene2-p1,the banana in the bowl on the table ,?,banana.000,?,compound,"<Vector (4.0448, 1.2775, 1.7252)>","<Matrix 3x3 (0.3275, -0.1064,  0.9389)
+            (0.9449,  0.0369, -0.3254)
+            (0.0000,  0.9936,  0.1126)>",155.289535522461
+9b2d7ebf-0556-4949-944c-4f0ed5efe719,4,p1,scene2-p1,the table in front of you ,?,Table,?,compound,"<Vector (4.0448, 1.2775, 1.7252)>","<Matrix 3x3 (0.3275, -0.1064,  0.9389)
+            (0.9449,  0.0369, -0.3254)
+            (0.0000,  0.9936,  0.1126)>",173.518417358398
+2cb52d32-714c-4c90-a85a-f7623179c3d9,4,p1,scene2-p1,the apple in the bowl on top of the table ,?,apple.006,?,compound,"<Vector (4.0448, 1.2775, 1.7252)>","<Matrix 3x3 (0.3275, -0.1064,  0.9389)
+            (0.9449,  0.0369, -0.3254)
+            (0.0000,  0.9936,  0.1126)>",189.314559936523
+ea9883ff-787c-44e9-90c3-93582cc60d57,4,p1,scene2-p1,the ball on top of the bookshelf next to the mug ,?,ball,?,compound,"<Vector (4.0448, 1.2775, 1.7252)>","<Matrix 3x3 (0.3275, -0.1064,  0.9389)
+            (0.9449,  0.0369, -0.3254)
+            (0.0000,  0.9936,  0.1126)>",226.055587768555
+259c4cc0-b0aa-4862-a881-dbf080da5014,4,p1,scene2-p1,the spoon on the table next to the blocks ,on,spoon,?,compound,"<Vector (4.0448, 1.2775, 1.7252)>","<Matrix 3x3 (0.3275, -0.1064,  0.9389)
+            (0.9449,  0.0369, -0.3254)
+            (0.0000,  0.9936,  0.1126)>",250.982833862305
+c9053edd-8621-4068-a516-6596b1ab09cf,4,p1,scene2-p1,the jar on the desk under the lamp ,?,jar.001,?,compound,"<Vector (4.0448, 1.2775, 1.7252)>","<Matrix 3x3 (0.3275, -0.1064,  0.9389)
+            (0.9449,  0.0369, -0.3254)
+            (0.0000,  0.9936,  0.1126)>",265.429321289063
+070bb5f0-84b3-4624-a600-746bfa1a8301,4,p1,scene2-p1,the chair in the corner next to the box ,?,chair.001,?,compound,"<Vector (4.0448, 1.2775, 1.7252)>","<Matrix 3x3 (0.3275, -0.1064,  0.9389)
+            (0.9449,  0.0369, -0.3254)
+            (0.0000,  0.9936,  0.1126)>",293.222534179687
+583f6513-487c-4e8f-985a-6195b96afe49,4,p1,scene2-p1,the pencil on the table behind the block ,?,Pencil.003,?,compound,"<Vector (4.0448, 1.2775, 1.7252)>","<Matrix 3x3 (0.3275, -0.1064,  0.9389)
+            (0.9449,  0.0369, -0.3254)
+            (0.0000,  0.9936,  0.1126)>",322.398742675781
+c152bea3-c98f-4793-8f80-af8a828d3b0f,4,p1,scene2-p1,the mug on the table next to the fruit bowl ,on,mug.002,?,compound,"<Vector (4.0448, 1.2775, 1.7252)>","<Matrix 3x3 (0.3275, -0.1064,  0.9389)
+            (0.9449,  0.0369, -0.3254)
+            (0.0000,  0.9936,  0.1126)>",343.326965332031
+0f0380f9-29dc-4236-8b64-64f727f2ac1f,4,p1,scene2-p1,the box under the desk to the right of the chair ,?,box,?,compound,"<Vector (4.0448, 1.2775, 1.7252)>","<Matrix 3x3 (0.3275, -0.1064,  0.9389)
+            (0.9449,  0.0369, -0.3254)
+            (0.0000,  0.9936,  0.1126)>",365.454895019531
+17411b0a-669c-4cfb-94ae-2505af8ad6b4,4,p1,scene2-p1,the chair on the ground ,on,chair,ground,simple,"<Vector (4.0448, 1.2775, 1.7252)>","<Matrix 3x3 (0.3275, -0.1064,  0.9389)
+            (0.9449,  0.0369, -0.3254)
+            (0.0000,  0.9936,  0.1126)>",373.569580078125
+e70e42b1-b1f8-4ddc-811e-88e99b9206f6,4,p1,scene2-p1,the pencil on the table ,on,Pencil.001,table,simple,"<Vector (4.0448, 1.2775, 1.7252)>","<Matrix 3x3 (0.3275, -0.1064,  0.9389)
+            (0.9449,  0.0369, -0.3254)
+            (0.0000,  0.9936,  0.1126)>",395.797485351562
+5abc93a7-5e9e-4523-bf14-cfbdf1e10605,4,p1,scene2-p1,the mug on the desk under the lamp ,?,mug.001,?,compound,"<Vector (4.0448, 1.2775, 1.7252)>","<Matrix 3x3 (0.3275, -0.1064,  0.9389)
+            (0.9449,  0.0369, -0.3254)
+            (0.0000,  0.9936,  0.1126)>",409.777404785156
+f9ab73b5-407b-48f9-bb57-1a6afcbfd7c9,4,p1,scene2-p1,the book on the floor to the left of the banana ,?,book.002,?,compound,"<Vector (4.0448, 1.2775, 1.7252)>","<Matrix 3x3 (0.3275, -0.1064,  0.9389)
+            (0.9449,  0.0369, -0.3254)
+            (0.0000,  0.9936,  0.1126)>",429.705871582031
+44ea66b7-d584-4e7c-a508-b78572cf6266,4,p1,scene2-p1,the banana on the floor to the right of the book ,?,banana.004,?,compound,"<Vector (4.0448, 1.2775, 1.7252)>","<Matrix 3x3 (0.3275, -0.1064,  0.9389)
+            (0.9449,  0.0369, -0.3254)
+            (0.0000,  0.9936,  0.1126)>",446.835021972656
+04de960b-112d-4b5e-a891-527ce279a7e7,4,p1,scene2-p1,the box on the floor to the right of the chair ,?,box.001,?,compound,"<Vector (4.0448, 1.2775, 1.7252)>","<Matrix 3x3 (0.2132, -0.0822,  0.9736)
+            (0.9770,  0.0179, -0.2124)
+            (0.0000,  0.9965,  0.0841)>",477.544189453125
+673d50cf-5953-43ee-a4d6-3d4d21d6b65c,4,p1,scene2-p1,the notebook on the desk ,on,notebook,desk,simple,"<Vector (4.0448, 1.2775, 1.7252)>","<Matrix 3x3 (0.2132, -0.0822,  0.9736)
+            (0.9770,  0.0179, -0.2124)
+            (0.0000,  0.9965,  0.0841)>",507.3369140625
+b941eb10-7bf7-480b-aa31-d4caa3afe3ab,4,p1,scene2-p1,the spoon on the table behind the fruit bowl ,?,spoon.001,?,compound,"<Vector (4.0448, 1.2775, 1.7252)>","<Matrix 3x3 (0.2132, -0.0822,  0.9736)
+            (0.9770,  0.0179, -0.2124)
+            (0.0000,  0.9965,  0.0841)>",527.098754882813
+5dd56727-db22-4c8d-8062-e5546a3345d0,4,p1,scene2-p1,the cube on the table behind the fruit bowl ,?,Cube.002,?,compound,"<Vector (4.0448, 1.2775, 1.7252)>","<Matrix 3x3 (0.2132, -0.0822,  0.9736)
+            (0.9770,  0.0179, -0.2124)
+            (0.0000,  0.9965,  0.0841)>",547.893676757812
+8203d00b-e97e-408f-8dd5-bb3e392cc693,6,p1,scene1-p1,chair to the right of the cupboard ,right of,chair.001,?,compound,"<Vector (2.3050, -3.0751, 1.7799)>","<Matrix 3x3 ( 0.7070, -0.0982,  0.7004)
+            ( 0.7072,  0.0982, -0.7001)
+            (-0.0000,  0.9903,  0.1389)>",67.6833114624023
+8428a2a5-3bbe-4eeb-9a63-9ac46fede558,6,p1,scene1-p1,lamp on the table in the corner ,?,lamp,?,compound,"<Vector (2.3050, -3.0751, 1.7799)>","<Matrix 3x3 ( 0.7070, -0.0982,  0.7004)
+            ( 0.7072,  0.0982, -0.7001)
+            (-0.0000,  0.9903,  0.1389)>",96.589485168457
+6de2c927-15b5-44e5-94d3-56b4df05d295,6,p1,scene1-p1,chair in the corner ,in,chair.002,corner,simple,"<Vector (2.3050, -3.0751, 1.7799)>","<Matrix 3x3 ( 0.7070, -0.0982,  0.7004)
+            ( 0.7072,  0.0982, -0.7001)
+            (-0.0000,  0.9903,  0.1389)>",104.691215515137
+ada94a19-61f7-4288-b463-4fb39985be18,6,p1,scene1-p1,spoon on top of the table ,on top of,spoon,table,simple,"<Vector (0.5491, -0.9091, 1.5244)>","<Matrix 3x3 ( 0.7428, -0.1326,  0.6563)
+            ( 0.6695,  0.1471, -0.7281)
+            (-0.0000,  0.9802,  0.1980)>",136.394149780273
+05212821-177c-4162-a255-415e72107ba5,6,p1,scene1-p1,cube to the right of the box on the table ,?,Cube,?,compound,"<Vector (-0.9570, 2.1038, 1.0617)>","<Matrix 3x3 ( 0.8971, -0.0676,  0.4366)
+            ( 0.4418,  0.1373, -0.8866)
+            (-0.0000,  0.9882,  0.1530)>",163.637496948242
+3a9359c1-9229-4698-9b0f-23f9b9e74bed,6,p1,scene1-p1,pencil in the box on the table ,?,Pencil.001,?,compound,"<Vector (-0.9570, 2.1038, 1.0617)>","<Matrix 3x3 ( 0.8187, -0.0667,  0.5703)
+            ( 0.5741,  0.0952, -0.8132)
+            (-0.0000,  0.9932,  0.1162)>",180.383407592773
+20c0af83-3ebc-4661-ada5-4ec3a4efa02f,6,p1,scene1-p1,apple in the bowl on the table ,?,apple.002,?,compound,"<Vector (-1.2232, -1.9940, 1.9421)>","<Matrix 3x3 ( 0.9975, 0.0242, -0.0661)
+            (-0.0704, 0.3428, -0.9368)
+            (-0.0000, 0.9391,  0.3436)>",197.762496948242
+3c78714b-c2b3-4336-80df-191c6589285e,6,p1,scene1-p1,table near the corner of the room ,?,Table,?,compound,"<Vector (-1.2232, -1.9940, 1.9421)>","<Matrix 3x3 ( 0.9805, -0.0465,  0.1907)
+            ( 0.1963,  0.2325, -0.9526)
+            (-0.0000,  0.9715,  0.2371)>",225.788986206055
+53cee6ec-35f4-40a5-833a-784c13a5daef,6,p1,scene1-p1,cube on the book on the table ,?,Cube.001,?,compound,"<Vector (0.6315, 1.5624, 1.2551)>","<Matrix 3x3 ( 0.6375, -0.1179,  0.7614)
+            ( 0.7705,  0.0976, -0.6300)
+            (-0.0000,  0.9882,  0.1530)>",250.24967956543
+c1a9afbb-9249-4b4e-836b-9c057d30adbc,6,p1,scene1-p1,box to the far right of the table nearest to the corner of the room ,?,box.002,?,compound,"<Vector (0.6315, 1.5624, 1.2551)>","<Matrix 3x3 ( 0.7828, -0.1527,  0.6032)
+            ( 0.6222,  0.1921, -0.7589)
+            (-0.0000,  0.9694,  0.2454)>",284.574645996094
+645ae251-8c82-4a94-9500-0762c24c4f00,6,p1,scene1-p1,chair nearest to the shelf ,?,chair.003,?,compound,"<Vector (3.8509, -2.8775, 2.3810)>","<Matrix 3x3 ( 0.8141, -0.1036,  0.5714)
+            ( 0.5807,  0.1452, -0.8011)
+            (-0.0000,  0.9840,  0.1784)>",313.101013183594
+dbc59853-4920-40a8-919f-d5797cc4b591,6,p1,scene1-p1,spoon below the lamp on the table ,?,spoon.002,?,compound,"<Vector (2.4010, -1.3962, 2.0416)>","<Matrix 3x3 ( 0.6898, -0.0862,  0.7189)
+            ( 0.7240,  0.0821, -0.6849)
+            (-0.0000,  0.9929,  0.1191)>",328.31396484375
+42f24500-d286-4890-8bde-643df8524796,6,p1,scene1-p1,table in front of the cupboard ,?,table,?,compound,"<Vector (2.4010, -1.3962, 2.0416)>","<Matrix 3x3 ( 0.5574, -0.1224,  0.8212)
+            ( 0.8302,  0.0821, -0.5513)
+            (-0.0000,  0.9891,  0.1474)>",354.590881347656
+0e73dad6-d1b4-4635-b871-9f2ba375ac8d,6,p1,scene1-p1,pencil on top of books on the table near to the corner of the room ,?,Pencil.004,?,compound,"<Vector (2.6425, -1.7084, 2.1067)>","<Matrix 3x3 ( 0.7939, -0.0965,  0.6003)
+            ( 0.6080,  0.1260, -0.7839)
+            (-0.0000,  0.9873,  0.1587)>",387.549499511719
+dd5db2b6-3e30-48e7-bc43-12f72e3a85b1,6,p1,scene1-p1,book with the cube on top of it ,?,book.001,?,compound,"<Vector (2.6425, -1.7084, 2.1067)>","<Matrix 3x3 ( 0.7951, -0.0894,  0.5998)
+            ( 0.6064,  0.1172, -0.7865)
+            (-0.0000,  0.9891,  0.1474)>",405.545104980469
+d19ea1f1-dc96-49bc-aa23-255fc9a51ce3,6,p1,scene1-p1,book on top of the table in front of the cupboard ,?,book,?,compound,"<Vector (2.6425, -1.7084, 2.1067)>","<Matrix 3x3 ( 0.7951, -0.0894,  0.5998)
+            ( 0.6064,  0.1172, -0.7865)
+            (-0.0000,  0.9891,  0.1474)>",435.154541015625
+18e92a5e-be2c-4c9a-8f97-f27508c876ad,6,p1,scene1-p1,book nearest to the wall on top of the table ,on top of,book.002,?,compound,"<Vector (2.6425, -1.7084, 2.1067)>","<Matrix 3x3 ( 0.8944, -0.0576,  0.4434)
+            ( 0.4471,  0.1152, -0.8870)
+            (-0.0000,  0.9917,  0.1288)>",465.547119140625
+877fd9c2-3ee5-4098-84a3-663d2acbb7bf,6,p1,scene1-p1,jar against the table in front of the cupboard ,?,jar,?,compound,"<Vector (2.6425, -1.7084, 2.1067)>","<Matrix 3x3 ( 0.7292, -0.2323,  0.6436)
+            ( 0.6842,  0.2476, -0.6860)
+            (-0.0000,  0.9406,  0.3395)>",500.605224609375
+d30ac3b4-b54f-4b68-b35d-fcd14da91348,6,p1,scene1-p1,spoon inside the cup on the table ,?,spoon.001,?,compound,"<Vector (2.6425, -1.7084, 2.1067)>","<Matrix 3x3 ( 0.7573, -0.2093,  0.6186)
+            ( 0.6530,  0.2428, -0.7174)
+            (-0.0000,  0.9472,  0.3206)>",519.667236328125
+62307fe4-cd30-4e9c-aa31-fd24c6e7ca56,6,p1,scene1-p1,pencil inside the cup on the table ,?,Pencil,?,compound,"<Vector (2.6425, -1.7084, 2.1067)>","<Matrix 3x3 ( 0.7573, -0.2093,  0.6186)
+            ( 0.6530,  0.2428, -0.7174)
+            (-0.0000,  0.9472,  0.3206)>",528.931640625
+50839f99-b235-4758-9f1a-62d5e40286e2,6,p1,scene1-p1,lamp on top of the table in front of the cupboard ,?,lamp.001,?,compound,"<Vector (2.6425, -1.7084, 2.1067)>","<Matrix 3x3 ( 0.7573, -0.2093,  0.6186)
+            ( 0.6530,  0.2428, -0.7174)
+            (-0.0000,  0.9472,  0.3206)>",547.227172851563
+85121caa-7bb2-46b4-8cb9-ae5bba78975e,6,p1,scene1-p1,apple on the table in front of the cupboard ,?,apple.003,?,compound,"<Vector (2.6425, -1.7084, 2.1067)>","<Matrix 3x3 ( 0.7573, -0.2093,  0.6186)
+            ( 0.6530,  0.2428, -0.7174)
+            (-0.0000,  0.9472,  0.3206)>",568.52197265625
+e1d23ae2-3ce8-4bcb-8597-e592584cc5af,6,p1,scene1-p1,pencil on top of the plate on top of the table ,?,Pencil.005,?,compound,"<Vector (2.6425, -1.7084, 2.1067)>","<Matrix 3x3 ( 0.7573, -0.2093,  0.6186)
+            ( 0.6530,  0.2428, -0.7174)
+            (-0.0000,  0.9472,  0.3206)>",593.31591796875
+a2dbcbf7-4f46-4350-8a55-ada5326cad5d,6,p1,scene1-p1,table near to the corner of the room ,?,Table,?,compound,"<Vector (6.4434, -1.2227, 1.8000)>","<Matrix 3x3 (0.4632, -0.0562,  0.8845)
+            (0.8863,  0.0294, -0.4623)
+            (0.0000,  0.9980,  0.0634)>",19.6998710632324
+80880e86-df0b-40f5-96ba-f0f18f69bc30,6,p1,scene1-p1,apple on top of the plate on top of the table in front of the cupboard ,?,apple.001,?,compound,"<Vector (6.4434, -1.2227, 1.8000)>","<Matrix 3x3 (0.4632, -0.0562,  0.8845)
+            (0.8863,  0.0294, -0.4623)
+            (0.0000,  0.9980,  0.0634)>",45.5661430358887
+d243cdd4-15b4-4261-be0a-9c95fc52825a,6,p1,scene1-p1,pencil in the cup on the table ,?,Pencil,?,compound,"<Vector (6.4434, -1.2227, 1.8000)>","<Matrix 3x3 (0.4632, -0.0562,  0.8845)
+            (0.8863,  0.0294, -0.4623)
+            (0.0000,  0.9980,  0.0634)>",54.5826721191406
+976f90b1-3c88-4981-9350-7627dd5c9e02,6,p1,scene1-p1,pencil against the books on top of the table near to the corner of the room ,?,Pencil.004,?,compound,"<Vector (6.4434, -1.2227, 1.8000)>","<Matrix 3x3 (0.4632, -0.0562,  0.8845)
+            (0.8863,  0.0294, -0.4623)
+            (0.0000,  0.9980,  0.0634)>",73.2845077514648
+4d48a456-bfb9-467a-9700-73f3a740125e,6,p1,scene1-p1,the pencil inside the box on the table ,?,Pencil.001,?,compound,"<Vector (3.7015, 0.2103, 1.6033)>","<Matrix 3x3 (0.4632, -0.0562,  0.8845)
+            (0.8863,  0.0294, -0.4623)
+            (0.0000,  0.9980,  0.0634)>",94.5057067871094
+745575b7-7f5e-4be6-afb4-b8cbdcc180f0,6,p1,scene1-p1,the chair to the left of the shelf ,left of,chair.003,?,compound,"<Vector (3.7015, 0.2103, 1.6033)>","<Matrix 3x3 (0.4632, -0.0562,  0.8845)
+            (0.8863,  0.0294, -0.4623)
+            (0.0000,  0.9980,  0.0634)>",131.528671264648
+f3f4efa9-ee01-4e13-b36b-3ae074f2f5ae,6,p1,scene1-p1,the book under the pencil on top of the table in front of the cupboard ,?,book,?,compound,"<Vector (3.7015, 0.2103, 1.6033)>","<Matrix 3x3 (0.4632, -0.0562,  0.8845)
+            (0.8863,  0.0294, -0.4623)
+            (0.0000,  0.9980,  0.0634)>",176.451034545898
+35aee6b0-d8dd-4787-aed5-0a7316d8e1ff,6,p1,scene1-p1,the lamp on the table in front of the cupboard ,?,lamp.001,?,compound,"<Vector (3.7015, 0.2103, 1.6033)>","<Matrix 3x3 (0.4632, -0.0562,  0.8845)
+            (0.8863,  0.0294, -0.4623)
+            (0.0000,  0.9980,  0.0634)>",187.914901733398
+df4b2076-a18a-4e99-ae4d-f30499c7bb6e,6,p1,scene1-p1,the table in front of the cupboard ,?,table,?,compound,"<Vector (3.7015, 0.2103, 1.6033)>","<Matrix 3x3 (0.4632, -0.0562,  0.8845)
+            (0.8863,  0.0294, -0.4623)
+            (0.0000,  0.9980,  0.0634)>",195.563034057617
+b17626c1-936a-4d60-a3bc-f13662a4ad37,6,p1,scene1-p1,the cube on top of the table near to the corner of the room ,?,Cube,?,compound,"<Vector (3.7015, 0.2103, 1.6033)>","<Matrix 3x3 (0.4632, -0.0562,  0.8845)
+            (0.8863,  0.0294, -0.4623)
+            (0.0000,  0.9980,  0.0634)>",216.857833862305
+9eca1bd7-b50b-4003-b4c7-520dfeeb5747,6,p1,scene1-p1,the jar against the table in front of the cupboard ,?,jar,?,compound,"<Vector (6.1781, -1.0840, 1.7810)>","<Matrix 3x3 (0.4632, -0.0562,  0.8845)
+            (0.8863,  0.0294, -0.4623)
+            (0.0000,  0.9980,  0.0634)>",234.536849975586
+690828b1-9552-41bf-9111-9ee864433a54,6,p1,scene1-p1,the spoon on top of the lamp ,on top of,spoon.002,lamp,simple,"<Vector (3.6131, 0.2566, 1.5970)>","<Matrix 3x3 (0.4632, -0.0562,  0.8845)
+            (0.8863,  0.0294, -0.4623)
+            (0.0000,  0.9980,  0.0634)>",256.764770507812
+68300248-e9ed-47aa-8f7c-a4b8992a2c4f,6,p1,scene1-p1,the cube on top of the book ,on top of,Cube.001,book,simple,"<Vector (3.6131, 0.2566, 1.5970)>","<Matrix 3x3 (0.4632, -0.0562,  0.8845)
+            (0.8863,  0.0294, -0.4623)
+            (0.0000,  0.9980,  0.0634)>",267.912048339844
+a68b8742-499d-4413-b22f-36a3af517309,6,p1,scene1-p1,the box against the wall to the right of the shelf ,?,box.002,?,compound,"<Vector (3.6131, 0.2566, 1.5970)>","<Matrix 3x3 (0.4632, -0.0562,  0.8845)
+            (0.8863,  0.0294, -0.4623)
+            (0.0000,  0.9980,  0.0634)>",298.088012695312
+79a1a705-289d-46f5-89f2-5c1aeb028aed,6,p1,scene1-p1,the pencil against the plate on top of the table in front of the cupboard ,?,Pencil.005,?,compound,"<Vector (3.6131, 0.2566, 1.5970)>","<Matrix 3x3 (0.4632, -0.0562,  0.8845)
+            (0.8863,  0.0294, -0.4623)
+            (0.0000,  0.9980,  0.0634)>",320.932434082031
+2ebea71d-a6e8-47e8-96ce-13a9de9afbbe,6,p1,scene1-p1,the lamp on top of the table near the corner of the room ,?,lamp,?,compound,"<Vector (3.6131, 0.2566, 1.5970)>","<Matrix 3x3 (0.4632, -0.0562,  0.8845)
+            (0.8863,  0.0294, -0.4623)
+            (0.0000,  0.9980,  0.0634)>",333.262756347656
+f181d1d7-3c81-48ad-8e38-e8c5e2c232ae,6,p1,scene1-p1,the box on top of the table ,on top of,box.003,table,simple,"<Vector (3.6131, 0.2566, 1.5970)>","<Matrix 3x3 (0.4632, -0.0562,  0.8845)
+            (0.8863,  0.0294, -0.4623)
+            (0.0000,  0.9980,  0.0634)>",342.593811035156
+a2b9f285-8fee-4a35-8154-54a3d6c6c1b8,6,p1,scene1-p1,the chair to the left of the room ,left of,chair,?,compound,"<Vector (5.7358, -0.8529, 1.7492)>","<Matrix 3x3 (0.4632, -0.0562,  0.8845)
+            (0.8863,  0.0294, -0.4623)
+            (0.0000,  0.9980,  0.0634)>",357.423522949219
+21d3cea2-a258-450f-9521-1f0c1740e351,6,p1,scene1-p1,the apple inside the bowl on top of the table in front of the cupboard ,?,apple.002,?,compound,"<Vector (5.2051, -0.5755, 1.7112)>","<Matrix 3x3 (0.4632, -0.0562,  0.8845)
+            (0.8863,  0.0294, -0.4623)
+            (0.0000,  0.9980,  0.0634)>",391.748474121094
+099b5fc1-23b7-4f5c-9626-c56179e6b8fd,6,p1,scene1-p1,the spoon inside the cup ,inside,spoon.001,cup,simple,"<Vector (5.2051, -0.5755, 1.7112)>","<Matrix 3x3 (0.4632, -0.0562,  0.8845)
+            (0.8863,  0.0294, -0.4623)
+            (0.0000,  0.9980,  0.0634)>",400.4296875
+824b8a40-9ba7-43e1-8f27-024efecf4aa2,9,p1,scene2-p1,The cup on the shelf. ,on,mug,shelf,simple,"<Vector (4.2037, 2.9700, 1.7252)>","<Matrix 3x3 (0.0819, -0.0731,  0.9940)
+            (0.9966,  0.0060, -0.0817)
+            (0.0000,  0.9973,  0.0734)>",33.2829971313477
+0f1df9bc-db4c-4a1c-8804-32a94f5a7498,9,p1,scene2-p1,The notebook on the table near the fallen chair. ,?,notebook,?,compound,"<Vector (4.2037, 2.9700, 1.7252)>","<Matrix 3x3 (0.0819, -0.0731,  0.9940)
+            (0.9966,  0.0060, -0.0817)
+            (0.0000,  0.9973,  0.0734)>",59.5659294128418
+84901d9d-841e-4698-93e6-c1bfc057743e,9,p1,scene2-p1,The book. 002 on the carpet near the table. ,?,book.002,?,compound,"<Vector (4.2037, 2.9700, 1.7252)>","<Matrix 3x3 (0.0819, -0.0731,  0.9940)
+            (0.9966,  0.0060, -0.0817)
+            (0.0000,  0.9973,  0.0734)>",86.3206253051758
+6ad7d910-9595-45c2-abb8-858f7ff328f5,9,p1,scene2-p1,The ball. 001 on the shelf above the table. ,?,ball.001,?,compound,"<Vector (4.2037, 2.9700, 1.7252)>","<Matrix 3x3 (0.0819, -0.0731,  0.9940)
+            (0.9966,  0.0060, -0.0817)
+            (0.0000,  0.9973,  0.0734)>",107.391792297363
+6baaf19c-70ed-4026-9c7e-6549489ca38d,9,p1,scene2-p1,The book inside the shelf. ,inside,book,shelf,simple,"<Vector (4.2037, 2.9700, 1.7252)>","<Matrix 3x3 (0.0819, -0.0731,  0.9940)
+            (0.9966,  0.0060, -0.0817)
+            (0.0000,  0.9973,  0.0734)>",119.761100769043
+33c65a53-a9e8-4be5-b5f4-14361264ed79,9,p1,scene2-p1,The spoon on the circle table. ,on,spoon.001,?,compound,"<Vector (4.2037, 2.9700, 1.7252)>","<Matrix 3x3 (0.0540, -0.0077,  0.9985)
+            (0.9985,  0.0004, -0.0540)
+            (0.0000,  1.0000,  0.0077)>",151.107223510742
+60ec5d0a-1a49-4e32-aaa4-8ee6c04060c1,9,p1,scene2-p1,The spoon on the circle table. ,on,spoon,?,compound,"<Vector (4.2037, 2.9700, 1.7252)>","<Matrix 3x3 (0.0540, -0.0077,  0.9985)
+            (0.9985,  0.0004, -0.0540)
+            (0.0000,  1.0000,  0.0077)>",163.087631225586
+95498eed-2dec-46b3-8535-2d65cb269798,9,p1,scene2-p1,The banana. 004 on the floor. ,on,banana.004,floor,simple,"<Vector (4.2037, 2.9700, 1.7252)>","<Matrix 3x3 (0.0540, -0.0077,  0.9985)
+            (0.9985,  0.0004, -0.0540)
+            (0.0000,  1.0000,  0.0077)>",183.182723999023
+db5840e6-ffdc-44ad-875a-fe0caeb51ed4,9,p1,scene2-p1,The book on the floor under the shelf. ,?,book.001,?,compound,"<Vector (4.2037, 2.9700, 1.7252)>","<Matrix 3x3 (0.0540, -0.0077,  0.9985)
+            (0.9985,  0.0004, -0.0540)
+            (0.0000,  1.0000,  0.0077)>",217.374374389648
+7a1c28ef-b576-47b1-aea7-f1cb6d00bd14,9,p1,scene2-p1,The jar on the table near the lamp. ,?,jar.001,?,compound,"<Vector (4.2037, 2.9700, 1.7252)>","<Matrix 3x3 (0.0540, -0.0077,  0.9985)
+            (0.9985,  0.0004, -0.0540)
+            (0.0000,  1.0000,  0.0077)>",233.570419311523
+ca04cd0c-34cc-4597-86f2-566091bd1b62,9,p1,scene2-p1,The apple on the circular table. ,on,apple.006,table,simple,"<Vector (4.2037, 2.9700, 1.7252)>","<Matrix 3x3 (0.0540, -0.0077,  0.9985)
+            (0.9985,  0.0004, -0.0540)
+            (0.0000,  1.0000,  0.0077)>",247.167098999023
+3c549cfb-9209-4003-bbd4-43ea08b93c56,9,p1,scene2-p1,The notebook on the circular table. ,on,notebook.001,table,simple,"<Vector (4.2037, 2.9700, 1.7252)>","<Matrix 3x3 (0.0540, -0.0077,  0.9985)
+            (0.9985,  0.0004, -0.0540)
+            (0.0000,  1.0000,  0.0077)>",256.898071289062
+30114fef-d37d-4197-a702-a5f8d416ca10,9,p1,scene2-p1,The pencil on the circular table. ,on,Pencil.001,table,simple,"<Vector (4.2037, 2.9700, 1.7252)>","<Matrix 3x3 (0.0540, -0.0077,  0.9985)
+            (0.9985,  0.0004, -0.0540)
+            (0.0000,  1.0000,  0.0077)>",269.061767578125
+45c38c33-eb66-4ac3-b5e9-5a5af0b2db0e,9,p1,scene2-p1,The jar on the left of the shelf. ,?,jar,?,compound,"<Vector (4.2037, 2.9700, 1.7252)>","<Matrix 3x3 (0.0540, -0.0077,  0.9985)
+            (0.9985,  0.0004, -0.0540)
+            (0.0000,  1.0000,  0.0077)>",293.305847167969
+bd7d1929-f145-45fe-855e-1e25f7fb2e18,9,p1,scene2-p1,The apple on the circular table.. ,on,apple.008,table..,simple,"<Vector (3.9426, 2.3371, 1.2611)>","<Matrix 3x3 (-0.1189, -0.0955, 0.9883)
+            ( 0.9929, -0.0114, 0.1184)
+            (-0.0000,  0.9954, 0.0961)>",327.414184570312
+ddf6eb54-9a47-47da-b5ee-37ba77ae5aac,9,p1,scene2-p1,The cube on the table near the lamp. ,?,Cube.000,?,compound,"<Vector (3.9426, 2.3371, 1.2611)>","<Matrix 3x3 (-0.1189, -0.0955, 0.9883)
+            ( 0.9929, -0.0114, 0.1184)
+            (-0.0000,  0.9954, 0.0961)>",360.639404296875
+5ac139cd-dfe8-4b31-b311-d8f9eb72dbb4,9,p1,scene2-p1,The table under the shelf on the wall. ,?,table.001,?,compound,"<Vector (3.9426, 2.3371, 1.2611)>","<Matrix 3x3 (-0.0432, -0.0476, 0.9979)
+            ( 0.9991, -0.0021, 0.0431)
+            (-0.0000,  0.9989, 0.0477)>",389.565673828125
+f347fc90-2346-4d30-b591-6b751367718d,9,p1,scene2-p1,The chair in the corner of the room. ,?,chair.001,?,compound,"<Vector (3.9426, 2.3371, 1.2611)>","<Matrix 3x3 (-0.0432, -0.0476, 0.9979)
+            ( 0.9991, -0.0021, 0.0431)
+            (-0.0000,  0.9989, 0.0477)>",402.845764160156
+616159bc-2b08-44c4-9750-29288c21ebb0,9,p1,scene2-p1,The cube on the circular table. ,on,Cube.002,table,simple,"<Vector (3.9426, 2.3371, 1.2611)>","<Matrix 3x3 (-0.0432, -0.0476, 0.9979)
+            ( 0.9991, -0.0021, 0.0431)
+            (-0.0000,  0.9989, 0.0477)>",416.809020996094
+74277415-7452-408f-b9ed-db4ab19bb517,9,p1,scene2-p1,The mug on the circular table. ,on,mug.002,table,simple,"<Vector (3.9426, 2.3371, 1.2611)>","<Matrix 3x3 (-0.0432, -0.0476, 0.9979)
+            ( 0.9991, -0.0021, 0.0431)
+            (-0.0000,  0.9989, 0.0477)>",426.623291015625
+ce14c94c-6039-4843-8e8e-cf9d606b0267,9,p1,scene2-p1,The cube on the circular table. ,on,Cube.001,table,simple,"<Vector (3.9426, 2.3371, 1.2611)>","<Matrix 3x3 (-0.0432, -0.0476, 0.9979)
+            ( 0.9991, -0.0021, 0.0431)
+            (-0.0000,  0.9989, 0.0477)>",436.404235839844
+31ce917b-b80c-4c02-ac7b-23667051031c,9,p1,scene2-p1,The pencil on the table beside the lamp. ,?,Pencil.003,?,compound,"<Vector (3.9426, 2.3371, 1.2611)>","<Matrix 3x3 (-0.0432, -0.0476, 0.9979)
+            ( 0.9991, -0.0021, 0.0431)
+            (-0.0000,  0.9989, 0.0477)>",450.050903320313
+75d7963c-9340-432f-87b0-8fb3b7011f3d,9,p1,scene2-p1,The box on the floor. ,on,box.001,floor,simple,"<Vector (3.9426, 2.3371, 1.2611)>","<Matrix 3x3 (-0.0432, -0.0476, 0.9979)
+            ( 0.9991, -0.0021, 0.0431)
+            (-0.0000,  0.9989, 0.0477)>",463.264343261719
+912e3916-95b3-4a44-bd9b-8fcaa33a83b2,9,p1,scene2-p1,The box under the table. ,under,box,table,simple,"<Vector (3.9426, 2.3371, 1.2611)>","<Matrix 3x3 (-0.0432, -0.0476, 0.9979)
+            ( 0.9991, -0.0021, 0.0431)
+            (-0.0000,  0.9989, 0.0477)>",472.112182617188
+8b3d4393-03c1-40f7-b8c1-b9fc22b4382c,9,p1,scene2-p1,The mug in front of the lamp. ,?,mug.001,?,compound,"<Vector (3.9426, 2.3371, 1.2611)>","<Matrix 3x3 (-0.0432, -0.0476, 0.9979)
+            ( 0.9991, -0.0021, 0.0431)
+            (-0.0000,  0.9989, 0.0477)>",493.673583984375
+92cef047-f5fc-4815-9304-4ad477e937f4,9,p1,scene2-p1,The ball on top of the wooden cupboard. ,on top of,ball,cupboard,simple,"<Vector (3.9426, 2.3371, 1.2611)>","<Matrix 3x3 ( 0.0807, -0.0333,  0.9962)
+            ( 0.9967,  0.0027, -0.0807)
+            (-0.0000,  0.9994,  0.0334)>",517.984313964844
+7e04e9e7-cfb1-4b3e-8cb8-773e6be0490b,9,p1,scene2-p1,The table near the shelf on the wall. ,?,Table,?,compound,"<Vector (3.8135, 0.7423, 1.2611)>","<Matrix 3x3 ( 0.0807, -0.0333,  0.9962)
+            ( 0.9967,  0.0027, -0.0807)
+            (-0.0000,  0.9994,  0.0334)>",550.476379394531
+1ab3d5b7-48a7-4ee0-9f9e-deea874f9c33,9,p1,scene2-p1,The chair near the table with the lamp. ,?,chair,?,compound,"<Vector (3.8135, 0.7423, 1.2611)>","<Matrix 3x3 ( 0.0807, -0.0333,  0.9962)
+            ( 0.9967,  0.0027, -0.0807)
+            (-0.0000,  0.9994,  0.0334)>",564.672912597656
+0fd2e1d8-1203-4ad9-b45e-ba7f6b592108,9,p1,scene2-p1,The banana on the circular table. ,on,banana.000,table,simple,"<Vector (3.8135, 0.7423, 1.2611)>","<Matrix 3x3 ( 0.0807, -0.0333,  0.9962)
+            ( 0.9967,  0.0027, -0.0807)
+            (-0.0000,  0.9994,  0.0334)>",579.869201660156
+b4202d48-ffbc-4045-8733-75bf0345b1e1,11,p1,scene2-p1,apple in bowl ,in,apple.006,bowl,simple,"<Vector (4.2037, 2.9700, 1.7252)>","<Matrix 3x3 (-0.2936, -0.0517, 0.9545)
+            ( 0.9559, -0.0159, 0.2932)
+            (-0.0000,  0.9985, 0.0540)>",164.054061889648
+1868101b-eea1-434d-9f98-f2a33a7498ad,11,p1,scene2-p1,chair under table ,under,chair,table,simple,"<Vector (4.2037, 2.9700, 1.7252)>","<Matrix 3x3 (-0.2936, -0.0517, 0.9545)
+            ( 0.9559, -0.0159, 0.2932)
+            (-0.0000,  0.9985, 0.0540)>",169.819320678711
+ac357162-10ff-4419-9613-a52bf2bfe899,11,p1,scene2-p1,jar on shelf ,on,jar,shelf,simple,"<Vector (2.5740, -0.8842, 1.5900)>","<Matrix 3x3 ( 0.3931, -0.0103,  0.9194)
+            ( 0.9195,  0.0044, -0.3931)
+            (-0.0000,  0.9999,  0.0112)>",184.632369995117
+bdc558f0-f95f-4ca2-8471-639eeb0acb9f,11,p1,scene2-p1,book in bookshelf ,in,book,bookshelf,simple,"<Vector (2.5740, -0.8842, 1.5900)>","<Matrix 3x3 ( 0.7187, -0.0851,  0.6901)
+            ( 0.6953,  0.0879, -0.7134)
+            (-0.0000,  0.9925,  0.1223)>",208.909774780273
+bee4c90f-fe09-49d4-b4d2-61ac82dc9e9f,11,p1,scene2-p1,cube near apple ,near,Cube.002,apple,simple,"<Vector (0.9305, 3.2879, 3.0233)>","<Matrix 3x3 (-0.3240, -0.4652, 0.8238)
+            ( 0.9460, -0.1593, 0.2822)
+            (-0.0000,  0.8708, 0.4917)>",238.035995483398
+4c7cdf57-a2ce-4aa2-8a34-5854e74d56e5,11,p1,scene2-p1,book against bookshelf ,against,book.001,bookshelf,simple,"<Vector (0.9305, 3.2879, 3.0233)>","<Matrix 3x3 ( 0.3802, -0.5669,  0.7308)
+            ( 0.9249,  0.2330, -0.3004)
+            (-0.0000,  0.7901,  0.6129)>",264.029663085938
+ffa7a799-1935-4c3e-b57b-6cbd7a4fda04,11,p1,scene2-p1,pencil on desk ,on,Pencil.003,desk,simple,"<Vector (0.9305, 3.2879, 3.0233)>","<Matrix 3x3 (-0.0500, -0.3596, 0.9318)
+            ( 0.9987, -0.0180, 0.0466)
+            (-0.0000,  0.9329, 0.3601)>",278.476135253906
+cff86302-8c72-4682-b558-0ecd22e05903,11,p1,scene2-p1,mug on bookshelf ,on,mug,bookshelf,simple,"<Vector (0.9305, 3.2879, 3.0233)>","<Matrix 3x3 ( 0.2744, -0.4871,  0.8291)
+            ( 0.9616,  0.1390, -0.2366)
+            (-0.0000,  0.8622,  0.5066)>",288.390380859375
+6bb0a438-0dd0-4876-968f-0497f7719569,11,p1,scene2-p1,notebook on desk ,on,notebook,desk,simple,"<Vector (0.9305, 3.2879, 3.0233)>","<Matrix 3x3 (-0.0600, -0.3273, 0.9430)
+            ( 0.9982, -0.0197, 0.0566)
+            (-0.0000,  0.9447, 0.3279)>",296.655029296875
+11b4666c-d5a4-4a3e-ac78-8d1c465f057a,11,p1,scene2-p1,cube on desk ,on,Cube.000,desk,simple,"<Vector (0.9305, 3.2879, 3.0233)>","<Matrix 3x3 (-0.0600, -0.3273, 0.9430)
+            ( 0.9982, -0.0197, 0.0566)
+            (-0.0000,  0.9447, 0.3279)>",304.786376953125
+c5f8230c-7b59-494d-b5e6-48d1c3abf0b8,11,p1,scene2-p1,apple under banana ,under,apple.008,banana,simple,"<Vector (0.9305, 3.2879, 3.0233)>","<Matrix 3x3 (-0.3221, -0.3834, 0.8656)
+            ( 0.9467, -0.1305, 0.2946)
+            (-0.0000,  0.9144, 0.4049)>",318.98291015625
+5c261bda-299a-41ca-9a65-a882940e9e1c,11,p1,scene2-p1,ball on bookshelf ,on,ball,bookshelf,simple,"<Vector (0.9305, 3.2879, 3.0233)>","<Matrix 3x3 ( 0.2474, -0.4643,  0.8504)
+            ( 0.9689,  0.1186, -0.2171)
+            (-0.0000,  0.8777,  0.4792)>",327.130920410156
+7d833981-ec6e-4fc3-ae36-302096890f7b,11,p1,scene2-p1,ball on jar ,on,ball.001,jar,simple,"<Vector (0.9305, 3.2879, 3.0233)>","<Matrix 3x3 (-0.2840, -0.1606, 0.9453)
+            ( 0.9588, -0.0476, 0.2800)
+            (-0.0000,  0.9859, 0.1675)>",334.129211425781
+7cc11089-aad8-4c1d-88d8-0ea31467e975,11,p1,scene2-p1,jar against lamp ,against,jar.001,lamp,simple,"<Vector (0.9305, 3.2879, 3.0233)>","<Matrix 3x3 (-0.0080, -0.2953, 0.9554)
+            ( 1.0000, -0.0024, 0.0076)
+            (-0.0000,  0.9554, 0.2953)>",345.743041992187
+f1d70b17-5071-492a-93ab-d21502e65722,11,p1,scene2-p1,box near bookshelf ,near,box.001,bookshelf,simple,"<Vector (-3.7437, -3.2504, 3.8971)>","<Matrix 3x3 ( 0.9871, -0.0621,  0.1476)
+            ( 0.1601,  0.3831, -0.9098)
+            (-0.0000,  0.9217,  0.3881)>",393.481384277344
+a53fbe8e-6c48-4d4c-a1e4-5d35295558a9,11,p1,scene2-p1,pencil on table ,on,Pencil.001,table,simple,"<Vector (-2.7779, 2.4760, 2.9275)>","<Matrix 3x3 (-0.7187, -0.6440, 0.2621)
+            ( 0.6953, -0.6657, 0.2710)
+            (-0.0000,  0.3770, 0.9262)>",435.321166992188
+ad6ba861-1c3e-4576-ace2-bfb2f011aeca,11,p1,scene2-p1,banana near apple ,near,banana.000,apple,simple,"<Vector (-2.7779, 2.4760, 2.9275)>","<Matrix 3x3 (-0.7187, -0.6440, 0.2621)
+            ( 0.6953, -0.6657, 0.2710)
+            (-0.0000,  0.3770, 0.9262)>",453.666687011719
+be58a16f-24c8-41d8-bf22-7d8fabd70367,11,p1,scene2-p1,book on floor ,on,book.002,floor,simple,"<Vector (2.1151, 3.7860, 4.0757)>","<Matrix 3x3 ( 0.1336, -0.5654,  0.8140)
+            ( 0.9910,  0.0762, -0.1097)
+            (-0.0000,  0.8213,  0.5705)>",472.6787109375
+60978402-c1b8-40c2-9645-d7d116286089,11,p1,scene2-p1,spoon on table near notebook ,?,spoon,?,compound,"<Vector (1.8479, 1.8040, 4.0757)>","<Matrix 3x3 ( 0.1336, -0.5654,  0.8140)
+            ( 0.9910,  0.0762, -0.1097)
+            (-0.0000,  0.8213,  0.5705)>",492.27392578125
+462107fb-5ed3-4162-9434-62f971a07f3b,11,p1,scene2-p1,mug on desk ,on,mug.001,desk,simple,"<Vector (1.8479, 1.8040, 4.0757)>","<Matrix 3x3 ( 0.1078, -0.3988,  0.9107)
+            ( 0.9942,  0.0432, -0.0987)
+            (-0.0000,  0.9160,  0.4012)>",501.488342285156
+e62db9f8-0091-4542-b212-047fa555464e,11,p1,scene2-p1,banana on floor ,on,banana.004,floor,simple,"<Vector (1.8479, 1.8040, 4.0757)>","<Matrix 3x3 ( 0.1078, -0.3988,  0.9107)
+            ( 0.9942,  0.0432, -0.0987)
+            (-0.0000,  0.9160,  0.4012)>",513.352111816406
+82f9e7e8-d90d-46c0-b39c-fb572d8a9777,11,p1,scene2-p1,chair in corner ,in,chair.001,corner,simple,"<Vector (1.8479, 1.8040, 4.0757)>","<Matrix 3x3 ( 0.2590, -0.4226,  0.8686)
+            ( 0.9659,  0.1133, -0.2329)
+            (-0.0000,  0.8993,  0.4375)>",528.415100097656
+5042fa01-83e0-4c3b-9527-9b267c801e17,11,p1,scene2-p1,mug near bowl on table ,?,mug.002,?,compound,"<Vector (1.8479, 1.8040, 4.0757)>","<Matrix 3x3 ( 0.2590, -0.4226,  0.8686)
+            ( 0.9659,  0.1133, -0.2329)
+            (-0.0000,  0.8993,  0.4375)>",556.624877929688
+eee9332e-b76d-4dff-af9a-9b7621d92dea,11,p1,scene2-p1,notebook in front of robot ,?,notebook.001,?,compound,"<Vector (1.8479, 1.8040, 4.0757)>","<Matrix 3x3 ( 0.2590, -0.4226,  0.8686)
+            ( 0.9659,  0.1133, -0.2329)
+            (-0.0000,  0.8993,  0.4375)>",582.418579101563
+91117312-e043-4392-8f93-6023a31ad202,11,p1,scene2-p1,cube on table near mug ,?,Cube.001,?,compound,"<Vector (1.8479, 1.8040, 4.0757)>","<Matrix 3x3 ( 0.2590, -0.4226,  0.8686)
+            ( 0.9659,  0.1133, -0.2329)
+            (-0.0000,  0.8993,  0.4375)>",590.066711425781
+1c221107-4ec0-46c1-b631-8b951e9e7d2f,13,p1,scene3-p1,"turn around, walk right, walk forwards ",?,mug,?,compound,"<Vector (4.2037, 2.9700, 1.7252)>","<Matrix 3x3 (0.4375, -0.1622,  0.8845)
+            (0.8992,  0.0789, -0.4303)
+            (0.0000,  0.9836,  0.1804)>",66.7831192016602
+17c14bca-c024-4f29-bcdb-8929d422f283,13,p1,scene3-p1,"walk right, to left of table leg, pick up box ",right of,box,?,compound,"<Vector (4.2037, 2.9700, 1.7252)>","<Matrix 3x3 (-0.0472, -0.2165, 0.9751)
+            ( 0.9989, -0.0102, 0.0461)
+            ( 0.0000,  0.9762, 0.2168)>",103.69100189209
+e6ed3d7b-880f-4682-bba3-cc876d2a2043,13,p1,scene3-p1,"walk to right, pick up jar on top of table ",on top of,jar.001,?,compound,"<Vector (4.2037, 2.9700, 1.7252)>","<Matrix 3x3 (0.2559, -0.2042,  0.9449)
+            (0.9667,  0.0541, -0.2502)
+            (0.0000,  0.9774,  0.2112)>",137.860458374023
+ddfbbf71-de46-42d1-a361-2297cb7aa4a6,13,p1,scene3-p1,"on top of table, to the right of the first cube ",?,Cube.001,?,compound,"<Vector (1.3182, 1.3130, 1.2045)>","<Matrix 3x3 ( 0.9988, 0.0490, -0.0041)
+            (-0.0492, 0.9953, -0.0835)
+            ( 0.0000, 0.0836,  0.9965)>",279.775817871094
+5847c27f-d71d-4419-8978-0012f07550ed,13,p1,scene3-p1,"behind the two cubes, in the large basin, pick up apple inside basin ",?,apple.009,?,compound,"<Vector (-1.3517, 1.9999, 1.0328)>","<Matrix 3x3 (0.1751,  0.0352,  0.9839)
+            (0.9845, -0.0063, -0.1750)
+            (0.0000,  0.9994, -0.0358)>",354.990783691406
+02d537de-b767-427b-ba30-21d5ee12c484,13,p1,scene3-p1,"to the left of the book shelf on the wall, on top of the tin ",?,ball,?,compound,"<Vector (-2.6252, 2.9273, 1.0793)>","<Matrix 3x3 (-0.5497, 0.0799,  0.8315)
+            ( 0.8353, 0.0526,  0.5472)
+            ( 0.0000, 0.9954, -0.0956)>",425.973449707031
+780671f7-935f-4747-acfd-e5e7118b0ca3,13,p1,scene3-p1,"on top of the table and on top of the white rectangle, and to the left ",?,Cube.002,?,compound,"<Vector (-2.6252, 2.9273, 1.0793)>","<Matrix 3x3 (-0.5891, -0.0150, 0.8079)
+            ( 0.8080, -0.0109, 0.5891)
+            ( 0.0000,  0.9998, 0.0185)>",475.411376953125
+698f249d-3967-43c2-8836-c2d1a73f7e15,13,p1,scene3-p1,"behind the cube, tankage and mug at the right ",?,bowl_001,?,compound,"<Vector (-1.2510, 4.6861, 1.6144)>","<Matrix 3x3 (-0.5564, -0.2170, 0.8021)
+            ( 0.8309, -0.1453, 0.5371)
+            ( 0.0000,  0.9653, 0.2612)>",522.316589355469
+dcaf3248-10f5-4771-b06a-a0bb7a7ea69a,13,p1,scene3-p1,"to the left on the floor, left of the white book ",?,banana.001,?,compound,"<Vector (-1.2510, 4.6861, 1.6144)>","<Matrix 3x3 (-0.5227, -0.3730, 0.7666)
+            ( 0.8525, -0.2287, 0.4700)
+            ( 0.0000,  0.8992, 0.4375)>",555.825073242188
+7c75e737-1fce-4d25-8b41-bbc18c353d26,13,p1,scene3-p1,"left of book case behind you, right of the chair, on the floor ",?,box.001,?,compound,"<Vector (-1.2510, 4.6861, 1.6144)>","<Matrix 3x3 (0.2006, -0.3568,  0.9124)
+            (0.9796,  0.0731, -0.1868)
+            (0.0000,  0.9313,  0.3642)>",592.832702636719
+4201b13f-8085-467f-9a79-6ab088731295,18,p1,scene1-p1,the book is on the table ,on,book.002,table,simple,"<Vector (6.4434, -1.2227, 1.8000)>","<Matrix 3x3 (0.3946, -0.0766,  0.9157)
+            (0.9189,  0.0329, -0.3932)
+            (0.0000,  0.9965,  0.0834)>",32.616340637207
+3698ab79-c81c-4b4d-b696-6bb2a3024d6f,18,p1,scene1-p1,the table is to the right of the cabinet ,right of,Table,?,compound,"<Vector (6.4434, -1.2227, 1.8000)>","<Matrix 3x3 (0.3946, -0.0766,  0.9157)
+            (0.9189,  0.0329, -0.3932)
+            (0.0000,  0.9965,  0.0834)>",77.3520431518555
+62dafaa5-c482-4b42-b6a6-0cbd4c959ced,18,p1,scene1-p1,the chair is near the nable ,near,chair.003,chair,simple,"<Vector (6.4434, -1.2227, 1.8000)>","<Matrix 3x3 (0.3946, -0.0766,  0.9157)
+            (0.9189,  0.0329, -0.3932)
+            (0.0000,  0.9965,  0.0834)>",95.8393249511719
+f0386603-d93a-4c1e-8e23-3fd9727e591f,18,p1,scene1-p1,the cube is on the table ,on,Cube.001,table,simple,"<Vector (6.4434, -1.2227, 1.8000)>","<Matrix 3x3 (0.3946, -0.0766,  0.9157)
+            (0.9189,  0.0329, -0.3932)
+            (0.0000,  0.9965,  0.0834)>",104.774566650391
+8ce6ab0b-42bc-450c-a072-fe7cf9ce4279,18,p1,scene1-p1,the box is under the table ,under,box,table,simple,"<Vector (6.4434, -1.2227, 1.8000)>","<Matrix 3x3 (0.3946, -0.0766,  0.9157)
+            (0.9189,  0.0329, -0.3932)
+            (0.0000,  0.9965,  0.0834)>",111.275955200195
+0cdb36f5-3bc4-4ea7-abbf-1a93f54cf3cb,18,p1,scene1-p1,the pencil is on the table ,on,Pencil.004,table,simple,"<Vector (6.4434, -1.2227, 1.8000)>","<Matrix 3x3 (0.3946, -0.0766,  0.9157)
+            (0.9189,  0.0329, -0.3932)
+            (0.0000,  0.9965,  0.0834)>",117.327247619629
+c3f7ce5b-9bf2-4212-87f9-987852344d4a,18,p1,scene1-p1,the spoon is on the lamp ,on,spoon.002,lamp,simple,"<Vector (-0.7652, 3.1570, 0.9556)>","<Matrix 3x3 (-0.9626, -0.0141, 0.2706)
+            ( 0.2710, -0.0501, 0.9613)
+            ( 0.0000,  0.9986, 0.0520)>",162.071212768555
+09461048-d20d-47a4-8845-d04aece05410,18,p1,scene1-p1,the chair is behind the desk ,behind,chair,desk,simple,"<Vector (0.4139, 3.6551, 0.9972)>","<Matrix 3x3 (-0.9626, -0.0141, 0.2706)
+            ( 0.2710, -0.0501, 0.9613)
+            ( 0.0000,  0.9986, 0.0520)>",173.385116577148
+834e5f1b-cd9c-49fa-9e17-967d91919b4e,18,p1,scene1-p1,the book is on the table ,on,book.001,table,simple,"<Vector (0.4139, 3.6551, 0.9972)>","<Matrix 3x3 (0.0136, -0.0919,  0.9957)
+            (0.9999,  0.0012, -0.0135)
+            (0.0000,  0.9958,  0.0919)>",181.683090209961
+834ad443-c459-44e4-a5d5-49a2e15aa807,18,p1,scene1-p1,the pencil in the box ,in,Pencil.001,box,simple,"<Vector (0.4139, 3.6551, 0.9972)>","<Matrix 3x3 (0.0136, -0.0919,  0.9957)
+            (0.9999,  0.0012, -0.0135)
+            (0.0000,  0.9958,  0.0919)>",203.99430847168
+45585bce-1db1-4685-8c05-0c3e9f29c53f,18,p1,scene1-p1,pencil in the pencil holder ,in,Pencil,?,compound,"<Vector (0.4139, 3.6551, 0.9972)>","<Matrix 3x3 (-0.8481, -0.0215, 0.5294)
+            ( 0.5298, -0.0344, 0.8474)
+            ( 0.0000,  0.9992, 0.0406)>",215.59147644043
+92b95ce4-799b-4c71-9d1d-1a5dfc837970,18,p1,scene1-p1,lamp on the table ,on,lamp.001,table,simple,"<Vector (0.4139, 3.6551, 0.9972)>","<Matrix 3x3 (-0.8481, -0.0215, 0.5294)
+            ( 0.5298, -0.0344, 0.8474)
+            ( 0.0000,  0.9992, 0.0406)>",219.823776245117
+55607726-1f3e-4237-8d37-45f89951d2b6,18,p1,scene1-p1,box next to the bin ,next to,box.001,bin,simple,"<Vector (0.4139, 3.6551, 0.9972)>","<Matrix 3x3 (0.7072, -0.1151,  0.6975)
+            (0.7070,  0.1151, -0.6978)
+            (0.0000,  0.9867,  0.1628)>",231.304306030273
+909f9ec9-4e1f-46a5-a5de-2e8539db2352,18,p1,scene1-p1,jar under the table ,under,jar.001,table,simple,"<Vector (4.2239, 2.8224, 0.9725)>","<Matrix 3x3 (0.1173, -0.0998,  0.9881)
+            (0.9931,  0.0118, -0.1167)
+            (0.0000,  0.9949,  0.1005)>",246.283981323242
+c63a98d9-26a8-4c66-83eb-d31d2e9ff103,18,p1,scene1-p1,apple on the desk ,on,apple.001,desk,simple,"<Vector (4.2239, 2.8224, 0.9725)>","<Matrix 3x3 (-0.3168, -0.0602, 0.9466)
+            ( 0.9485, -0.0201, 0.3162)
+            ( 0.0000,  0.9980, 0.0634)>",251.71598815918
+eaf5c32b-34b7-49c4-bd61-d22f49103c09,18,p1,scene1-p1,spoon in the pencil holder ,in,spoon.001,?,compound,"<Vector (4.2239, 2.8224, 0.9725)>","<Matrix 3x3 (-0.3168, -0.0602, 0.9466)
+            ( 0.9485, -0.0201, 0.3162)
+            ( 0.0000,  0.9980, 0.0634)>",263.396484375
+61f682fa-585e-4e14-8596-4949dd24c05a,18,p1,scene1-p1,pencil on the table ,on,Pencil.005,table,simple,"<Vector (4.2239, 2.8224, 0.9725)>","<Matrix 3x3 (-0.3168, -0.0602, 0.9466)
+            ( 0.9485, -0.0201, 0.3162)
+            ( 0.0000,  0.9980, 0.0634)>",267.445495605469
+fefefffd-b1ae-4f46-8336-420f06b8fca7,18,p1,scene1-p1,chair near the guitar ,near,chair.001,guitar,simple,"<Vector (4.2239, 2.8224, 0.9725)>","<Matrix 3x3 (-0.3168, -0.0602, 0.9466)
+            ( 0.9485, -0.0201, 0.3162)
+            ( 0.0000,  0.9980, 0.0634)>",276.943176269531
+93b88d1e-1e0e-416f-8938-8ec577f2784e,18,p1,scene1-p1,pencil on top of the book ,on top of,Pencil.003,book,simple,"<Vector (0.9522, -1.9839, 1.1133)>","<Matrix 3x3 (0.8982, -0.0316,  0.4385)
+            (0.4396,  0.0647, -0.8959)
+            (0.0000,  0.9974,  0.0720)>",312.817749023437
+a928745e-681f-4b8f-9a0f-63e2c2369ccc,18,p1,scene1-p1,box to the right of the other box ,right of,box.002,?,compound,"<Vector (3.7365, -0.6211, 1.1133)>","<Matrix 3x3 (0.8982, -0.0316,  0.4385)
+            (0.4396,  0.0647, -0.8959)
+            (0.0000,  0.9974,  0.0720)>",341.37744140625
+10f89578-220e-4fbf-a674-5142744ae01c,18,p1,scene1-p1,table near the jar ,near,table,jar,simple,"<Vector (2.2174, -0.2036, 1.0094)>","<Matrix 3x3 (0.5308, -0.0707,  0.8445)
+            (0.8475,  0.0443, -0.5290)
+            (0.0000,  0.9965,  0.0834)>",364.938354492187
+247618dd-cd51-4a08-b1cb-37283b9a3a3b,18,p1,scene1-p1,cube on the table ,on,Cube,table,simple,"<Vector (2.2174, -0.2036, 1.0094)>","<Matrix 3x3 (0.5308, -0.0707,  0.8445)
+            (0.8475,  0.0443, -0.5290)
+            (0.0000,  0.9965,  0.0834)>",368.887390136719
+232f4882-9555-40b6-bc62-058aa999384c,18,p1,scene1-p1,spoon on the bowl ,on,spoon,bowl,simple,"<Vector (-2.2389, 4.2244, 1.8792)>","<Matrix 3x3 (-0.8215,  0.2224, -0.5251)
+            (-0.5702, -0.3204,  0.7564)
+            ( 0.0000,  0.9208,  0.3900)>",391.648498535156
+6d97a9f8-ca65-4d67-8433-95619bbae891,18,p1,scene1-p1,chair near the picture ,near,chair.002,picture,simple,"<Vector (5.1368, -0.1902, 0.8586)>","<Matrix 3x3 (0.5206, -0.0200,  0.8536)
+            (0.8538,  0.0122, -0.5205)
+            (0.0000,  0.9997,  0.0235)>",419.49169921875
+0f3ec74c-0865-42ef-8ac7-d6eadd2bea90,18,p1,scene1-p1,lamp on the table ,on,lamp,table,simple,"<Vector (5.1368, -0.1902, 0.8586)>","<Matrix 3x3 (0.5206, -0.0200,  0.8536)
+            (0.8538,  0.0122, -0.5205)
+            (0.0000,  0.9997,  0.0235)>",424.057250976562
+875bfebc-6579-4c4e-bca9-7f2ada677310,18,p1,scene1-p1,box near the lamp ,near,box.003,lamp,simple,"<Vector (5.1368, -0.1902, 0.8586)>","<Matrix 3x3 (0.5206, -0.0200,  0.8536)
+            (0.8538,  0.0122, -0.5205)
+            (0.0000,  0.9997,  0.0235)>",428.522827148437
+2d3623f8-fb20-4822-9e72-72f005de8fa4,18,p1,scene1-p1,jar next to the table ,next to,jar,table,simple,"<Vector (5.1368, -0.1902, 0.8586)>","<Matrix 3x3 (0.5206, -0.0200,  0.8536)
+            (0.8538,  0.0122, -0.5205)
+            (0.0000,  0.9997,  0.0235)>",438.537048339844
+41511529-57c8-4858-bc23-aca1dc5b5ec0,18,p1,scene1-p1,apple on the table ,on,apple.002,table,simple,"<Vector (-4.4390, 4.9242, 0.8686)>","<Matrix 3x3 (-0.7796, -0.0032, -0.6263)
+            (-0.6263,  0.0040,  0.7796)
+            ( 0.0000,  1.0000, -0.0051)>",488.358215332031
+21ff2800-cf49-4041-b788-ad0571f35c53,18,p1,scene1-p1,apple next to the mug ,next to,apple.003,mug,simple,"<Vector (-4.4390, 4.9242, 0.8686)>","<Matrix 3x3 (-0.7796, -0.0032, -0.6263)
+            (-0.6263,  0.0040,  0.7796)
+            ( 0.0000,  1.0000, -0.0051)>",495.573120117188
+06db7674-d99d-4448-99d4-dedd0d3c72a8,18,p1,scene1-p1,book on the table ,on,book,table,simple,"<Vector (-4.4390, 4.9242, 0.8686)>","<Matrix 3x3 (-0.7796, -0.0032, -0.6263)
+            (-0.6263,  0.0040,  0.7796)
+            ( 0.0000,  1.0000, -0.0051)>",502.354797363281
+4eb74983-684b-45b3-9263-a793573e505d,19,p1,scene1-p1,the chair near the table ,near,chair,table,simple,"<Vector (6.4434, -1.2227, 1.8000)>","<Matrix 3x3 ( 0.2913, -0.2359,  0.9271)
+            ( 0.9566,  0.0718, -0.2823)
+            (-0.0000,  0.9691,  0.2466)>",49.3327522277832
+3dc16200-c101-4aed-a2d9-02d51a0d5f0c,19,p1,scene1-p1,the jar against the table ,against,jar,table,simple,"<Vector (6.4434, -1.2227, 1.8000)>","<Matrix 3x3 ( 0.2913, -0.2359,  0.9271)
+            ( 0.9566,  0.0718, -0.2823)
+            (-0.0000,  0.9691,  0.2466)>",77.9688415527344
+2e17ca40-bfbd-41a3-abb6-ee7686c24754,19,p1,scene1-p1,the spoon on the base of the lamp ,?,spoon.002,?,compound,"<Vector (0.0062, 1.7884, 0.9796)>","<Matrix 3x3 (-0.3750, 0.0021,  0.9270)
+            ( 0.9270, 0.0008,  0.3750)
+            (-0.0000, 1.0000, -0.0022)>",211.042587280273
+7b0c6817-c8fc-422f-87fa-8b106f1dfb6a,19,p1,scene1-p1,the pencil on the book ,on,Pencil.003,book,simple,"<Vector (-0.0557, 0.7902, 0.9055)>","<Matrix 3x3 ( 0.3388, -0.1690,  0.9256)
+            ( 0.9409,  0.0609, -0.3333)
+            (-0.0000,  0.9837,  0.1796)>",230.371200561523
+ee589292-5d49-419c-802f-40c38bd96e65,19,p1,scene1-p1,the chair near the robot ,near,chair.003,robot,simple,"<Vector (3.2533, -0.9081, 1.5074)>","<Matrix 3x3 ( 0.7251, -0.0868,  0.6831)
+            ( 0.6886,  0.0914, -0.7194)
+            (-0.0000,  0.9920,  0.1260)>",320.399230957031
+dca0a16b-8c6f-4a93-a6d8-fc36354de8b9,19,p1,scene1-p1,the pencil in the box ,in,Pencil.001,box,simple,"<Vector (-1.1110, 3.2217, 0.9705)>","<Matrix 3x3 ( 0.2737, -0.0692,  0.9593)
+            ( 0.9618,  0.0197, -0.2730)
+            (-0.0000,  0.9974,  0.0720)>",366.487976074219
+95d58833-b4a6-44b8-ad7e-369bb4a35e99,19,p1,scene1-p1,the jar on the floor ,on,jar.001,floor,simple,"<Vector (-2.0334, 2.3405, 1.7036)>","<Matrix 3x3 ( 0.9185, 0.3527, -0.1785)
+            (-0.3953, 0.8196, -0.4148)
+            (-0.0000, 0.4516,  0.8922)>",394.097900390625
+3348b337-dd80-410f-932b-a97de0d693a9,19,p1,scene1-p1,the table in front of the chest of drawers ,?,table,?,compound,"<Vector (3.0418, 3.2697, 1.3234)>","<Matrix 3x3 (-0.1264, -0.0771, 0.9890)
+            ( 0.9919, -0.0098, 0.1261)
+            (-0.0000,  0.9970, 0.0777)>",526.265625
+99e577fe-3930-4046-b1e0-96f425e194cc,19,p1,scene1-p1,the lamp on the table ,on,lamp.001,table,simple,"<Vector (3.0418, 3.2697, 1.3234)>","<Matrix 3x3 (-0.2809, -0.0609, 0.9578)
+            ( 0.9597, -0.0178, 0.2804)
+            (-0.0000,  0.9980, 0.0635)>",543.711364746094
+7be00a95-2a2f-466e-b6c6-e629e8cdc5a3,19,p1,scene1-p1,the apple on the table ,on,apple.003,table,simple,"<Vector (3.0418, 3.2697, 1.3234)>","<Matrix 3x3 (-0.3455, -0.1527, 0.9259)
+            ( 0.9384, -0.0562, 0.3409)
+            (-0.0000,  0.9867, 0.1628)>",553.842224121094
+c4360c20-a790-4a22-aaa1-e2eabaaed894,20,p1,scene2-p1,to the right ,?,Cube.001,?,compound,"<Vector (-0.8520, 2.2769, 1.2365)>","<Matrix 3x3 (-0.0660, -0.0669, 0.9956)
+            ( 0.9978, -0.0044, 0.0658)
+            ( 0.0000,  0.9978, 0.0670)>",42.3328590393066
+969e1741-453f-48c8-ae51-1e3f1e30801e,20,p1,scene2-p1,to the left of the bookshelf ,left of,book.001,bookshelf,simple,"<Vector (-0.7522, 2.2739, 1.2434)>","<Matrix 3x3 (0.5346, -0.2897,  0.7939)
+            (0.8451,  0.1833, -0.5022)
+            (0.0000,  0.9394,  0.3428)>",58.0659523010254
+bd0030da-1c9c-4d6a-bd54-f1e6a11f2283,20,p1,scene2-p1,behind th ,behind,ball.001,th,simple,"<Vector (-0.7522, 2.2739, 1.2434)>","<Matrix 3x3 (0.0088,  0.1692,  0.9855)
+            (1.0000, -0.0015, -0.0087)
+            (0.0000,  0.9856, -0.1692)>",81.5529403686523
+0515a711-96bd-449e-b4e9-9acf3f5d3876,20,p1,scene2-p1,under the ball behind you ,?,jar,?,compound,"<Vector (-0.7522, 2.2739, 1.2434)>","<Matrix 3x3 (0.0088,  0.1692,  0.9855)
+            (1.0000, -0.0015, -0.0087)
+            (0.0000,  0.9856, -0.1692)>",91.4383850097656
+4f05df19-4a5c-4f88-9079-cf49fe64b340,20,p1,scene2-p1,to the right of you ,right of,Table,you,simple,"<Vector (-0.7522, 2.2739, 1.2434)>","<Matrix 3x3 (-0.1407, 0.0269,  0.9897)
+            ( 0.9900, 0.0038,  0.1407)
+            ( 0.0000, 0.9996, -0.0272)>",123.978668212891
+5f2360c2-51dd-4d46-9a4b-0ad166c966b0,20,p1,scene2-p1,the banana in front of you on the table in the bowl ,?,banana.000,?,compound,"<Vector (-0.7522, 2.2739, 1.2434)>","<Matrix 3x3 (-0.2377, -0.0679, 0.9690)
+            ( 0.9713, -0.0166, 0.2371)
+            ( 0.0000,  0.9976, 0.0699)>",201.928146362305
+329e8ce3-e8df-471a-ab77-f9676805704a,20,p1,scene2-p1,on top of the book shelf ,on top of,mug,shelf,simple,"<Vector (-0.7522, 2.2739, 1.2434)>","<Matrix 3x3 (0.8028, -0.0451,  0.5945)
+            (0.5962,  0.0607, -0.8005)
+            (0.0000,  0.9971,  0.0756)>",219.007308959961
+43dd5a32-c08b-4208-9532-88b142562b8e,20,p1,scene2-p1,on the table next to the robot ,on,notebook.001,robot,simple,"<Vector (-0.7522, 2.2739, 1.2434)>","<Matrix 3x3 (-0.2006, -0.1960, 0.9599)
+            ( 0.9797, -0.0401, 0.1966)
+            ( 0.0000,  0.9798, 0.2000)>",232.620651245117
+e4fd0ccc-1eab-4fab-942e-8b0ee854ad29,20,p1,scene2-p1,on the table to the right of the fallen down chair ,?,mug.001,?,compound,"<Vector (-0.7522, 2.2739, 1.2434)>","<Matrix 3x3 (-0.0300, -0.0328, 0.9990)
+            ( 0.9995, -0.0010, 0.0300)
+            ( 0.0000,  0.9995, 0.0328)>",250.899520874023
+4473385f-d222-4afc-aae8-af11adc45f2d,20,p1,scene2-p1,on top of the bookshelf ,on top of,ball,bookshelf,simple,"<Vector (-0.7522, 2.2739, 1.2434)>","<Matrix 3x3 (0.5107, -0.0772,  0.8563)
+            (0.8597,  0.0459, -0.5086)
+            (0.0000,  0.9960,  0.0898)>",261.280334472656
+ca31cd4e-f022-401b-9858-3e98c47a9d65,20,p1,scene2-p1,on the floor ,on,banana.004,floor,simple,"<Vector (-0.7522, 2.2739, 1.2434)>","<Matrix 3x3 (0.1217, -0.2013,  0.9720)
+            (0.9925,  0.0247, -0.1192)
+            (0.0000,  0.9792,  0.2028)>",270.444763183594
+e2957f80-1b20-4a06-9285-3fe9168a42ea,20,p1,scene2-p1,on the table ,on,spoon,table,simple,"<Vector (-0.7522, 2.2739, 1.2434)>","<Matrix 3x3 (-0.3240, 0.0500,  0.9447)
+            ( 0.9460, 0.0171,  0.3236)
+            ( 0.0000, 0.9986, -0.0529)>",276.06005859375
+fe3ab894-4c86-4645-9403-71b83770fac3,20,p1,scene2-p1,on the table next to the fallen chair ,on,Pencil.003,chair,simple,"<Vector (-0.7522, 2.2739, 1.2434)>","<Matrix 3x3 (-0.1692, 0.0858,  0.9818)
+            ( 0.9856, 0.0147,  0.1685)
+            ( 0.0000, 0.9962, -0.0871)>",292.156127929687
+ea6622fc-e350-45d4-909b-ea07065f460f,20,p1,scene2-p1,on the floor ,on,book.002,floor,simple,"<Vector (-0.7522, 2.2739, 1.2434)>","<Matrix 3x3 (-0.2260, -0.2971, 0.9277)
+            ( 0.9741, -0.0689, 0.2153)
+            ( 0.0000,  0.9524, 0.3050)>",299.820922851563
+ae3377e2-f9f4-4c72-9165-cdef911c5d6b,20,p1,scene2-p1,on top of the bowl on the table next to robot ,?,spoon.001,?,compound,"<Vector (-0.7522, 2.2739, 1.2434)>","<Matrix 3x3 (-0.3372, -0.1166, 0.9342)
+            ( 0.9414, -0.0418, 0.3347)
+            ( 0.0000,  0.9923, 0.1239)>",312.751098632812
+7c7d3353-d6b6-4efe-858e-6d4cd52e35ec,20,p1,scene2-p1,on the book shelf ,on,book,shelf,simple,"<Vector (-0.7522, 2.2739, 1.2434)>","<Matrix 3x3 (0.4934, -0.2200,  0.8415)
+            (0.8698,  0.1248, -0.4774)
+            (0.0000,  0.9675,  0.2529)>",318.966247558594
+9d7301f6-c576-406d-bb7c-62506ca51bbf,20,p1,scene2-p1,to the right of the far out table ,right of,chair,right,simple,"<Vector (-0.7522, 2.2739, 1.2434)>","<Matrix 3x3 (-0.1197, -0.0524, 0.9914)
+            ( 0.9928, -0.0063, 0.1196)
+            ( 0.0000,  0.9986, 0.0528)>",332.296325683594
+12fd8961-78ae-46b4-ba47-224d7085ef64,20,p1,scene2-p1,on the table next to the lamp ,on,jar.001,lamp,simple,"<Vector (-0.7522, 2.2739, 1.2434)>","<Matrix 3x3 (-0.2280, -0.0013, 0.9737)
+            ( 0.9736, -0.0003, 0.2280)
+            ( 0.0000,  1.0000, 0.0014)>",340.460998535156
+1514e5bc-e320-4e76-a2b1-3b87fd9cd156,20,p1,scene2-p1,over the book next to you on the table ,?,Cube.002,?,compound,"<Vector (-0.7522, 2.2739, 1.2434)>","<Matrix 3x3 (-0.2280, -0.0013, 0.9737)
+            ( 0.9736, -0.0003, 0.2280)
+            ( 0.0000,  1.0000, 0.0014)>",355.957214355469
+fced9643-f9c6-44fe-99b4-802de6333694,20,p1,scene2-p1,on the table next to you ,on,mug.002,you,simple,"<Vector (-0.7522, 2.2739, 1.2434)>","<Matrix 3x3 (-0.2280, -0.0013, 0.9737)
+            ( 0.9736, -0.0003, 0.2280)
+            ( 0.0000,  1.0000, 0.0014)>",366.071411132812
+cc75eeda-2c8f-4367-9f0d-1f858e864bb9,20,p1,scene2-p1,on the floor to the right ,on,box,right,simple,"<Vector (-0.7522, 2.2739, 1.2434)>","<Matrix 3x3 (-0.0958, -0.1064, 0.9897)
+            ( 0.9954, -0.0102, 0.0953)
+            ( 0.0000,  0.9943, 0.1069)>",381.084411621094
+ae800977-314f-4100-919d-4ccbe7ad101e,20,p1,scene2-p1,on the far out table ,on,Cube.000,?,simple,"<Vector (-0.7522, 2.2739, 1.2434)>","<Matrix 3x3 (-0.0958, -0.1149, 0.9888)
+            ( 0.9954, -0.0111, 0.0952)
+            ( 0.0000,  0.9933, 0.1154)>",387.099609375
+168d9287-0c54-48ba-bf0c-0baff7655143,20,p1,scene2-p1,in front of you on the table over the bowl ,?,apple.006,?,compound,"<Vector (-0.7522, 2.2739, 1.2434)>","<Matrix 3x3 (-0.0958, -0.1149, 0.9888)
+            ( 0.9954, -0.0111, 0.0952)
+            ( 0.0000,  0.9933, 0.1154)>",397.89697265625
+a66f89c6-4b84-444c-97cc-a1ac67d3ec86,20,p1,scene2-p1,next to the corner of the room ,of,chair.001,room,simple,"<Vector (-0.7522, 2.2739, 1.2434)>","<Matrix 3x3 (0.1435, -0.1896,  0.9713)
+            (0.9896,  0.0275, -0.1408)
+            (0.0000,  0.9815,  0.1916)>",415.476013183594
+11bbede3-3438-4185-b53e-832a858b5051,20,p1,scene2-p1,next to the chair in the corner ,in,box.001,corner,simple,"<Vector (-0.7522, 2.2739, 1.2434)>","<Matrix 3x3 (0.2706, -0.2514,  0.9293)
+            (0.9627,  0.0707, -0.2612)
+            (0.0000,  0.9653,  0.2612)>",425.973449707031
+e9274eba-587c-441a-8fb2-64508cf27f46,20,p1,scene2-p1,next to the bowl where there is an apple ,?,Pencil.001,?,compound,"<Vector (-0.7522, 2.2739, 1.2434)>","<Matrix 3x3 (-0.2260, -0.0542, 0.9726)
+            ( 0.9741, -0.0126, 0.2257)
+            ( 0.0000,  0.9985, 0.0556)>",461.431457519531
+f4e2eccd-3123-406b-8515-098ba89e036d,20,p1,scene2-p1,bowl next to you ,?,apple.008,?,compound,"<Vector (-0.7522, 2.2739, 1.2434)>","<Matrix 3x3 (0.2171, -0.1000,  0.9710)
+            (0.9761,  0.0222, -0.2159)
+            (0.0000,  0.9948,  0.1025)>",492.123962402344
+6600ce60-96f6-4dbd-8f67-d98d985bce77,20,p1,scene2-p1,next to table directly next to robot ,?,table.001,?,compound,"<Vector (-0.7522, 2.2739, 1.2434)>","<Matrix 3x3 (0.2171, -0.1000,  0.9710)
+            (0.9761,  0.0222, -0.2159)
+            (0.0000,  0.9948,  0.1025)>",503.904418945313
+439995ae-ddb3-410e-af89-0097184cfd77,23,p1,scene2-p1,The spoon on the table ,on,spoon,table,simple,"<Vector (-2.5359, 3.8295, 1.6104)>","<Matrix 3x3 (-0.8360, -0.1527, 0.5270)
+            ( 0.5487, -0.2327, 0.8030)
+            ( 0.0000,  0.9605, 0.2783)>",30.9830322265625
+6b12b6a2-2458-4406-ab77-836bb597729c,23,p1,scene2-p1,The table on the floor ,on,Table,floor,simple,"<Vector (-2.3097, 4.2342, 1.7973)>","<Matrix 3x3 (-0.8762, -0.1923, 0.4418)
+            ( 0.4819, -0.3497, 0.8034)
+            ( 0.0000,  0.9169, 0.3991)>",51.0993919372559
+98e7f2a1-5bfe-45a5-b462-96f08711e7e9,23,p1,scene2-p1,The spoon on the plate next to the apple on the table ,?,spoon.001,?,compound,"<Vector (-2.8440, 3.0160, 1.3627)>","<Matrix 3x3 (-0.9095, -0.1134, 0.4000)
+            ( 0.4158, -0.2481, 0.8750)
+            ( 0.0000,  0.9621, 0.2728)>",70.5172500610352
+6aece113-01f2-435d-b05f-c701ce636062,23,p1,scene2-p1,The jar on top of the shelf under the ball ,?,jar,?,compound,"<Vector (-4.7859, 0.4398, 1.9381)>","<Matrix 3x3 (0.1455,  0.0404,  0.9885)
+            (0.9894, -0.0059, -0.1454)
+            (0.0000,  0.9992, -0.0408)>",111.942764282227
+03442f33-e6f4-47cf-b2cf-6f60b3ba75eb,23,p1,scene2-p1,The box. 001 on the floor next to the chair ,?,box.001,?,compound,"<Vector (-4.8125, 3.3657, 0.9256)>","<Matrix 3x3 (0.9951, -0.0317,  0.0934)
+            (0.0986,  0.3203, -0.9422)
+            (0.0000,  0.9468,  0.3219)>",129.262557983398
+3ad21fc8-c014-4069-8022-9fbe4084c94e,23,p1,scene2-p1,The box under the table ,under,box,table,simple,"<Vector (-3.3765, 3.2957, 1.0135)>","<Matrix 3x3 (0.1857, -0.2599,  0.9476)
+            (0.9826,  0.0491, -0.1791)
+            (0.0000,  0.9644,  0.2645)>",168.869552612305
+0ead5e1d-ce40-45da-9f8f-0474f0c57e82,23,p1,scene2-p1,The mug on top of the cupboard above the toilet roll ,?,mug,?,compound,"<Vector (-2.9636, 3.3847, 1.0498)>","<Matrix 3x3 ( 0.8990, -0.0091, -0.4378)
+            (-0.4378, -0.0188, -0.8989)
+            ( 0.0000,  0.9998, -0.0209)>",205.410629272461
+c89b2be9-4a02-4395-be7d-18819bafb54f,23,p1,scene2-p1,The book inside the cupboard under the mug ,?,book,?,compound,"<Vector (-2.9636, 3.3847, 1.0498)>","<Matrix 3x3 ( 0.9304, 0.0122, -0.3663)
+            (-0.3665, 0.0311, -0.9299)
+            ( 0.0000, 0.9994,  0.0334)>",221.773300170898
+d45fe947-b02d-4f86-84f1-c91761f38226,23,p1,scene2-p1,The ball on top of the cupboard next to the mug ,?,ball,?,compound,"<Vector (-2.9636, 3.3847, 1.0498)>","<Matrix 3x3 ( 0.9304, 0.0122, -0.3663)
+            (-0.3665, 0.0311, -0.9299)
+            ( 0.0000, 0.9994,  0.0334)>",233.137191772461
+f8e9e0e0-d001-4896-8ae3-09de8b058462,23,p1,scene2-p1,The book on the floor next to the cupboard ,?,book.001,?,compound,"<Vector (-2.9636, 3.3847, 1.0498)>","<Matrix 3x3 ( 0.9681, 0.1084, -0.2258)
+            (-0.2505, 0.4191, -0.8727)
+            ( 0.0000, 0.9014,  0.4329)>",272.677551269531
+69ec1638-fcc4-48e9-ab58-9a83446aa8d1,23,p1,scene2-p1,The banana on the ground near the book ,?,banana.004,?,compound,"<Vector (-0.9331, 3.5853, 2.3797)>","<Matrix 3x3 (0.0360, -0.6410,  0.7668)
+            (0.9993,  0.0231, -0.0276)
+            (0.0000,  0.7672,  0.6414)>",313.534240722656
+b2e1578b-a2c1-473a-814c-5bf9e19d2c93,23,p1,scene2-p1,The book on the floor near the banana ,?,book.002,?,compound,"<Vector (-0.9331, 3.5853, 2.3797)>","<Matrix 3x3 (0.0600, -0.6181,  0.7839)
+            (0.9982,  0.0371, -0.0471)
+            (0.0000,  0.7853,  0.6192)>",325.597961425781
+fb3020bc-b929-429e-b61e-869f0c21018e,23,p1,scene2-p1,The chair in the corner of the room next to the table ,?,chair.001,?,compound,"<Vector (-0.9331, 3.5853, 2.3797)>","<Matrix 3x3 (0.2474, -0.3740,  0.8938)
+            (0.9689,  0.0955, -0.2282)
+            (0.0000,  0.9225,  0.3860)>",348.325744628906
+766a27b8-8527-40db-82cc-e99c7c96dc59,23,p1,scene2-p1,The apple inside the bowl on top of the table ,?,apple.008,?,compound,"<Vector (-0.7504, 3.9172, 3.5055)>","<Matrix 3x3 (-0.5663, -0.5376, 0.6248)
+            ( 0.8242, -0.3694, 0.4293)
+            ( 0.0000,  0.7580, 0.6523)>",396.713928222656
+be1423b8-e338-4a6d-9bd4-fc56cf1d8282,23,p1,scene2-p1,The chair near the table ,near,chair,table,simple,"<Vector (-1.1610, 3.8450, 3.2294)>","<Matrix 3x3 (-0.1633, -0.5352, 0.8288)
+            ( 0.9866, -0.0886, 0.1372)
+            ( 0.0000,  0.8401, 0.5425)>",419.308410644531
+c4030ef1-203f-4d3d-bee7-875f816bf690,23,p1,scene2-p1,The jar on top of the desk ,on top of,jar.001,desk,simple,"<Vector (-1.1610, 3.8450, 3.2294)>","<Matrix 3x3 (-0.1771, -0.5173, 0.8373)
+            ( 0.9842, -0.0931, 0.1506)
+            ( 0.0000,  0.8507, 0.5256)>",429.939147949219
+9d833c78-6bc8-488e-95b9-9cce0e9788c6,23,p1,scene2-p1,The cube on top of the table near the pencil ,?,Cube.001,?,compound,"<Vector (-2.7112, 2.7975, 1.8929)>","<Matrix 3x3 (-0.6257, -0.4653, 0.6261)
+            ( 0.7801, -0.3732, 0.5022)
+            ( 0.0000,  0.8026, 0.5965)>",451.533874511719
+61b88fcb-16bf-47c9-a372-e83dddaebb7b,23,p1,scene2-p1,The ball on top of the jar on top of the shelf ,?,ball.001,?,compound,"<Vector (-3.0759, 2.8830, 2.5521)>","<Matrix 3x3 (-0.6405, -0.1368, 0.7557)
+            ( 0.7679, -0.1141, 0.6303)
+            ( 0.0000,  0.9840, 0.1782)>",473.361877441406
+50ab2b35-6eab-499a-96c0-714e87bce2d2,23,p1,scene2-p1,The cube on top of the notepad on top of the table ,?,Cube.002,?,compound,"<Vector (-3.2384, 2.5468, 1.8443)>","<Matrix 3x3 (-0.9472, -0.3052, 0.0983)
+            ( 0.3207, -0.9016, 0.2905)
+            ( 0.0000,  0.3067, 0.9518)>",493.690246582031
+8985ace3-1061-417f-b267-c003d4ecb5cb,23,p1,scene2-p1,The mug near the bowl on top of the table ,?,mug.002,?,compound,"<Vector (-3.2950, 2.5011, 1.7757)>","<Matrix 3x3 (-0.7259, -0.5297, 0.4387)
+            ( 0.6878, -0.5591, 0.4630)
+            ( 0.0000,  0.6378, 0.7702)>",507.053649902344
+7678a263-e816-4218-9d2c-202c5cedb8fc,23,p1,scene2-p1,The banana on top of the bowl on top of the table ,?,banana.000,?,compound,"<Vector (-3.2950, 2.5011, 1.7757)>","<Matrix 3x3 (-0.8078, -0.4249, 0.4087)
+            ( 0.5895, -0.5822, 0.5600)
+            ( 0.0000,  0.6932, 0.7207)>",519.73388671875
+09536c59-7699-46d0-be61-19288fe36acb,23,p1,scene2-p1,The pencil under the plate on top of the table ,?,Pencil.001,?,compound,"<Vector (-3.2234, 2.8248, 2.1500)>","<Matrix 3x3 (-0.9663, -0.1945, 0.1687)
+            ( 0.2575, -0.7299, 0.6332)
+            ( 0.0000,  0.6553, 0.7554)>",543.428100585938
+04549766-0f0f-4fab-9c7d-7dc8b4ad0443,23,p1,scene2-p1,The pencil on top of the desk ,on top of,Pencil.003,desk,simple,"<Vector (-3.2234, 2.8248, 2.1500)>","<Matrix 3x3 (0.0656, -0.4216,  0.9044)
+            (0.9978,  0.0277, -0.0594)
+            (0.0000,  0.9064,  0.4226)>",553.575622558594
+d04b9e83-8542-4772-b95d-15213a03b4be,23,p1,scene2-p1,The cube on top of the sheet of paper on top of the desk ,?,Cube.000,?,compound,"<Vector (-3.2234, 2.8248, 2.1500)>","<Matrix 3x3 (0.0656, -0.4216,  0.9044)
+            (0.9978,  0.0277, -0.0594)
+            (0.0000,  0.9064,  0.4226)>",572.604309082031
+cdece9e5-7bbe-41bb-9ebf-1ad66e95ec8f,23,p1,scene2-p1,The table against the wall near the shelf ,?,table.001,?,compound,"<Vector (-3.2234, 2.8248, 2.1500)>","<Matrix 3x3 (0.0616, -0.4217,  0.9046)
+            (0.9981,  0.0260, -0.0558)
+            (0.0000,  0.9064,  0.4226)>",583.818237304688
+05faeb3a-fae0-4766-a822-b3eebb3bbfc7,31,p1,scene1-p1,the chair next to the table ,next to,chair.001,table,simple,"<Vector (5.9779, -2.9614, 1.8000)>","<Matrix 3x3 (0.1530, -0.1963,  0.9685)
+            (0.9882,  0.0304, -0.1499)
+            (0.0000,  0.9801,  0.1987)>",58.5992774963379
+cec75962-6087-410b-afa8-29b05c02b87c,31,p1,scene1-p1,the pen on the table ,on,Pencil.005,table,simple,"<Vector (1.3992, 0.0758, 1.7127)>","<Matrix 3x3 (0.5443, -0.3937,  0.7407)
+            (0.8389,  0.2555, -0.4807)
+            (0.0000,  0.8830,  0.4694)>",83.5867080688477
+7af57829-583d-47d5-9684-c635028151af,31,p1,scene1-p1,the box in the corner ,in,box.001,corner,simple,"<Vector (1.8100, 4.3548, 1.2096)>","<Matrix 3x3 (0.2412, -0.1765,  0.9543)
+            (0.9705,  0.0439, -0.2372)
+            (0.0000,  0.9833,  0.1818)>",105.524726867676
+272f7196-e3ac-4d6f-8c29-5335439a79c4,31,p1,scene1-p1,th apple on the plate ,on,apple.001,?,compound,"<Vector (0.6235, 0.2662, 1.8713)>","<Matrix 3x3 (0.5443, -0.4815,  0.6869)
+            (0.8389,  0.3125, -0.4457)
+            (0.0000,  0.8188,  0.5740)>",119.644409179688
+50911e2e-1e86-42de-8821-521b9e913aa3,31,p1,scene1-p1,the spoon in the cup ,in,spoon.001,cup,simple,"<Vector (0.6235, 0.2662, 1.8713)>","<Matrix 3x3 (0.5172, -0.4421,  0.7328)
+            (0.8559,  0.2672, -0.4429)
+            (0.0000,  0.8562,  0.5166)>",138.976852416992
+12f87118-478a-45b2-a0de-849aba2c583f,31,p1,scene1-p1,the box in the corner tp the right of the other box ,?,box.002,?,compound,"<Vector (0.6235, 0.2662, 1.8713)>","<Matrix 3x3 (0.9150, -0.1203,  0.3850)
+            (0.4034,  0.2729, -0.8734)
+            (0.0000,  0.9545,  0.2982)>",193.896774291992
+261d9bee-9c0a-4bd8-b14b-bf8f2602e062,31,p1,scene1-p1,the lamp on the square table ,on,lamp.001,?,compound,"<Vector (1.5840, 2.2149, 2.1683)>","<Matrix 3x3 (-0.1372, -0.4749, 0.8693)
+            ( 0.9905, -0.0658, 0.1204)
+            ( 0.0000,  0.8776, 0.4794)>",238.91911315918
+e7db9798-b3dc-421a-bf7d-fcf92905bfeb,31,p1,scene1-p1,the book on the table near the wall ,?,book.002,?,compound,"<Vector (1.5840, 2.2149, 2.1683)>","<Matrix 3x3 (0.5042, -0.2763,  0.8182)
+            (0.8636,  0.1613, -0.4777)
+            (0.0000,  0.9475,  0.3200)>",291.556274414062
+a15d2626-a426-4323-bec3-f7a1269b09de,31,p1,scene1-p1,the cube on top of the book ,on top of,Cube.001,book,simple,"<Vector (1.5840, 2.2149, 2.1683)>","<Matrix 3x3 (0.5042, -0.2763,  0.8182)
+            (0.8636,  0.1613, -0.4777)
+            (0.0000,  0.9475,  0.3200)>",306.752563476562
+8ffaf248-4daf-4b4a-818d-12edf4487f47,31,p1,scene1-p1,the pencil in the pot on the square table ,?,Pencil,?,compound,"<Vector (1.5840, 2.2149, 2.1683)>","<Matrix 3x3 (-0.3463, -0.3752, 0.8599)
+            ( 0.9381, -0.1385, 0.3174)
+            ( 0.0000,  0.9166, 0.3999)>",349.775390625
+8d4f3aa1-ce04-4c71-acc7-57c24993baf1,31,p1,scene1-p1,the pencil on top of the books ,on top of,Pencil.004,books,simple,"<Vector (1.5840, 2.2149, 2.1683)>","<Matrix 3x3 (0.5683, -0.2921,  0.7693)
+            (0.8228,  0.2017, -0.5313)
+            (0.0000,  0.9349,  0.3549)>",363.522033691406
+d7f9b89e-d1f5-46c2-8599-84db2f626550,31,p1,scene1-p1,the jar next to the table ,next to,jar,table,simple,"<Vector (1.5840, 2.2149, 2.1683)>","<Matrix 3x3 (-0.7470, -0.4224, 0.5133)
+            ( 0.6648, -0.4747, 0.5768)
+            ( 0.0000,  0.7722, 0.6354)>",389.515686035156
+9912c7e3-9c7b-45b2-8ede-f35e0ea61070,31,p1,scene1-p1,the lampion the round table ,?,lamp,?,compound,"<Vector (1.5840, 2.2149, 2.1683)>","<Matrix 3x3 (0.3620, -0.2499,  0.8981)
+            (0.9322,  0.0971, -0.3488)
+            (0.0000,  0.9634,  0.2681)>",400.946228027344
+b2e9e7cf-6b72-4495-824f-8bbba62a740e,31,p1,scene1-p1,the jar under the round table ,under,jar.001,?,compound,"<Vector (1.5840, 2.2149, 2.1683)>","<Matrix 3x3 (0.2030, -0.4522,  0.8685)
+            (0.9792,  0.0937, -0.1801)
+            (0.0000,  0.8870,  0.4618)>",416.82568359375
+acb2553b-7fed-4fd8-a68f-2929f1492406,31,p1,scene1-p1,he chair next to you ,?,chair.003,?,compound,"<Vector (1.5840, 2.2149, 2.1683)>","<Matrix 3x3 (0.5814, -0.4400,  0.6844)
+            (0.8136,  0.3144, -0.4890)
+            (0.0000,  0.8412,  0.5408)>",440.81982421875
+b4dfdd43-b953-4167-84f4-775ae710f4a9,31,p1,scene1-p1,the pencil in the box ,in,Pencil.001,box,simple,"<Vector (1.5840, 2.2149, 2.1683)>","<Matrix 3x3 (0.3282, -0.2610,  0.9078)
+            (0.9446,  0.0907, -0.3154)
+            (0.0000,  0.9611,  0.2763)>",451.633850097656
+3e21f823-1e27-470d-a7a6-5a0b93fed3cc,31,p1,scene1-p1,the spoon on top of the lamp ,on top of,spoon.002,lamp,simple,"<Vector (1.5840, 2.2149, 2.1683)>","<Matrix 3x3 (-0.4092, -0.3815, 0.8289)
+            ( 0.9124, -0.1711, 0.3717)
+            ( 0.0000,  0.9084, 0.4182)>",468.113159179688
+b47d8b66-2425-4387-aba1-7cef8c1d7360,31,p1,scene1-p1,"the bounder the table, next to the jar ",?,box,?,compound,"<Vector (1.5840, 2.2149, 2.1683)>","<Matrix 3x3 (0.3545, -0.3983,  0.8460)
+            (0.9350,  0.1510, -0.3208)
+            (0.0000,  0.9048,  0.4259)>",510.519470214844
+72e3f26b-de00-4916-84e5-8cf7bbe72d13,31,p1,scene1-p1,the book under the cube ,under,book.001,cube,simple,"<Vector (1.5840, 2.2149, 2.1683)>","<Matrix 3x3 (0.4568, -0.3086,  0.8343)
+            (0.8896,  0.1585, -0.4285)
+            (0.0000,  0.9379,  0.3469)>",521.116882324219
+e7f2c672-620f-4de1-8d37-99249c69e931,31,p1,scene1-p1,the chair behind the square table ,behind,chair,?,compound,"<Vector (1.5840, 2.2149, 2.1683)>","<Matrix 3x3 (-0.5291, -0.4068, 0.7447)
+            ( 0.8485, -0.2537, 0.4644)
+            ( 0.0000,  0.8776, 0.4794)>",548.9267578125
+20058993-ac19-4f6e-8708-e5133ed925a5,31,p1,scene1-p1,the apple in the bowl ,in,apple.002,bowl,simple,"<Vector (1.5840, 2.2149, 2.1683)>","<Matrix 3x3 (-0.4436, -0.3840, 0.8098)
+            ( 0.8962, -0.1901, 0.4008)
+            ( 0.0000,  0.9036, 0.4285)>",567.322265625
+ebab5eb3-a874-4525-b51b-c9012af75488,31,p1,scene1-p1,the cube to the left of the book ,left of,Cube,?,compound,"<Vector (1.5840, 2.2149, 2.1683)>","<Matrix 3x3 (0.4209, -0.3580,  0.8335)
+            (0.9071,  0.1661, -0.3867)
+            (0.0000,  0.9189,  0.3947)>",582.635192871094
+e994a70d-2a3b-41b1-97aa-2a6151aa1b41,31,p1,scene1-p1,the book on the square table ,on,book,?,compound,"<Vector (1.5840, 2.2149, 2.1683)>","<Matrix 3x3 (-0.3872, -0.4604, 0.7988)
+            ( 0.9220, -0.1933, 0.3355)
+            ( 0.0000,  0.8664, 0.4993)>",598.398010253906
