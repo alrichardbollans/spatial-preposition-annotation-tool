@@ -7,7 +7,8 @@
 3. [Creating Annotations](#creating-annotations)
 4. [Troubleshooting](#troubleshooting)
 5. [Requirements](#requirements)
-6. [Contact](#contact)
+6. [Preliminary Study](#study)
+7. [Contact](#contact)
 
 ### Introduction
 
@@ -134,6 +135,9 @@ For guidance installing Python on your machine see https://wiki.python.org/moin/
 
 ###### Note
 The BGUI module has been included in the appropriate directory in the repository. We recommend keeping the version that is included in our repository as we have made minor changes to it, [see here](https://blender.stackexchange.com/questions/119394/how-to-make-a-bgui-widget-always-focused-active).
+
+### Preliminary Study
+We have conducted a preliminary study using this framework. The collected annotations and associated data can be found in the Preliminary Study folder. If you would like to see the Blender scenes we used please get in touch, see below.
 
 ### Contact
 If you have any comments, queries or want to ask about extensions of the tool to fit your needs dont hesitate to get in touch!
