@@ -1,0 +1,29 @@
+Description of features given in configuration data
+scene: Scene file name
+figure: Name of figure (also known as: target,trajector, referent)
+ground: Name of ground (also known as: reference, landmark, relatum)
+figure_volume: Volume of bounding box of figure
+figure_verticalness: 1 if figure length or width is less than half its height, else 0
+figure_z_height: Height of the figure in the z dimension
+base_figure_movement_top: How much the highest point of the figure moves in the z dimension, over 50 frames when no change is made to the scene
+base_figure_movement_cobb: How much the centre of the bounding box of the figure moves in the z dimension, over 50 frames when no change is made to the scene
+base_figure_movement_bottom: How much the lowest point of the figure moves in the z dimension, over 50 frames when no change is made to the scene
+ground_volume: Volume of bounding box of ground
+ground_verticalness: 1 if ground length or width is less than half its height, else 0
+ground_z_height: Height of the ground in the z dimension
+ground_CN_ISA_CONTAINER: The 'IsA' edge weight in ConceptNet between the name of the ground and 'Container': 'http://api.conceptnet.io/query?node=/c/en/<clean_ground_name>&other=/c/en/container
+ground_CN_UsedFor_Light: The 'UsedFor' edge weight in ConceptNet between the name of the ground and 'Light': 'http://api.conceptnet.io/query?node=/c/en/<clean_ground_name>&other=/c/en/light
+distance: A measure of the distance between the figure and ground
+contact: The smallest distance between the meshes of the figure and ground
+contact_scaled: Contact scaled by the maximum dimension of both figure and ground
+above_measure: Difference between highest point of ground and lowest point of figure, positive value implies figure is above ground.
+shared_volume: The shared volume of the bounding boxes of figure and ground
+containment: The shared volume divided by the volume of the figure
+ins: 1 / (1 + e ** (- 1 * x)) where x is the shared volume divided by the ground volume
+raw_support_top: How much the highest point of the figure moves in the z dimension, over 50 frames when the ground is removed from the scene
+raw_support_cobb: How much the centre of the bounding box of the figure moves in the z dimension, over 50 frames when the ground is removed from the scene
+raw_support_bottom: How much the lowest point of the figure moves in the z dimension, over 50 frames when the ground is removed from the scene
+support_top: raw_support_top normalized by dividing by ground_z_height
+support_cobb: raw_support_cobb normalized by dividing by ground_z_height
+support_bottom: raw_support_bottom normalized by dividing by ground_z_height
+ground_CN_ISA_CONTAINER_Capped: ground_CN_ISA_CONTAINER capped to a maximum value of 1
