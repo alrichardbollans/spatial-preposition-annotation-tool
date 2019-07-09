@@ -1,0 +1,13 @@
+This folder contains and condenses most of the code related to feature extraction into one place for reference.
+In order to get this working the files need separating into specific locations.
+If you are interested in using some or all of this contact Adam at mm15alrb@leeds.ac.uk in order for help getting this working.
+
+
+
+
+
+
+
+
+
+
