@@ -1,3 +1,6 @@
+## Note
+This repo has been **archived** as we have built an improved version of the framework in the Unity 3D framework. See: https://github.com/alrichardbollans/spatial-preposition-annotation-tool-unity3d
+
 # Spatial Preposition Annotation Tool for Virtual Environments 
 
 ### Table of Contents
