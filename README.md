@@ -46,7 +46,7 @@ In general green highlighting denotes a figure objects while red highlighting de
 
 ##### Adding new prepositions
 
-Prepositions that you would like to include in the various tasks are contained in /bgui-scripts/textui.py. All you need to do is add/remove prepositions from `preposition_list`.
+Prepositions that you would like to include in the various tasks are contained in /bge-scripts/on-startup.py. All you need to do is add/remove prepositions from `preposition_list`. The list is randomised. You can change this by commenting out `random.shuffle(random_preposition_list)`.
 
 ### Creating Annotations
 
