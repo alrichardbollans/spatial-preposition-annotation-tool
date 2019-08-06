@@ -3,6 +3,13 @@ import bge
 import math
 import random
 
+
+preposition_list = ['in','inside','on', 'on top of', 'against', 'over', 'under', 'above','below']
+
+random_preposition_list = preposition_list
+
+random.shuffle(random_preposition_list)
+print("shuffling")
 # Makes game run in full screen
 # bge.render.setFullScreen(True)
 
@@ -16,6 +23,8 @@ own = cont.owner #owner of the controller is the active object (try print(own))
 scene = bge.logic.getCurrentScene()
 
 empty = scene.objects['Empty']
+empty["random_preposition_list"] = random_preposition_list
+
 
 scenes = bge.logic.getSceneList()
 main_scene = scenes[0]

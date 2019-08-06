@@ -11,19 +11,21 @@ import os
 from os.path import expanduser
 
 import random
-
 import bgui
 import bgui.bge_utils
 import bge
 
-preposition_list = ['in','inside','on', 'on top of', 'against', 'over', 'under', 'above','below']
+# preposition_list = ['in','inside','on', 'on top of', 'against', 'over', 'under', 'above','below']
 
+# random_preposition_list = on-startup.random_preposition_list
 
 main_scene = bge.logic.getCurrentScene()
 
 co = bge.logic.getCurrentController()
 
 empty = co.owner
+
+random_preposition_list = empty["random_preposition_list"]
 
 keyboard = co.sensors["textinputkeyboard"]
 
@@ -119,7 +121,8 @@ class SimpleLayout(bgui.bge_utils.Layout):
 
             if "p" not in empty.getPropertyNames():
                 # A label for the given preposition
-                self.prepositionlbl = bgui.Label(self.frame,text= 'Preposition: '+random.choice(preposition_list), pos=[0, 0.9],
+                p = random_preposition_list[0]
+                self.prepositionlbl = bgui.Label(self.frame,text= 'Preposition: '+p, pos=[0, 0.9],
                     sub_theme='Large',pt_size = 50, options = bgui.BGUI_DEFAULT | bgui.BGUI_CENTERX)
         
             if "p" in empty.getPropertyNames():
@@ -201,6 +204,7 @@ class SimpleLayout(bgui.bge_utils.Layout):
 
 def main(cont):
     own = cont.owner
+
     mouse = bge.logic.mouse
 
     if 'sys' not in own:
@@ -212,6 +216,21 @@ def main(cont):
     else:
         own['sys'].run()
 
+
+def get_current_preposition():
+    return co.owner['sys'].layout.prepositionlbl.text.replace('Preposition: ','')
+
+def change_preposition():
+    print(random_preposition_list)
+    p = get_current_preposition()
+    new_index = random_preposition_list.index(p) + 1
+    if new_index < len(random_preposition_list):
+        next_preposition = random_preposition_list[new_index]
+        co.owner['sys'].layout.prepositionlbl.text = 'Preposition: ' + next_preposition
+    else:
+        quit_game()
+    
+    
 
 
 main(bge.logic.getCurrentController())
@@ -310,14 +329,9 @@ if 'pragmatic' not in empty.getPropertyNames():
                         bge.logic.sendMessage("changepreposition")
 
             if changeprep.positive:
-                co.owner['sys'].layout.prepositionlbl.text = 'Preposition: ' + random.choice(preposition_list)
-                # new_index = preposition_list.index(co.owner['sys'].layout.lbl2.text) + 1
-
-                # if new_index < len(preposition_list):
-
-                #     co.owner['sys'].layout.lbl2.text = preposition_list[new_index]
-                # else:
-                #     co.owner['sys'].layout.lbl2.text = preposition_list[0]
+                change_preposition()
+                
+               
 
 if 'sfg' in empty.getPropertyNames():
     if deselect.positive:
@@ -334,7 +348,7 @@ if 'sfg' in empty.getPropertyNames():
                 if co.owner['sys'].layout.allselectedlbl.visible == True:
                     output(['ALL INSTANCES SELECTED',co.owner['sys'].layout.prepositionlbl.text.replace('Preposition: ',''),''])
                     co.owner['sys'].layout.allselectedlbl.visible = False
-                    co.owner['sys'].layout.prepositionlbl.text = 'Preposition: ' + random.choice(preposition_list)
+                    change_preposition()
 
 if "pragmatic" in empty.getPropertyNames():
     ###Keep text input focused
