@@ -9,7 +9,7 @@ preposition_list = ['in','inside','on', 'on top of', 'against', 'over', 'under',
 random_preposition_list = preposition_list
 
 random.shuffle(random_preposition_list)
-print("shuffling")
+
 # Makes game run in full screen
 # bge.render.setFullScreen(True)
 
