@@ -221,7 +221,7 @@ def get_current_preposition():
     return co.owner['sys'].layout.prepositionlbl.text.replace('Preposition: ','')
 
 def change_preposition():
-    print(random_preposition_list)
+    
     p = get_current_preposition()
     new_index = random_preposition_list.index(p) + 1
     if new_index < len(random_preposition_list):
