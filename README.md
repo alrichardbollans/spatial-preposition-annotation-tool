@@ -30,6 +30,8 @@ By using virtual environments it is possible to extract large amounts of detaile
 
 The first thing you need is a set of scenes to work with. These should be stored in /blender/scene creation/scenes. Please avoid using "-" in file names.
 
+**Note**  The files given in the 'add ons' folder must be in your blender add ons directory. Usually this is .config/blender/2.79/scripts/addons
+
 Once scenes have been created, run 'process_scenes.py' to create environments to annotate.
 
 There are a couple of things to note when creating a scene. See below
