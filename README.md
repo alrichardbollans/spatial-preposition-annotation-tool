@@ -142,7 +142,7 @@ For guidance installing Python on your machine see https://wiki.python.org/moin/
 The BGUI module has been included in the appropriate directory in the repository. We recommend keeping the version that is included in our repository as we have made minor changes to it, [see here](https://blender.stackexchange.com/questions/119394/how-to-make-a-bgui-widget-always-focused-active).
 
 ### Preliminary Study
-We have conducted a preliminary study using this framework. The collected annotations and associated data can be found in the Preliminary Study folder. If you would like to see the Blender scenes we used please get in touch, see below.
+We have conducted a preliminary study using this framework. The collected annotations and associated data can be found in the Preliminary Study folder. If you would like to see the Blender scenes we used please get in touch, see below. An archive of the collected data and exact copy of the tool used at the time can be found here: https://doi.org/10.5518/620
 
 #### Related Publication
 [Investigating the Dimensions of Spatial Language](https://www.researchgate.net/publication/334415174_Investigating_the_Dimensions_of_Spatial_Language), Speaking of Location 2019: Communicating about Space
