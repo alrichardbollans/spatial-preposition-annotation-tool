@@ -144,6 +144,9 @@ The BGUI module has been included in the appropriate directory in the repository
 ### Preliminary Study
 We have conducted a preliminary study using this framework. The collected annotations and associated data can be found in the Preliminary Study folder. If you would like to see the Blender scenes we used please get in touch, see below.
 
+#### Related Publication
+[Investigating the Dimensions of Spatial Language](https://www.researchgate.net/publication/334415174_Investigating_the_Dimensions_of_Spatial_Language), Speaking of Location 2019: Communicating about Space
+
 ### Contact
 If you have any comments, queries or want to ask about extensions of the tool to fit your needs dont hesitate to get in touch!
 
